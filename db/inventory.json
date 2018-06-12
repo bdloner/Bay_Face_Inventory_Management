@@ -1,0 +1,270 @@
+{
+  "data": [
+    {
+      "_id": {
+        "$oid": "5b15067cf199f6b50377e953"
+      },
+      "sn": "FXS2111Q0QL",
+      "desc": "CiscoSystems,Inc.WS-C4507R+E7slotswitch",
+      "pid": "WS-C4507R+E",
+      "timestamp": {
+        "$date": "2018-06-04T16:29:30.362Z"
+      },
+      "state": {
+        "status": "InService",
+        "hostname": "Switch",
+        "ip": "192.168.1.1",
+        "slot": "SwitchSystem",
+        "suboid": "1"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5b150682f199f6b50377e954"
+      },
+      "sn": "FXS2109Q0EH",
+      "desc": "FanTray",
+      "pid": "WS-X4597+E",
+      "timestamp": {
+        "$date": "2018-06-04T16:29:36.497Z"
+      },
+      "state": {
+        "status": "InService",
+        "hostname": "Switch",
+        "ip": "192.168.1.1",
+        "slot": "FanTray1",
+        "suboid": "12"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5b150686f199f6b50377e955"
+      },
+      "sn": "ART2107FF1X",
+      "desc": "PowerSupply(AC4200W)",
+      "pid": "PWR-C45-4200ACV",
+      "timestamp": {
+        "$date": "2018-06-04T16:29:42.061Z"
+      },
+      "state": {
+        "status": "InService",
+        "hostname": "Switch",
+        "ip": "192.168.1.1",
+        "slot": "PowerSupply1",
+        "suboid": "15"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5b15068bf199f6b50377e956"
+      },
+      "sn": "ART2107FF0L",
+      "desc": "PowerSupply(AC4200W)",
+      "pid": "PWR-C45-4200ACV",
+      "timestamp": {
+        "$date": "2018-06-04T16:29:46.083Z"
+      },
+      "state": {
+        "status": "InService",
+        "hostname": "Switch",
+        "ip": "192.168.1.1",
+        "slot": "PowerSupply2",
+        "suboid": "18"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5b150691f199f6b50377e957"
+      },
+      "sn": "FXS210806HT",
+      "desc": "ClockModule",
+      "pid": "WS-X4K-CLOCK-E",
+      "timestamp": {
+        "$date": "2018-06-04T16:29:51.760Z"
+      },
+      "state": {
+        "status": "InService",
+        "hostname": "Switch",
+        "ip": "192.168.1.1",
+        "slot": "ClockModule",
+        "suboid": "20"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5b150697f199f6b50377e958"
+      },
+      "sn": "FXS210200UQ",
+      "desc": "MuxBuffersforRedundancyLogic",
+      "pid": "WS-X4590-EX=",
+      "timestamp": {
+        "$date": "2018-06-04T16:29:57.307Z"
+      },
+      "state": {
+        "status": "InService",
+        "hostname": "Switch",
+        "ip": "192.168.1.1",
+        "slot": "MuxBuffer1",
+        "suboid": "21"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5b15069cf199f6b50377e959"
+      },
+      "sn": "FXS2103022W",
+      "desc": "MuxBuffersforRedundancyLogic",
+      "pid": "WS-X4590-EX=",
+      "timestamp": {
+        "$date": "2018-06-04T16:30:02.670Z"
+      },
+      "state": {
+        "status": "InService",
+        "hostname": "Switch",
+        "ip": "192.168.1.1",
+        "slot": "MuxBuffer2",
+        "suboid": "22"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5b1506a2f199f6b50377e95a"
+      },
+      "sn": "FXS210201PH",
+      "desc": "MuxBuffersforRedundancyLogic",
+      "pid": "WS-X4590-EX=",
+      "timestamp": {
+        "$date": "2018-06-04T16:30:08.273Z"
+      },
+      "state": {
+        "status": "InService",
+        "hostname": "Switch",
+        "ip": "192.168.1.1",
+        "slot": "MuxBuffer5",
+        "suboid": "25"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5b1506a7f199f6b50377e95b"
+      },
+      "sn": "FXS210202JN",
+      "desc": "MuxBuffersforRedundancyLogic",
+      "pid": "WS-X4590-EX=",
+      "timestamp": {
+        "$date": "2018-06-04T16:30:13.438Z"
+      },
+      "state": {
+        "status": "InService",
+        "hostname": "Switch",
+        "ip": "192.168.1.1",
+        "slot": "MuxBuffer6",
+        "suboid": "26"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5b1506acf199f6b50377e95c"
+      },
+      "sn": "FXS21020291",
+      "desc": "MuxBuffersforRedundancyLogic",
+      "pid": "WS-X4590-EX=",
+      "timestamp": {
+        "$date": "2018-06-04T16:30:18.412Z"
+      },
+      "state": {
+        "status": "InService",
+        "hostname": "Switch",
+        "ip": "192.168.1.1",
+        "slot": "MuxBuffer7",
+        "suboid": "27"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5b1506b1f199f6b50377e95d"
+      },
+      "sn": "JAE1210AF3V",
+      "desc": "1000BaseX(SFP)with48SFPports",
+      "pid": "WS-X4448-GB-SFP",
+      "timestamp": {
+        "$date": "2018-06-04T16:30:24.181Z"
+      },
+      "state": {
+        "status": "InService",
+        "hostname": "Switch",
+        "ip": "192.168.1.1",
+        "slot": "Linecard(slot1)",
+        "suboid": "1000"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5b1506b7f199f6b50377e95e"
+      },
+      "sn": "AVJ19063LCA",
+      "desc": "1000BaseLH",
+      "pid": "GLC-LH-SMD",
+      "timestamp": {
+        "$date": "2018-06-04T16:36:47.239Z"
+      },
+      "state": {
+        "status": "InStock"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5b1506bcf199f6b50377e95f"
+      },
+      "sn": "JAE10202EG6",
+      "desc": "1000BaseX(SFP)with48SFPports",
+      "pid": "WS-X4448-GB-SFP",
+      "timestamp": {
+        "$date": "2018-06-04T16:30:34.912Z"
+      },
+      "state": {
+        "status": "InService",
+        "hostname": "Switch",
+        "ip": "192.168.1.1",
+        "slot": "Linecard(slot2)",
+        "suboid": "2000"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5b1506c2f199f6b50377e960"
+      },
+      "sn": "CAT2118L79M",
+      "desc": "Sup8-E10GE(SFP+),1000BaseX(SFP)with8SFP+Ports",
+      "pid": "WS-X45-SUP8-E",
+      "timestamp": {
+        "$date": "2018-06-04T16:30:40.679Z"
+      },
+      "state": {
+        "status": "InService",
+        "hostname": "Switch",
+        "ip": "192.168.1.1",
+        "slot": "Supervisor(slot3)",
+        "suboid": "3000"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5b15087bf199f6b5213f4167"
+      },
+      "sn": "AVC211923XW",
+      "desc": "1000BaseT",
+      "pid": "GLC-TE",
+      "timestamp": {
+        "$date": "2018-06-04T16:38:03.936Z"
+      },
+      "state": {
+        "status": "InService",
+        "hostname": "Switch",
+        "ip": "192.168.1.1",
+        "slot": "GigabitEthernet1/15",
+        "suboid": "1063"
+      }
+    }
+  ]
+}
