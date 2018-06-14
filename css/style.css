@@ -53,10 +53,11 @@ tr:hover {
     background: lightblue;
 }
 
-#row-data-table {
-    padding: 30px;
+p {
+    display: block;
+    margin: 1em 0;
 }
 
-.table {
-    padding: 20px;
+#row-data-table {
+    padding: 30px;
 }

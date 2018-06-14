@@ -2,7 +2,8 @@ $(document).ready(function () {
     var table = $('#bay-face').DataTable({
         "ajax": {
             "url": "db/inventory.json",
-            "type": "GET"
+            "contentType": "application/json",
+            "type": "POST"
         },
         "columns": [
             {"data": "pid", "defaultContent": "-"},
@@ -20,8 +21,17 @@ $(document).ready(function () {
 
     });
 
-    $('#bay-face tbody').on('click', 'tr', function () {
+    $('#bay-face tbody').on('click', 'tr', function () { //$("#sn").val(data.pid); << for put value in <input> form
         var data = table.row(this).data();
-        alert(data.pid);
+        $("#pid").text(data.pid);
+        $("#sn").text(data.sn);
+        $("#hostname").text(data.state.hostname);
+        $("#ip").text(data.state.ip);
+        $("#slot").text(data.state.slot);
+        $("#status").text(data.state.status);
+        $("#bayface-status").modal("show")
+
+        //window.location.href = "bayface.html?pid=" + data.pid + "&sn=" + data.sn;
+        //alert(data.pid);
     });
 });

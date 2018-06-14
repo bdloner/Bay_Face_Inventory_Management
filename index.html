@@ -7,6 +7,8 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.16/r-2.2.1/datatables.min.css"/>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,24 +33,62 @@
         </div>
 
         <div class="row" id="row-data-table">
-            <table id="bay-face" class="table table-bordered display responsive nowrap" style="width:100%">
-                <thead class="thead-dark">
-                <tr>
-                    <th scope="col">PID</th>
-                    <th scope="col">Serial Number</th>
-                    <th scope="col">Hostname</th>
-                    <th scope="col">IP Address</th>
-                    <th scope="col">Slot</th>
-                    <th scope="col">Status</th>
-                </tr>
-                </thead>
-            </table>
+            <div class="panel-body table-responsive">
+                <table id="bay-face" class="table table-bordered display responsive nowrap" style="width:100%">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">PID</th>
+                        <th scope="col">Serial Number</th>
+                        <th scope="col">Hostname</th>
+                        <th scope="col">IP Address</th>
+                        <th scope="col">Slot</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" id="bayface-status" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Bay Face Status</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="row dataTable">
+                    <div class="col-md-8">
+                        <img class="form-control" src="img/WS-C4507R+E.svg"/>
+                    </div>
+                    <div class="col-md-4">
+                        <p> PID : <label id="pid"></label></p>
+                        <p> Serial Number : <label id="sn"></label></p>
+                        <p> Hostname : <label id="hostname"></label></p>
+                        <p> IP Address : <label id="ip"></label></p>
+                        <p> Slot : <label id="slot"></label></p>
+                        <p> Status : <label id="status"></label></p>
+                    </div>
+                </div>
+                <br>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
         </div>
     </div>
 </div>
 </body>
 
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.js"></script>
 
+<!-- Latest compiled and minified Locales -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/locale/bootstrap-table-zh-CN.min.js"></script>
+
+<script src="//fast.wistia.net/labs/fresh-url/v1.js" async></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
