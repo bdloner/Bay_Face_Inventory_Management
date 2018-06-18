@@ -14,6 +14,8 @@ This project use for display status a Bay Face Inventory
 
 >Jquery/Ajax
 
+>Microsoft Visio
+
 >SVG Format
 
 ## Installation
