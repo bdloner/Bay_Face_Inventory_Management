@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     var table = $('#bay-face').DataTable({
         "ajax": {
             "url": "db/inventory.json",
@@ -7,11 +8,10 @@ $(document).ready(function () {
         },
         "columns": [
             {"data": "pid", "defaultContent": "-"},
+            {"data": "title", "defaultContent": "-"},
+            {"data": "hostname", "defaultContent": "-"},
             {"data": "sn", "defaultContent": "-"},
-            {"data": "state.hostname", "defaultContent": "-"},
-            {"data": "state.ip", "defaultContent": "-"},
-            {"data": "state.slot", "defaultContent": "-"},
-            {"data": "state.status", "defaultContent": "-"}
+            {"data": "address", "defaultContent": "-"}
         ],
         "initComplete": function () {
             $("#bay-face_filter").detach().appendTo('#new-search-area');
@@ -23,15 +23,21 @@ $(document).ready(function () {
 
     $('#bay-face tbody').on('click', 'tr', function () { //$("#sn").val(data.pid); << for put value in <input> form
         var data = table.row(this).data();
-        $("#pid").text(data.pid);
-        $("#sn").text(data.sn);
-        $("#hostname").text(data.state.hostname);
-        $("#ip").text(data.state.ip);
-        $("#slot").text(data.state.slot);
-        $("#status").text(data.state.status);
-        $("#bayface-status").modal("show")
+        //$("#bayface-status").modal("show");
 
-        //window.location.href = "bayface.html?pid=" + data.pid + "&sn=" + data.sn;
+        var linecardItem;
+        var portItem;
+
+        $.getJSON('db/inventory.json', function(data) {
+            linecardItem = data.data[0].title;
+            portItem = data.data[0].data[0][0].ifname;
+
+            localStorage.setItem('linecard', linecardItem);
+            localStorage.setItem('port', portItem);
+        });
+
+        window.location.href = "description-bay-face.html?pid=" + data.pid + "&title=" + data.title + "&hostname=" +
+            data.hostname + "&sn=" + data.sn + "&address=" + data.address;
         //alert(data.pid);
     });
 });

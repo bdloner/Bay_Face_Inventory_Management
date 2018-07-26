@@ -1,0 +1,159 @@
+{
+  "result": [
+    {
+      "title": "1",
+      "pid": "WS-C3750G-12S-S",
+      "sn": "FDO1447V1WU",
+      "data": [
+        {
+          "title": "-",
+          "pid": "-",
+          "sn": "unknow1",
+          "data": [
+            [
+              {
+                "ifname": "GigabitEthernet1/0/1",
+                "ifstate": "up",
+                "sname": "Gig1/0/1"
+              },
+              {
+                "ifname": "GigabitEthernet1/0/2",
+                "ifstate": "admin_down",
+                "sname": "Gig1/0/2"
+              },
+              {
+                "ifname": "GigabitEthernet1/0/3",
+                "ifstate": "up",
+                "sname": "Gig1/0/3"
+              },
+              {
+                "ifname": "GigabitEthernet1/0/4",
+                "ifstate": "up",
+                "sname": "Gig1/0/4"
+              },
+              {
+                "ifname": "GigabitEthernet1/0/5",
+                "ifstate": "up",
+                "sname": "Gig1/0/5"
+              },
+              {
+                "ifname": "GigabitEthernet1/0/6",
+                "ifstate": "up",
+                "sname": "Gig1/0/6"
+              },
+              {
+                "ifname": "GigabitEthernet1/0/7",
+                "ifstate": "up",
+                "sname": "Gig1/0/7"
+              },
+              {
+                "ifname": "GigabitEthernet1/0/8",
+                "ifstate": "down",
+                "sname": "Gig1/0/8"
+              },
+              {
+                "ifname": "GigabitEthernet1/0/9",
+                "ifstate": "up",
+                "sname": "Gig1/0/9"
+              },
+              {
+                "ifname": "GigabitEthernet1/0/10",
+                "ifstate": "up",
+                "sname": "Gig1/0/10"
+              },
+              {
+                "ifname": "GigabitEthernet1/0/11",
+                "ifstate": "up",
+                "sname": "Gig1/0/11"
+              },
+              {
+                "ifname": "GigabitEthernet1/0/12",
+                "ifstate": "up",
+                "sname": "Gig1/0/12"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "2",
+      "pid": "WS-C3750G-12S-S",
+      "sn": "FDO1446Y00Y",
+      "data": [
+        {
+          "title": "-",
+          "pid": "-",
+          "sn": "unknow2",
+          "data": [
+            [
+              {
+                "ifname": "GigabitEthernet2/0/1",
+                "ifstate": "down",
+                "sname": "Gig2/0/1"
+              },
+              {
+                "ifname": "GigabitEthernet2/0/2",
+                "ifstate": "down",
+                "sname": "Gig2/0/2"
+              },
+              {
+                "ifname": "GigabitEthernet2/0/3",
+                "ifstate": "down",
+                "sname": "Gig2/0/3"
+              },
+              {
+                "ifname": "GigabitEthernet2/0/4",
+                "ifstate": "down",
+                "sname": "Gig2/0/4"
+              },
+              {
+                "ifname": "GigabitEthernet2/0/5",
+                "ifstate": "down",
+                "sname": "Gig2/0/5"
+              },
+              {
+                "ifname": "GigabitEthernet2/0/6",
+                "ifstate": "down",
+                "sname": "Gig2/0/6"
+              },
+              {
+                "ifname": "GigabitEthernet2/0/7",
+                "ifstate": "down",
+                "sname": "Gig2/0/7"
+              },
+              {
+                "ifname": "GigabitEthernet2/0/8",
+                "ifstate": "down",
+                "sname": "Gig2/0/8"
+              },
+              {
+                "ifname": "GigabitEthernet2/0/9",
+                "ifstate": "up",
+                "sname": "Gig2/0/9"
+              },
+              {
+                "ifname": "GigabitEthernet2/0/10",
+                "ifstate": "up",
+                "sname": "Gig2/0/10"
+              },
+              {
+                "ifname": "GigabitEthernet2/0/11",
+                "ifstate": "up",
+                "sname": "Gig2/0/11"
+              },
+              {
+                "ifname": "GigabitEthernet2/0/12",
+                "ifstate": "down",
+                "sname": "Gig2/0/12"
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "sitename": "-",
+  "address": "10.230.5.18",
+  "hostname": "SW-ESA-01-CRI"
+}

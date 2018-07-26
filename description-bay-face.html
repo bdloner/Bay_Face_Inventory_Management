@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.16/r-2.2.1/datatables.min.css"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bay Face Inventory - Searching</title>
+
+</head>
+<body class="view-bay" onload="getElemSvg()">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <object id="bay-id" data="#blank"></object>
+        </div>
+        <div class="col-md-4">
+            <p> PID : <label id="pid"></label></p>
+            <p> Title : <label id="title"></label></p>
+            <p> Hostname : <label id="hostname"></label></p>
+            <p> Serial Number : <label id="sn"></label></p>
+            <p> IP Address : <label id="address"></label></p>
+        </div>
+    </div>
+    <br>
+</div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.16/r-2.2.1/datatables.min.js"></script>
+<script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+
+<script type="text/javascript" src="js/data-search.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var linecard = localStorage.getItem('linecard');
+        var port = localStorage.getItem('port');
+
+        //alert(linecard + "\n" + port);
+
+        myDisplay();
+    });
+
+    function myFunction() {
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        var pid = url.searchParams.get("pid");
+        var title = url.searchParams.get("title");
+        var hostname = url.searchParams.get("hostname");
+        var sn = url.searchParams.get("sn");
+        var address = url.searchParams.get("address");
+
+        return {
+            pid: pid,
+            title: title,
+            hostname: hostname,
+            sn: sn,
+            address: address
+        };
+    }
+
+    function myDisplay() {
+        var display = myFunction();
+        var pid = display.pid;
+        var title = display.title;
+        var hostname = display.hostname;
+        var sn = display.sn;
+        var address = display.address;
+
+        document.getElementById("bay-id").setAttribute('data', 'img/'+pid+'.svg');
+
+        document.getElementById("pid").innerHTML = pid;
+        document.getElementById("title").innerHTML = title;
+        document.getElementById("hostname").innerHTML = hostname;
+        document.getElementById("sn").innerHTML = sn;
+        document.getElementById("address").innerHTML = address;
+    }
+
+    function  getElemSvg() {
+
+        var svgObject = document.getElementById('bay-id').contentDocument;
+        var svg = svgObject.getElementById('img-lc');
+        if(svg){
+            console.log(svg);
+        }
+    }
+
+</script>
+
+</body>
+</html>
