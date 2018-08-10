@@ -21,23 +21,61 @@ $(document).ready(function () {
 
     });
 
+    /*$.getJSON('db/inventory.json', function(data) {
+
+        /!*var arraysLinecard = [];
+        var i = 0; var j = 0;*!/
+
+        var titleLinecard;
+        var pidLinecard;
+        var portItem;
+        var portState;
+
+        titleLinecard = data.data[0].data[0].title;
+        pidLinecard = data.data[0].data[0].pid;
+        portItem = data.data[0].data[0].data[0][0].ifname;
+        portState = data.data[0].data[0].data[0][0].ifstate;
+
+        /!*$.each(data, function(){
+            for (i in data.data){
+                for (j in data.data){
+                    arraysLinecard.push(data.data[i].data[j].title);
+                }
+            }
+        });*!/
+
+        /!*console.log(arraysLinecard);*!/
+
+        localStorage.setItem('titleLinecard', titleLinecard);
+        localStorage.setItem('pidLinecard', pidLinecard);
+        localStorage.setItem('portItem', portItem);
+        localStorage.setItem('portState',portState);
+    });*/
+
     $('#bay-face tbody').on('click', 'tr', function () { //$("#sn").val(data.pid); << for put value in <input> form
         var data = table.row(this).data();
         //$("#bayface-status").modal("show");
 
-        var linecardItem;
-        var portItem;
-
         $.getJSON('db/inventory.json', function(data) {
-            linecardItem = data.data[0].title;
-            portItem = data.data[0].data[0][0].ifname;
+            var titleLinecard;
+            var pidLinecard;
+            var portItem;
+            var portState;
 
-            localStorage.setItem('linecard', linecardItem);
-            localStorage.setItem('port', portItem);
+            titleLinecard = data.data[0].data[0].title;
+            pidLinecard = data.data[0].data[0].pid;
+            portItem = data.data[0].data[0].data[0][0].ifname;
+            portState = data.data[0].data[0].data[0][0].ifstate;
+
+            localStorage.setItem('titleLinecard', titleLinecard);
+            localStorage.setItem('pidLinecard', pidLinecard);
+            localStorage.setItem('portItem', portItem);
+            localStorage.setItem('portState',portState);
         });
 
         window.location.href = "description-bay-face.html?pid=" + data.pid + "&title=" + data.title + "&hostname=" +
             data.hostname + "&sn=" + data.sn + "&address=" + data.address;
+
         //alert(data.pid);
     });
 });

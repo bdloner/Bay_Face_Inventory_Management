@@ -14,25 +14,148 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bay Face Inventory - Searching</title>
+    <title>Bay Face Inventory</title>
 
 </head>
-<body class="view-bay" onload="getElemSvg()">
+
+<style>
+
+    /*Page Loading*/
+
+    .page    { display: none; padding: 0 0.5em; }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .arc {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border-top: 2px solid #0a3aff;
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+        animation: rt 2s infinite linear;
+    }
+    .arc::before {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border-top: 2px solid #ff0053;
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+        animation: rt 4s infinite linear reverse;
+        content: "";
+    }
+    .arc::after {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        border-top: initial;
+        border-left: initial;
+        border-right: initial;
+        animation: cw 1s infinite;
+        content: "";
+        background: snow;
+    }
+
+    h1 {
+        position: absolute;
+        height: 40px;
+        margin: auto;
+        top: 200px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 0.1em;
+        font-size: 14px;
+        font-weight: lighter;
+        color: white;
+    }
+    h1 span {
+        display: none;
+    }
+    h1::after {
+        animation: txt 5s infinite;
+        content: "";
+    }
+
+    @keyframes rt {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes cw {
+        0% {
+            width: 0;
+            height: 0;
+        }
+        75% {
+            width: 40px;
+            height: 40px;
+        }
+        100% {
+            width: 0;
+            height: 0;
+        }
+    }
+    @keyframes txt {
+        0% {
+            content: "LOADING.";
+        }
+        50% {
+            content: "LOADING..";
+        }
+        100% {
+            content: "LOADING...";
+        }
+    }
+
+</style>
+
+<body class="view-bay" onload="myDisplay()">
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-8">
-            <object id="bay-id" data="#blank"></object>
+
+    <div class="arc"></div>
+    <h1><span>LOADING</span></h1>
+
+    <div class="page">
+        <div>
+            <object id="bay-id" class="key cta" data="img/WS-C4503-E.svg" style="margin-right:3em"></object>
         </div>
-        <div class="col-md-4">
-            <p> PID : <label id="pid"></label></p>
-            <p> Title : <label id="title"></label></p>
-            <p> Hostname : <label id="hostname"></label></p>
-            <p> Serial Number : <label id="sn"></label></p>
-            <p> IP Address : <label id="address"></label></p>
-        </div>
+
+        <br>
+            <div hidden>
+                <p> PID : <label id="pid"></label></p>
+                <p> Title : <label id="title"></label></p>
+                <p> Hostname : <label id="hostname"></label></p>
+                <p> Serial Number : <label id="sn"></label></p>
+                <p> IP Address : <label id="address"></label></p>
+            </div>
     </div>
-    <br>
 </div>
 
 </body>
@@ -50,15 +173,86 @@
 <script type="text/javascript" src="js/data-search.js"></script>
 
 <script type="text/javascript">
+
+    function onReady(callback) {
+        var intervalId = window.setInterval(function() {
+            if (document.getElementsByTagName('body')[0] !== undefined) {
+                window.clearInterval(intervalId);
+                callback.call(this);
+            }
+        }, 2000);
+    }
+
+    function setVisible(selector, visible) {
+        document.querySelector(selector).style.display = visible ? 'block' : 'none';
+    }
+
+    onReady(function() {
+        setVisible('.page', true);
+        setVisible('.arc', false);
+        setVisible('h1', false);
+    });
+
     $(document).ready(function () {
 
-        var linecard = localStorage.getItem('linecard');
-        var port = localStorage.getItem('port');
+        var titleLinecard = localStorage.getItem('titleLinecard');
+        var pidLinecard = localStorage.getItem('pidLinecard');
+        var portItem = localStorage.getItem('portItem');
+        var portState = localStorage.getItem('portState');
 
-        //alert(linecard + "\n" + port);
+        console.log(titleLinecard + "\n"+ pidLinecard + "\n" + portItem + "\n" + portState);
 
-        myDisplay();
+        /*myDisplay();*/
     });
+
+    /*$.getJSON('db/inventory.json', function(data) {
+
+        var titleLinecard;
+        var pidLinecard;
+        var portItem;
+        var portState;
+
+        var arraysLinecard = [];
+        var arraysAddress = [];
+        var i = 0 ; var k = 0; var l = 0;
+
+        titleLinecard = data.data[0].data[0].title;
+        pidLinecard = data.data[0].data[0].pid;
+        portItem = data.data[0].data[0].data[0][0].ifname;
+        portState = data.data[0].data[0].data[0][0].ifstate;
+
+        $.each(data, function(){
+            for (i in data.data){
+                arraysAddress.push(data.data[i].address);
+            }
+        });
+
+        for (var i = 0; i < arraysAddress.length; i++) {
+            var text = "";
+            text += arraysAddress[i];
+            if(myFunction().address === text){
+                $.each(data, function(){
+                    for (k in data.data){
+
+                        for (l in data.data){
+                            arraysLinecard.push(data.data[k].data[l].title);
+                        }
+                    }
+                });
+                console.log(arraysLinecard);
+            }
+        }
+
+        localStorage.setItem('titleLinecard', titleLinecard);
+        localStorage.setItem('pidLinecard', pidLinecard);
+        localStorage.setItem('portItem', portItem);
+        localStorage.setItem('portState',portState);
+    });*/
+
+    window.onbeforeunload = function() {
+        localStorage.clear();
+        return undefined;
+    };
 
     function myFunction() {
         var url_string = window.location.href;
@@ -86,23 +280,22 @@
         var sn = display.sn;
         var address = display.address;
 
-        document.getElementById("bay-id").setAttribute('data', 'img/'+pid+'.svg');
-
         document.getElementById("pid").innerHTML = pid;
         document.getElementById("title").innerHTML = title;
         document.getElementById("hostname").innerHTML = hostname;
         document.getElementById("sn").innerHTML = sn;
         document.getElementById("address").innerHTML = address;
+
     }
 
-    function  getElemSvg() {
+    /*function  getElemSvg() {
 
         var svgObject = document.getElementById('bay-id').contentDocument;
         var svg = svgObject.getElementById('img-lc');
         if(svg){
             console.log(svg);
         }
-    }
+    }*/
 
 </script>
 

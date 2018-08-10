@@ -27,6 +27,11 @@
         fill:#aaaaaa;
         }
 
+        #test:hover{
+        transition: fill 0.6s ease;
+        fill:#aaaaaa;
+        }
+
         #img-lc:hover{
         transition: fill 0.6s ease;
         fill:#aaaaaa;
@@ -944,19 +949,38 @@
               d="M42.6,174.72H267.84a3.72,3.72,0,0,0,3.6-3.72h.12V16.2h-.12a3.61,3.61,0,0,0-3.6-3.6v-.12H42.6l.12.12a3.61,3.61,0,0,0-3.6,3.6H39V171h.12a3.72,3.72,0,0,0,3.6,3.72Z"
               transform="translate(-0.42 -0.41)"/>
 
-        <clipPath id="lc1">
         <path id="Linecard1" class="cls-112"
               d="M76.68,244.44H523l-.12,0c1.08,0,1.8-.27,1.8-.62h0l.12,0v-51l-.12,0c0-.35-.72-.58-1.8-.58l.12,0H76.68v0c-1.08,0-1.92.23-1.92.58l.12,0v51l-.12,0c0,.35.84.62,1.92.62Z"
               transform="translate(-0.42 -0.41)"/>
-        </clipPath>
-        <image id="img-lc" xlink:href="WS-X45-SUP6L-E.svg" clip-path="url(#lc1)" width="450" height="51" x="75" y="192"/>
 
+        <foreignObject width="450" height="51" x="75" y="192">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <object data="WS-X45-SUP6L-E.svg"/>
+            </div>
+        </foreignObject>
+
+        <!--<image id="img-lc" xlink:href="WS-X45-SUP6L-E.svg" clip-path="url(#lc1)" width="450" height="51" x="75" y="192"/>
+-->
         <path id="Linecard2" class="cls-112"
               d="M76.68,295.6H523l-.12,0c1.08,0,1.8-.27,1.8-.62h0l.12,0V244l-.12,0c0-.35-.72-.58-1.8-.58l.12,0H76.68v0c-1.08,0-1.92.23-1.92.58l.12,0v51l-.12,0c0,.35.84.62,1.92.62Z"
               transform="translate(-0.42 -0.41)"/>
+
+        <foreignObject width="450" height="51" x="75" y="242">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <object data="WS-X4448-GB-SFP.svg"/>
+            </div>
+        </foreignObject>
+
         <path id="Linecard3" class="cls-112"
               d="M76.68,346.88H523l-.12,0c1.08,0,1.8-.27,1.8-.62h0l.12,0v-51l-.12,0c0-.35-.72-.58-1.8-.58l.12,0H76.68v0c-1.08,0-1.92.23-1.92.58l.12,0v51l-.12,0c0,.35.84.62,1.92.62Z"
               transform="translate(-0.42 -0.41)"/>
+
+        <!--<foreignObject width="450" height="51" x="75" y="292">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <object data="WS-X4448-GB-SFP.svg"/>
+            </div>
+        </foreignObject>-->
+
         <path class="cls-15"
               d="M76.68,353H523l-.12-.12a1.8,1.8,0,0,0,1.8-1.92h0l.12.12v-157l-.12-.12a1.7,1.7,0,0,0-1.8-1.8l.12.12H76.68v-.12a1.8,1.8,0,0,0-1.92,1.8l.12.12v157l-.12-.12a1.9,1.9,0,0,0,1.92,1.92Z"
               transform="translate(-0.42 -0.41)"/>
