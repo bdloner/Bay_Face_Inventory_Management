@@ -4,35 +4,71 @@
 	 viewBox="0 0 540.4 59.9" style="enable-background:new 0 0 540.4 59.9;" xml:space="preserve">
 
 	<script type="text/ecmascript"><![CDATA[
-		window.addEventListener("load", function() {
-			var svg = document.getElementById('xs-x4448-gb-sfp');
-			var tooltip = svg.getElementById('tooltip');
-			var tooltipText = tooltip.getElementsByTagName('text')[0];
-			var tooltipRects = tooltip.getElementsByTagName('rect');
-			var triggers = svg.getElementsByClassName('tooltip-trigger');
+window.addEventListener("load", function() {
 
-			for (var i = 0; i < triggers.length; i++) {
-				triggers[i].addEventListener('mousemove', showTooltip);
-				triggers[i].addEventListener('mouseout', hideTooltip);
-			}
+	var svg = document.getElementById('xs-x4448-gb-sfp');
+	var tooltip = svg.getElementById('tooltip');
+	var tooltipText = tooltip.getElementsByTagName('text')[0];
+	var tooltipRects = tooltip.getElementsByTagName('rect');
+	var triggers = svg.getElementsByClassName('tooltip-trigger');
 
-		function showTooltip(evt) {
-				var CTM = svg.getScreenCTM();
-				var x = (evt.clientX - CTM.e + 2) / CTM.a;
-				var y = (evt.clientY - CTM.f + 5) / CTM.d;
-				tooltip.setAttributeNS(null, "transform", "translate(" + x + " " + y + ")");
-				tooltip.setAttributeNS(null, "visibility", "visible");
+    for (var i = 0; i < triggers.length; i++) {
+		triggers[i].addEventListener('mousemove', showTooltip);
+		triggers[i].addEventListener('mouseout', hideTooltip);
+	}
 
-				tooltipText.firstChild.data = evt.target.getAttributeNS(null, "data-tooltip-text");
-				var length = tooltipText.getComputedTextLength();
-				for (var i = 0; i < tooltipRects.length; i++) {
-					tooltipRects[i].setAttributeNS(null, "width", length + 8);
-				}
-			}
+	function showTooltip(evt) {
+		var CTM = svg.getScreenCTM();
+		var x = (evt.clientX - CTM.e + 2) / CTM.a;
+		var y = (evt.clientY - CTM.f + 5) / CTM.d;
+		tooltip.setAttributeNS(null, "transform", "translate(" + x + " " + y + ")");
+		tooltip.setAttributeNS(null, "visibility", "visible");
 
-			function hideTooltip(evt) {
-				tooltip.setAttributeNS(null, "visibility", "hidden");
-			}
+		tooltipText.firstChild.data = evt.target.getAttributeNS(null, "data-tooltip-text");
+		var length = tooltipText.getComputedTextLength();
+		for (var i = 0; i < tooltipRects.length; i++) {
+			tooltipRects[i].setAttributeNS(null, "width", length + 8);
+		}
+	}
+
+	function hideTooltip(evt) {
+		tooltip.setAttributeNS(null, "visibility", "hidden");
+	}
+
+	var getLocal = JSON.parse(localStorage.getItem('arraysInfoPort'));
+	var countCheckCard = 1;
+    var countLine1 = 1;
+    var countLine2 = 0;
+
+    for(var i=0; i<getLocal.length; i++){
+        for(var j=0; j<getLocal[i].length; j++){
+            var splitCard = getLocal[i][j].split(/[()]/);
+            if (splitCard[0].includes("Linecard") === true){
+            	console.log(getLocal[i][1]);
+                if(countCheckCard%48 != 0){
+                	countLine2+=2;
+		            if(getLocal[i][2] === "up"){
+    		            var path = document.getElementById("p" + countLine1).style.fill = "green";
+    		            var path = document.getElementById("p" + countLine2).style.fill = "green";
+    	            } else {
+        	            var path = document.getElementById("p" + countLine1).style.fill = "red";
+        	            var path = document.getElementById("p" + countLine2).style.fill = "red";
+    	            }
+                    countLine1+=2;
+                    countCheckCard++;
+                } else {
+                    if(getLocal[i][2] === "up"){
+    		            var path = document.getElementById("p" + countLine1).style.fill = "green";
+    		            var path = document.getElementById("p" + countLine2).style.fill = "green";
+    	            } else {
+        	            var path = document.getElementById("p" + countLine1).style.fill = "red";
+        	            var path = document.getElementById("p" + countLine2).style.fill = "red";
+    	            }
+    	            countCheckCard = 1;
+                }
+		    }
+        }
+    }
 		});
     ]]></script>
 
@@ -2696,7 +2732,7 @@ BRF43wAAAABJRU5ErkJggg==" transform="matrix(0.12 0 0 0.12 5.5201 13.3199)">
 	<polygon class="st63" points="162.6,27.7 150.2,27.7 150.2,32 170,32 170,27.7 	"/>
 	<polygon class="st64" points="162.6,27.7 150.2,27.7 150.2,32 170,32 170,27.7 	"/>
 </g>
-<rect x="150.2" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/13 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p13" x="150.2" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/13 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_155_" x="0" width="540.4" height="59.9"/>
@@ -2722,7 +2758,7 @@ BRF43wAAAABJRU5ErkJggg==" transform="matrix(0.12 0 0 0.12 5.5201 13.3199)">
 	<rect x="158.3" y="22.8" class="st69" width="1.3" height="1.4"/>
 	<rect x="160.7" y="22.8" class="st69" width="1.3" height="1.4"/>
 </g>
-<rect x="150.2" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/14 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p14" x="150.2" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/14 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_159_" x="0" width="540.4" height="59.9"/>
@@ -3074,7 +3110,7 @@ fDwjDPfnreRymVsRuVkM+SZAZasST4HKYuV8lfNFzjJotJMNT/JX+typ9Lt5i/q3iH//2Q==" transf
 	<polygon class="st99" points="182.2,27.7 169.8,27.7 169.8,32 189.6,32 189.6,27.7 	"/>
 	<polygon class="st100" points="182.2,27.7 169.8,27.7 169.8,32 189.6,32 189.6,27.7 	"/>
 </g>
-<rect x="169.8" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/15 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p15" x="169.8" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/15 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_227_" x="0" width="540.4" height="59.9"/>
@@ -3100,7 +3136,7 @@ fDwjDPfnreRymVsRuVkM+SZAZasST4HKYuV8lfNFzjJotJMNT/JX+typ9Lt5i/q3iH//2Q==" transf
 	<rect x="177.8" y="22.8" class="st103" width="1.3" height="1.4"/>
 	<rect x="180.1" y="22.8" class="st103" width="1.4" height="1.4"/>
 </g>
-<rect x="169.8" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/16 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p16" x="169.8" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/16 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_231_" x="0" width="540.4" height="59.9"/>
@@ -3456,7 +3492,7 @@ m4io5rYYcNidpbNPLzuUCURXA0E4tlO7fl2af63KBKEUXCcp3nTPNPHKs0f7PVJB2EKv4jt+TZ//
 	<polygon class="st133" points="202,27.7 189.6,27.7 189.6,32 209.3,32 209.3,27.7 	"/>
 	<polygon class="st134" points="202,27.7 189.6,27.7 189.6,32 209.3,32 209.3,27.7 	"/>
 </g>
-<rect x="189.6" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/17 | Status:Available" width="19.7" height="12.4"/>
+<rect id="p17" x="189.6" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/17 | Status:Available" width="19.7" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_299_" x="0" width="540.4" height="59.9"/>
@@ -3482,7 +3518,7 @@ m4io5rYYcNidpbNPLzuUCURXA0E4tlO7fl2af63KBKEUXCcp3nTPNPHKs0f7PVJB2EKv4jt+TZ//
 	<rect x="197.6" y="22.8" class="st137" width="1.3" height="1.4"/>
 	<rect x="199.9" y="22.8" class="st137" width="1.4" height="1.4"/>
 </g>
-<rect x="189.6" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/18 | Status:Available" width="19.7" height="12.4"/>
+<rect id="p18" x="189.6" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/18 | Status:Available" width="19.7" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_303_" x="0" width="540.4" height="59.9"/>
@@ -3838,7 +3874,7 @@ zpln/9k=" transform="matrix(0.12 0 0 0.12 204.3601 30.1199)">
 	<polygon class="st167" points="222,27.7 209.6,27.7 209.6,32 229.4,32 229.4,27.7 	"/>
 	<polygon class="st168" points="222,27.7 209.6,27.7 209.6,32 229.4,32 229.4,27.7 	"/>
 </g>
-<rect x="209.6" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/19 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p19" x="209.6" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/19 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_371_" x="0" width="540.4" height="59.9"/>
@@ -3864,7 +3900,7 @@ zpln/9k=" transform="matrix(0.12 0 0 0.12 204.3601 30.1199)">
 	<rect x="217.7" y="22.8" class="st171" width="1.3" height="1.4"/>
 	<rect x="220" y="22.8" class="st171" width="1.4" height="1.4"/>
 </g>
-<rect x="209.6" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/20 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p20" x="209.6" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/20 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_375_" x="0" width="540.4" height="59.9"/>
@@ -4220,7 +4256,7 @@ f//Z" transform="matrix(0.12 0 0 0.12 224.5201 30.1199)">
 	<polygon class="st201" points="242,27.7 229.7,27.7 229.7,32 249.5,32 249.5,27.7 	"/>
 	<polygon class="st202" points="242,27.7 229.7,27.7 229.7,32 249.5,32 249.5,27.7 	"/>
 </g>
-<rect x="229.7" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/21 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p21" x="229.7" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/21 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_443_" x="0" width="540.4" height="59.9"/>
@@ -4246,7 +4282,7 @@ f//Z" transform="matrix(0.12 0 0 0.12 224.5201 30.1199)">
 	<rect x="237.7" y="22.8" class="st205" width="1.3" height="1.4"/>
 	<rect x="240.1" y="22.8" class="st205" width="1.3" height="1.4"/>
 </g>
-<rect x="229.7" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/22 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p22" x="229.7" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/22 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_447_" x="0" width="540.4" height="59.9"/>
@@ -4602,7 +4638,7 @@ hzr2f//Z" transform="matrix(0.12 0 0 0.12 244.5601 30.1199)">
 	<polygon class="st235" points="261.8,27.7 249.5,27.7 249.5,32 269.3,32 269.3,27.7 	"/>
 	<polygon class="st236" points="261.8,27.7 249.5,27.7 249.5,32 269.3,32 269.3,27.7 	"/>
 </g>
-<rect x="249.5" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/23 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p23" x="249.5" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/23 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_515_" x="0" width="540.4" height="59.9"/>
@@ -4628,7 +4664,7 @@ hzr2f//Z" transform="matrix(0.12 0 0 0.12 244.5601 30.1199)">
 	<rect x="257.5" y="22.8" class="st239" width="1.3" height="1.4"/>
 	<rect x="259.8" y="22.8" class="st239" width="1.4" height="1.4"/>
 </g>
-<rect x="249.5" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/24 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p24" x="249.5" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/24 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_519_" x="0" width="540.4" height="59.9"/>
@@ -5023,7 +5059,7 @@ GQFelbWzg0bpWuwgpdQ79MpKHN3r1FsxXzlsRn3WYvwTYADlBEeLRipapgAAAABJRU5ErkJggg==" tr
 	<polygon class="st272" points="38.4,27.7 26,27.7 26,32 45.8,32 45.8,27.7 	"/>
 	<polygon class="st273" points="38.4,27.7 26,27.7 26,32 45.8,32 45.8,27.7 	"/>
 </g>
-<rect x="26" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/1 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p1" x="26" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/1 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_593_" x="0" width="540.4" height="59.9"/>
@@ -5049,7 +5085,7 @@ GQFelbWzg0bpWuwgpdQ79MpKHN3r1FsxXzlsRn3WYvwTYADlBEeLRipapgAAAABJRU5ErkJggg==" tr
 	<rect x="34.1" y="22.8" class="st276" width="1.3" height="1.4"/>
 	<rect x="36.4" y="22.8" class="st276" width="1.4" height="1.4"/>
 </g>
-<rect x="26" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/2 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p2" x="26" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/2 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_597_" x="0" width="540.4" height="59.9"/>
@@ -5405,7 +5441,7 @@ qdPAE3FVFIV48UTqlFUuEBltdd7vNQwCLHBhaxAPk0e2l13u81DiNoRaxUoS9zRDpqJdfbnOpsGx
 	<polygon class="st306" points="57.8,27.7 45.5,27.7 45.5,32 65.3,32 65.3,27.7 	"/>
 	<polygon class="st307" points="57.8,27.7 45.5,27.7 45.5,32 65.3,32 65.3,27.7 	"/>
 </g>
-<rect x="45.5" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/3 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p3" x="45.5" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/3 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_665_" x="0" width="540.4" height="59.9"/>
@@ -5431,7 +5467,7 @@ qdPAE3FVFIV48UTqlFUuEBltdd7vNQwCLHBhaxAPk0e2l13u81DiNoRaxUoS9zRDpqJdfbnOpsGx
 	<rect x="53.5" y="22.8" class="st310" width="1.4" height="1.4"/>
 	<rect x="55.9" y="22.8" class="st310" width="1.3" height="1.4"/>
 </g>
-<rect x="45.5" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/4 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p4" x="45.5" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/4 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_669_" x="0" width="540.4" height="59.9"/>
@@ -5787,7 +5823,7 @@ PyiViMgWpHehS1sLbrK4j+xO8agQa4GZcBSZmquyuUk2/JnF2TFB7heOgUmZqrs3n9U7VXafUKHO
 	<polygon class="st340" points="77.6,27.7 65.3,27.7 65.3,32 85.1,32 85.1,27.7 	"/>
 	<polygon class="st341" points="77.6,27.7 65.3,27.7 65.3,32 85.1,32 85.1,27.7 	"/>
 </g>
-<rect x="65.3" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/5 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p5" x="65.3" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/5 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_737_" x="0" width="540.4" height="59.9"/>
@@ -5813,7 +5849,7 @@ PyiViMgWpHehS1sLbrK4j+xO8agQa4GZcBSZmquyuUk2/JnF2TFB7heOgUmZqrs3n9U7VXafUKHO
 	<rect x="73.3" y="22.8" class="st344" width="1.3" height="1.4"/>
 	<rect x="75.7" y="22.8" class="st344" width="1.3" height="1.4"/>
 </g>
-<rect x="65.3" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/6 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p6" x="65.3" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/6 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_741_" x="0" width="540.4" height="59.9"/>
@@ -6165,7 +6201,7 @@ bjI0IKpPC0eYJpS8GIcqXKlaytD85xqRZ1dhk2XwBt7kneWia//Z" transform="matrix(0.12 0 0
 	<polygon class="st374" points="97.7,27.7 85.3,27.7 85.3,32 105.1,32 105.1,27.7 	"/>
 	<polygon class="st375" points="97.7,27.7 85.3,27.7 85.3,32 105.1,32 105.1,27.7 	"/>
 </g>
-<rect x="85.3" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/7 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p7" x="85.3" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/7 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_809_" x="0" width="540.4" height="59.9"/>
@@ -6191,7 +6227,7 @@ bjI0IKpPC0eYJpS8GIcqXKlaytD85xqRZ1dhk2XwBt7kneWia//Z" transform="matrix(0.12 0 0
 	<rect x="93.4" y="22.8" class="st378" width="1.4" height="1.4"/>
 	<rect x="95.8" y="22.8" class="st378" width="1.3" height="1.4"/>
 </g>
-<rect x="85.3" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/8 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p8" x="85.3" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/8 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_813_" x="0" width="540.4" height="59.9"/>
@@ -6543,7 +6579,7 @@ hYeYJpS8GIdWqXKl6yLDzJt/kDbXdOpYTX//2Q==" transform="matrix(0.12 0 0 0.12 100.20
 	<polygon class="st408" points="117.8,27.7 105.5,27.7 105.5,32 125.2,32 125.2,27.7 	"/>
 	<polygon class="st409" points="117.8,27.7 105.5,27.7 105.5,32 125.2,32 125.2,27.7 	"/>
 </g>
-<rect x="105.5" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/9 | Status:Available" width="19.7" height="12.4"/>
+<rect id="p9" x="105.5" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/9 | Status:Available" width="19.7" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_881_" x="0" width="540.4" height="59.9"/>
@@ -6569,7 +6605,7 @@ hYeYJpS8GIdWqXKl6yLDzJt/kDbXdOpYTX//2Q==" transform="matrix(0.12 0 0 0.12 100.20
 	<rect x="113.4" y="22.8" class="st412" width="1.4" height="1.4"/>
 	<rect x="115.8" y="22.8" class="st412" width="1.3" height="1.4"/>
 </g>
-<rect x="105.5" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/10 | Status:Available" width="19.7" height="12.4"/>
+<rect id="p10" x="105.5" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/10 | Status:Available" width="19.7" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_885_" x="0" width="540.4" height="59.9"/>
@@ -6923,7 +6959,7 @@ imRIWHmCtVLwYh06lcpXrIsPMra/EG2mqeBYTX//2Q==" transform="matrix(0.12 0 0 0.12 12
 	<polygon class="st442" points="137.5,27.7 125.2,27.7 125.2,32 145,32 145,27.7 	"/>
 	<polygon class="st443" points="137.5,27.7 125.2,27.7 125.2,32 145,32 145,27.7 	"/>
 </g>
-<rect x="125.2" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/11 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p11" x="125.2" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/11 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_953_" x="0" width="540.4" height="59.9"/>
@@ -6949,7 +6985,7 @@ imRIWHmCtVLwYh06lcpXrIsPMra/EG2mqeBYTX//2Q==" transform="matrix(0.12 0 0 0.12 12
 	<rect x="133.2" y="22.8" class="st446" width="1.4" height="1.4"/>
 	<rect x="135.6" y="22.8" class="st446" width="1.3" height="1.4"/>
 </g>
-<rect x="125.2" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/12 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p12" x="125.2" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/12 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_957_" x="0" width="540.4" height="59.9"/>
@@ -9749,7 +9785,7 @@ iGUVOAq3AAMAjLpaluAvgToAAAAASUVORK5CYII=" transform="matrix(0.12 0 0 0.12 257.76
 	<polygon class="st598" points="411,27.7 398.6,27.7 398.6,32 418.4,32 418.4,27.7 	"/>
 	<polygon class="st599" points="411,27.7 398.6,27.7 398.6,32 418.4,32 418.4,27.7 	"/>
 </g>
-<rect x="398.6" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/37 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p37" x="398.6" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/37 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_1411_" x="0" width="540.4" height="59.9"/>
@@ -9775,7 +9811,7 @@ iGUVOAq3AAMAjLpaluAvgToAAAAASUVORK5CYII=" transform="matrix(0.12 0 0 0.12 257.76
 	<rect x="406.7" y="22.8" class="st602" width="1.3" height="1.4"/>
 	<rect x="409" y="22.8" class="st602" width="1.4" height="1.4"/>
 </g>
-<rect x="398.6" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/38 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p38" x="398.6" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/38 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_1415_" x="0" width="540.4" height="59.9"/>
@@ -10131,7 +10167,7 @@ teWzZ//Z" transform="matrix(0.12 0 0 0.12 413.5201 30.1199)">
 	<polygon class="st632" points="430.4,27.7 418.1,27.7 418.1,32 437.9,32 437.9,27.7 	"/>
 	<polygon class="st633" points="430.4,27.7 418.1,27.7 418.1,32 437.9,32 437.9,27.7 	"/>
 </g>
-<rect x="418.1" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/39 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p39" x="418.1" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/39 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_1483_" x="0" width="540.4" height="59.9"/>
@@ -10157,7 +10193,7 @@ teWzZ//Z" transform="matrix(0.12 0 0 0.12 413.5201 30.1199)">
 	<rect x="426.1" y="22.8" class="st636" width="1.3" height="1.4"/>
 	<rect x="428.5" y="22.8" class="st636" width="1.3" height="1.4"/>
 </g>
-<rect x="418.1" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/40 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p40" x="418.1" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/40 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_1487_" x="0" width="540.4" height="59.9"/>
@@ -10513,7 +10549,7 @@ vYVulf20+YVn/9k=" transform="matrix(0.12 0 0 0.12 432.9601 30.1199)">
 	<polygon class="st666" points="450.2,27.7 437.9,27.7 437.9,32 457.7,32 457.7,27.7 	"/>
 	<polygon class="st667" points="450.2,27.7 437.9,27.7 437.9,32 457.7,32 457.7,27.7 	"/>
 </g>
-<rect x="437.9" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/41 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p41" x="437.9" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/41 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_1555_" x="0" width="540.4" height="59.9"/>
@@ -10539,7 +10575,7 @@ vYVulf20+YVn/9k=" transform="matrix(0.12 0 0 0.12 432.9601 30.1199)">
 	<rect x="445.9" y="22.8" class="st670" width="1.3" height="1.4"/>
 	<rect x="448.3" y="22.8" class="st670" width="1.3" height="1.4"/>
 </g>
-<rect x="437.9" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/42 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p42" x="437.9" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/42 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_1559_" x="0" width="540.4" height="59.9"/>
@@ -10895,7 +10931,7 @@ Mn/TySkNlM76T+9lUf/Z" transform="matrix(0.12 0 0 0.12 452.7601 30.1199)">
 	<polygon class="st700" points="470.3,27.7 457.9,27.7 457.9,32 477.7,32 477.7,27.7 	"/>
 	<polygon class="st701" points="470.3,27.7 457.9,27.7 457.9,32 477.7,32 477.7,27.7 	"/>
 </g>
-<rect x="457.9" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/43 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p43" x="457.9" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/43 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_1627_" x="0" width="540.4" height="59.9"/>
@@ -10921,7 +10957,7 @@ Mn/TySkNlM76T+9lUf/Z" transform="matrix(0.12 0 0 0.12 452.7601 30.1199)">
 	<rect x="466" y="22.8" class="st704" width="1.3" height="1.4"/>
 	<rect x="468.4" y="22.8" class="st704" width="1.3" height="1.4"/>
 </g>
-<rect x="457.9" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/44 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p44" x="457.9" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/44 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_1631_" x="0" width="540.4" height="59.9"/>
@@ -11277,7 +11313,7 @@ zf5L7P/Z" transform="matrix(0.12 0 0 0.12 472.8 30.1199)">
 	<polygon class="st734" points="490.3,27.7 478,27.7 478,32 497.8,32 497.8,27.7 	"/>
 	<polygon class="st735" points="490.3,27.7 478,27.7 478,32 497.8,32 497.8,27.7 	"/>
 </g>
-<rect x="478" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/45 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p45" x="478" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/45 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_1699_" x="0" width="540.4" height="59.9"/>
@@ -11303,7 +11339,7 @@ zf5L7P/Z" transform="matrix(0.12 0 0 0.12 472.8 30.1199)">
 	<rect x="486" y="22.8" class="st738" width="1.4" height="1.4"/>
 	<rect x="488.4" y="22.8" class="st738" width="1.3" height="1.4"/>
 </g>
-<rect x="478" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/46 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p46" x="478" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/46 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_1703_" x="0" width="540.4" height="59.9"/>
@@ -11659,7 +11695,7 @@ Lsp97RhvR1BbwzX4K7P/2Q==" transform="matrix(0.12 0 0 0.12 492.8401 30.1199)">
 	<polygon class="st768" points="510.1,27.7 497.8,27.7 497.8,32 517.6,32 517.6,27.7 	"/>
 	<polygon class="st769" points="510.1,27.7 497.8,27.7 497.8,32 517.6,32 517.6,27.7 	"/>
 </g>
-<rect x="497.8" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/47 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p47" x="497.8" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/47 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_1771_" x="0" width="540.4" height="59.9"/>
@@ -11685,7 +11721,7 @@ Lsp97RhvR1BbwzX4K7P/2Q==" transform="matrix(0.12 0 0 0.12 492.8401 30.1199)">
 	<rect x="505.8" y="22.8" class="st772" width="1.3" height="1.4"/>
 	<rect x="508.2" y="22.8" class="st772" width="1.3" height="1.4"/>
 </g>
-<rect x="497.8" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/48 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p48" x="497.8" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/48 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_1775_" x="0" width="540.4" height="59.9"/>
@@ -12051,7 +12087,7 @@ nMSeefyIhCXtsZLbTp33AURNcDgNQL0ebYzA7ypkHDqxHRAxCIuFf7PNso/qp33rSGr/AJu56z//
 	<polygon class="st804" points="286.7,27.7 274.3,27.7 274.3,32 294.1,32 294.1,27.7 	"/>
 	<polygon class="st805" points="286.7,27.7 274.3,27.7 274.3,32 294.1,32 294.1,27.7 	"/>
 </g>
-<rect x="274.3" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/25 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p25" x="274.3" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/25 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_1845_" x="0" width="540.4" height="59.9"/>
@@ -12077,7 +12113,7 @@ nMSeefyIhCXtsZLbTp33AURNcDgNQL0ebYzA7ypkHDqxHRAxCIuFf7PNso/qp33rSGr/AJu56z//
 	<rect x="282.4" y="22.8" class="st808" width="1.3" height="1.4"/>
 	<rect x="284.8" y="22.8" class="st808" width="1.3" height="1.4"/>
 </g>
-<rect x="274.3" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/26 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p26" x="274.3" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/26 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_1849_" x="0" width="540.4" height="59.9"/>
@@ -12429,7 +12465,7 @@ X//aAAgBAQEGPwBPPdwlmzC3f2gqLv8AW3Spu8+dul0bvBOY27Dh7Ir4f5n2fejX8DU63FCmpBZE
 	<polygon class="st838" points="306.2,27.7 293.9,27.7 293.9,32 313.7,32 313.7,27.7 	"/>
 	<polygon class="st839" points="306.2,27.7 293.9,27.7 293.9,32 313.7,32 313.7,27.7 	"/>
 </g>
-<rect x="293.9" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/27 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p27" x="293.9" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/27 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_1917_" x="0" width="540.4" height="59.9"/>
@@ -12455,7 +12491,7 @@ X//aAAgBAQEGPwBPPdwlmzC3f2gqLv8AW3Spu8+dul0bvBOY27Dh7Ir4f5n2fejX8DU63FCmpBZE
 	<rect x="301.9" y="22.8" class="st842" width="1.3" height="1.4"/>
 	<rect x="304.2" y="22.8" class="st842" width="1.4" height="1.4"/>
 </g>
-<rect x="293.9" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/28 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p28" x="293.9" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/28 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_1921_" x="0" width="540.4" height="59.9"/>
@@ -12811,7 +12847,7 @@ FnMzJSEyy4ae9t6LNPL1uUCiJrgcA8WynVvt2af73KBREIi4PRO86ZZw87Vmj/p7GQdhCr+orfZs
 	<polygon class="st872" points="326,27.7 313.7,27.7 313.7,32 333.5,32 333.5,27.7 	"/>
 	<polygon class="st873" points="326,27.7 313.7,27.7 313.7,32 333.5,32 333.5,27.7 	"/>
 </g>
-<rect x="313.7" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/29 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p29" x="313.7" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/29 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_1989_" x="0" width="540.4" height="59.9"/>
@@ -12837,7 +12873,7 @@ FnMzJSEyy4ae9t6LNPL1uUCiJrgcA8WynVvt2af73KBREIi4PRO86ZZw87Vmj/p7GQdhCr+orfZs
 	<rect x="321.7" y="22.8" class="st876" width="1.3" height="1.4"/>
 	<rect x="324" y="22.8" class="st876" width="1.4" height="1.4"/>
 </g>
-<rect x="313.7" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/30 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p30" x="313.7" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/30 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_1993_" x="0" width="540.4" height="59.9"/>
@@ -13193,7 +13229,7 @@ MnMUl4l/uIhC7YyX107bgKIjIHAahufdsZMvjp23BOQhEHAagUZlgmZcWxn8SPVdt6BrHiY637P/
 	<polygon class="st906" points="346.1,27.7 333.7,27.7 333.7,32 353.5,32 353.5,27.7 	"/>
 	<polygon class="st907" points="346.1,27.7 333.7,27.7 333.7,32 353.5,32 353.5,27.7 	"/>
 </g>
-<rect x="333.7" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/31 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p31" x="333.7" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/31 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_2061_" x="0" width="540.4" height="59.9"/>
@@ -13219,7 +13255,7 @@ MnMUl4l/uIhC7YyX107bgKIjIHAahufdsZMvjp23BOQhEHAagUZlgmZcWxn8SPVdt6BrHiY637P/
 	<rect x="341.8" y="22.8" class="st910" width="1.3" height="1.4"/>
 	<rect x="344" y="22.8" class="st910" width="1.4" height="1.4"/>
 </g>
-<rect x="333.7" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/32 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p32" x="333.7" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/32 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_2065_" x="0" width="540.4" height="59.9"/>
@@ -13575,7 +13611,7 @@ mTm0nnn7iIQl6bGS006ddwEJrgcBmHo/LYyZfXTruAoiEQcBmBRv8kzLe2MfiT7rvIzjxMdb9n//
 	<polygon class="st940" points="366.1,27.7 353.8,27.7 353.8,32 373.6,32 373.6,27.7 	"/>
 	<polygon class="st941" points="366.1,27.7 353.8,27.7 353.8,32 373.6,32 373.6,27.7 	"/>
 </g>
-<rect x="353.8" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/33 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p33" x="353.8" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/33 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_2133_" x="0" width="540.4" height="59.9"/>
@@ -13601,7 +13637,7 @@ mTm0nnn7iIQl6bGS006ddwEJrgcBmHo/LYyZfXTruAoiEQcBmBRv8kzLe2MfiT7rvIzjxMdb9n//
 	<rect x="361.8" y="22.8" class="st944" width="1.3" height="1.4"/>
 	<rect x="364.2" y="22.8" class="st944" width="1.3" height="1.4"/>
 </g>
-<rect x="353.8" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/34 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p34" x="353.8" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/34 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_2137_" x="0" width="540.4" height="59.9"/>
@@ -13957,7 +13993,7 @@ i/1uJ6z/2Q==" transform="matrix(0.12 0 0 0.12 368.64 30.1199)">
 	<polygon class="st974" points="385.9,27.7 373.6,27.7 373.6,32 393.4,32 393.4,27.7 	"/>
 	<polygon class="st975" points="385.9,27.7 373.6,27.7 373.6,32 393.4,32 393.4,27.7 	"/>
 </g>
-<rect x="373.6" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/35 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p35" x="373.6" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/35 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_2205_" x="0" width="540.4" height="59.9"/>
@@ -13983,7 +14019,7 @@ i/1uJ6z/2Q==" transform="matrix(0.12 0 0 0.12 368.64 30.1199)">
 	<rect x="381.6" y="22.8" class="st978" width="1.3" height="1.4"/>
 	<rect x="383.9" y="22.8" class="st978" width="1.4" height="1.4"/>
 </g>
-<rect x="373.6" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/36 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p36" x="373.6" y="32.6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/36 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_2209_" x="0" width="540.4" height="59.9"/>

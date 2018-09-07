@@ -20,6 +20,10 @@
 
 <style>
 
+    body{
+        overflow: hidden;
+    }
+
     /*Page Loading*/
 
     .page    { display: none; padding: 0 0.5em; }
@@ -135,7 +139,7 @@
 
 </style>
 
-<body class="view-bay" onload="myDisplay()">
+<body class="view-bay" onload="showDataBayface()">
 
 <div class="container">
 
@@ -144,7 +148,7 @@
 
     <div class="page">
         <div>
-            <object id="bay-id" class="key cta" data="img/WS-C4503-E.svg" style="margin-right:3em"></object>
+            <object id="bay-id" class="key cta" data="#" style="margin-right:3em; padding: 20px;"></object>
         </div>
 
         <br>
@@ -170,8 +174,6 @@
 <script type="text/javascript" charset="utf8"
         src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
 
-<script type="text/javascript" src="js/data-search.js"></script>
-
 <script type="text/javascript">
 
     function onReady(callback) {
@@ -193,109 +195,89 @@
         setVisible('h1', false);
     });
 
-    $(document).ready(function () {
+    /*$(document).ready(function () {
 
-        var titleLinecard = localStorage.getItem('titleLinecard');
-        var pidLinecard = localStorage.getItem('pidLinecard');
-        var portItem = localStorage.getItem('portItem');
-        var portState = localStorage.getItem('portState');
+        /!*myDisplay();*!/
+    });*/
+    
+    function showDataBayface() {
 
-        console.log(titleLinecard + "\n"+ pidLinecard + "\n" + portItem + "\n" + portState);
+        var getData = getDataFromHref();
+        var hostname = getData.hostname;
+        var address = getData.address;
+        var community = getData.community;
 
-        /*myDisplay();*/
-    });
+        $.getJSON('http://poc.servehttp.com/bayface/view?hostname=' + hostname, function (reply) {
 
-    /*$.getJSON('db/inventory.json', function(data) {
+            var title = reply.result[0].title;
+            var pid = reply.result[0].pid;
 
-        var titleLinecard;
-        var pidLinecard;
-        var portItem;
-        var portState;
+            if(title === "1"){
 
-        var arraysLinecard = [];
-        var arraysAddress = [];
-        var i = 0 ; var k = 0; var l = 0;
+                var arraysInfoPort = [];
+                var count = 0;
 
-        titleLinecard = data.data[0].data[0].title;
-        pidLinecard = data.data[0].data[0].pid;
-        portItem = data.data[0].data[0].data[0][0].ifname;
-        portState = data.data[0].data[0].data[0][0].ifstate;
+                document.getElementById('bay-id').setAttribute('data', 'img/' + pid + '.svg');
 
-        $.each(data, function(){
-            for (i in data.data){
-                arraysAddress.push(data.data[i].address);
-            }
-        });
+                for (var i = 0; i < reply.result[0].data[0].data[0].length; i++) {
 
-        for (var i = 0; i < arraysAddress.length; i++) {
-            var text = "";
-            text += arraysAddress[i];
-            if(myFunction().address === text){
-                $.each(data, function(){
-                    for (k in data.data){
+                    arraysInfoPort[count] = [reply.result[0].data[0].data[0][i].ifname,
+                        reply.result[0].data[0].data[0][i].ifstate];
 
-                        for (l in data.data){
-                            arraysLinecard.push(data.data[k].data[l].title);
+                    count++;
+                }
+
+                localStorage.setItem("arraysInfoPort", JSON.stringify(arraysInfoPort));
+
+            } else if (title === "SwitchSystem"){
+
+                var infoLinecardTitle = [];
+                var infoLinecardPid = [];
+                var arraysInfoPort = [];
+                var count = 0;
+
+                document.getElementById('bay-id').setAttribute('data', 'img/' + pid + '.svg');
+
+                for (var i = 0; i < reply.result[0].data.length; i++){
+
+                    infoLinecardTitle.push(reply.result[0].data[i].title);
+                    infoLinecardPid.push(reply.result[0].data[i].pid);
+
+                    for (var j = 0; j < reply.result[0].data[i].data.length; j++) {
+
+                        for (var k =0; k < reply.result[0].data[i].data[j].length; k++) {
+
+                            arraysInfoPort[count] = [reply.result[0].data[i].title,
+                                reply.result[0].data[i].data[j][k].ifname,
+                                reply.result[0].data[i].data[j][k].ifstate];
+
+                            count++;
                         }
                     }
-                });
-                console.log(arraysLinecard);
+                }
+
+                localStorage.setItem("linetitle", infoLinecardTitle);
+                localStorage.setItem("linepid", infoLinecardPid);
+
+                localStorage.setItem("arraysInfoPort", JSON.stringify(arraysInfoPort));
+
             }
-        }
+        });
+    }
 
-        localStorage.setItem('titleLinecard', titleLinecard);
-        localStorage.setItem('pidLinecard', pidLinecard);
-        localStorage.setItem('portItem', portItem);
-        localStorage.setItem('portState',portState);
-    });*/
-
-    window.onbeforeunload = function() {
-        localStorage.clear();
-        return undefined;
-    };
-
-    function myFunction() {
+    function getDataFromHref() {
         var url_string = window.location.href;
         var url = new URL(url_string);
-        var pid = url.searchParams.get("pid");
-        var title = url.searchParams.get("title");
         var hostname = url.searchParams.get("hostname");
-        var sn = url.searchParams.get("sn");
         var address = url.searchParams.get("address");
+        var community = url.searchParams.get("community");
 
         return {
-            pid: pid,
-            title: title,
             hostname: hostname,
-            sn: sn,
-            address: address
+            address: address,
+            community: community
         };
     }
-
-    function myDisplay() {
-        var display = myFunction();
-        var pid = display.pid;
-        var title = display.title;
-        var hostname = display.hostname;
-        var sn = display.sn;
-        var address = display.address;
-
-        document.getElementById("pid").innerHTML = pid;
-        document.getElementById("title").innerHTML = title;
-        document.getElementById("hostname").innerHTML = hostname;
-        document.getElementById("sn").innerHTML = sn;
-        document.getElementById("address").innerHTML = address;
-
-    }
-
-    /*function  getElemSvg() {
-
-        var svgObject = document.getElementById('bay-id').contentDocument;
-        var svg = svgObject.getElementById('img-lc');
-        if(svg){
-            console.log(svg);
-        }
-    }*/
 
 </script>
 

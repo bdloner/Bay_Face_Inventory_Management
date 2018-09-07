@@ -22,28 +22,25 @@
     <div class="card">
         <div class="row">
             <div class="w3-col" style="width:20%"></div>
-            <div class="w3-col" style="width:60%">
-                <div class="inputWithIcon">
-                    <div id="new-search-area"></div>
-                    <i class="fas fa-search" aria-hidden="true"></i>
-                </div>
-            </div>
-
+            <div class="w3-col" style="width:60%"></div>
             <div class="w3-col" style="width:20%"></div>
         </div>
 
         <div class="row" id="row-data-table">
             <div class="panel-body table-responsive">
-                <table id="bay-face" class="table table-bordered display responsive nowrap" style="width:100%">
+
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."
+                       title="Type in a name"/>
+
+                <table id="table-test" class="table table-bordered display responsive nowrap" style="width:100%">
                     <thead class="thead-dark">
                     <tr>
-                        <th scope="col">PID</th>
-                        <th scope="col">Slot</th>
                         <th scope="col">Hostname</th>
-                        <th scope="col">Serial Number</th>
                         <th scope="col">IP Address</th>
+                        <th scope="col">Community</th>
                     </tr>
                     </thead>
+                    <tbody id="test"></tbody>
                 </table>
             </div>
         </div>
@@ -65,8 +62,51 @@
 <script type="text/javascript" charset="utf8"
         src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
 
+<script>
+    $(document).ready(function () {
 
-<script type="text/javascript" src="js/data-search.js"></script>
+        $.getJSON('http://poc.servehttp.com/network/bep?search=success&oper=view&page_size=100&page_index=1', function (reply) {
+            for (var i = 0; i < reply.device.length; i++) {
+                $("#test").append('<tr><td class="nr" style="width:34%">' + reply.device[i].hostname + '</td>' +
+                    '<td style="width:33%">' + reply.device[i].address + '</td>' +
+                    '<td style="width:33%">' + reply.device[i].snmp_community + '</td></tr>');
+            }
+
+        });
+
+        $('#table-test tbody').on('click', 'tr', function () {
+
+            var postData = [];
+
+            $(this).closest('tr').find('td').each(function () {
+                var textval = $(this).text(); // this will be the text of each <td>
+                postData.push(textval);
+            });
+
+            popitup();
+
+            function popitup(url, windowName) {
+                newwindow = window.open("description-bay-face.html?hostname=" + postData[0] + "&address=" +
+                    postData[1] + "&community=" + postData[2], windowName, 'height=700,width=1024');
+                if (window.focus) {
+                    newwindow.focus()
+                }
+                return false;
+            }
+
+            /*window.open("description-bay-face.html?hostname=" + postData[0] + "&address=" + postData[1] + "&community=" + postData[2] , "_blank");
+*/
+        });
+
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#test tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+
+</script>
 
 </body>
 </html>

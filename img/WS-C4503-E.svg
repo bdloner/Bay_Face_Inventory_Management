@@ -1,6 +1,39 @@
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
      viewBox="0 0 552.96 358.21">
 
+    <script type="text/javascript"><![CDATA[
+
+document.addEventListener("DOMContentLoaded", function(event) {
+
+    var linecardTitle = localStorage.getItem('linetitle');
+    var linecardPid = localStorage.getItem('linepid').split(",");
+
+	for(var i=0; i<linecardPid.length; i++){
+	    if(linecardPid.length === 1){
+	        document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
+
+	        document.getElementById('fore1').style.display = "block";
+	    } else if (linecardPid.length === 2){
+	        document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
+	        document.getElementById('Linecard2').setAttribute('data', linecardPid[1] + '.svg');
+
+	        document.getElementById('fore1').style.display = "block";
+	        document.getElementById('fore2').style.display = "block";
+	    } else {
+	        document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
+	        document.getElementById('Linecard2').setAttribute('data', linecardPid[1] + '.svg');
+	        document.getElementById('Linecard3').setAttribute('data', linecardPid[2] + '.svg');
+
+	        document.getElementById('fore1').style.display = "block";
+	        document.getElementById('fore2').style.display = "block";
+	        document.getElementById('fore3').style.display = "block";
+	    }
+	}
+
+});
+
+]]></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"/>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"/>
 
@@ -14,28 +47,21 @@
         Myriad
         Pro;letter-spacing:0em;}.cls-93{letter-spacing:-0.01em;}.cls-94{letter-spacing:-0.05em;}.cls-95{letter-spacing:0em;}.cls-96{letter-spacing:-0.01em;}.cls-97{letter-spacing:-0.01em;}.cls-98{letter-spacing:0.01em;}.cls-99{letter-spacing:-0.03em;}.cls-100{letter-spacing:0em;}.cls-101{clip-path:url(#clip-path-131);}.cls-102{clip-path:url(#clip-path-133);}.cls-103{clip-path:url(#clip-path-135);}.cls-104{clip-path:url(#clip-path-137);}.cls-105{clip-path:url(#clip-path-138);}.cls-106{stroke:#3f3f3f;stroke-miterlimit:2;}.cls-107{clip-path:url(#clip-path-141);}.cls-108{clip-path:url(#clip-path-143);}.cls-109{clip-path:url(#clip-path-145);}.cls-110{clip-path:url(#clip-path-147);}.cls-111{fill:#4d4d4d;}.cls-112{fill:#262626;}
 
-        #Linecard1:hover{
-        transition: fill 0.6s ease;
-        fill:#aaaaaa;
-        }
-        #Linecard2:hover{
-        transition: fill 0.6s ease;
-        fill:#aaaaaa;
-        }
-        #Linecard3:hover{
-        transition: fill 0.6s ease;
-        fill:#aaaaaa;
+        #l1:hover{
+            transition: fill 0.6s ease;
+            fill:#aaaaaa;
         }
 
-        #test:hover{
-        transition: fill 0.6s ease;
-        fill:#aaaaaa;
+        #l2:hover{
+            transition: fill 0.6s ease;
+            fill:#aaaaaa;
         }
 
-        #img-lc:hover{
-        transition: fill 0.6s ease;
-        fill:#aaaaaa;
+        #l3:hover{
+            transition: fill 0.6s ease;
+            fill:#aaaaaa;
         }
+
     </style>
 
     <defs>
@@ -949,37 +975,37 @@
               d="M42.6,174.72H267.84a3.72,3.72,0,0,0,3.6-3.72h.12V16.2h-.12a3.61,3.61,0,0,0-3.6-3.6v-.12H42.6l.12.12a3.61,3.61,0,0,0-3.6,3.6H39V171h.12a3.72,3.72,0,0,0,3.6,3.72Z"
               transform="translate(-0.42 -0.41)"/>
 
-        <path id="Linecard1" class="cls-112"
+        <path id="l1" class="cls-112"
               d="M76.68,244.44H523l-.12,0c1.08,0,1.8-.27,1.8-.62h0l.12,0v-51l-.12,0c0-.35-.72-.58-1.8-.58l.12,0H76.68v0c-1.08,0-1.92.23-1.92.58l.12,0v51l-.12,0c0,.35.84.62,1.92.62Z"
               transform="translate(-0.42 -0.41)"/>
 
-        <foreignObject width="450" height="51" x="75" y="192">
+        <foreignObject id="fore1" style="display:none;" width="450" height="51" x="75" y="192">
             <div xmlns="http://www.w3.org/1999/xhtml">
-                <object data="WS-X45-SUP6L-E.svg"/>
+                <object id="Linecard1" data="WS-X4448-GB-SFP.svg"/>
             </div>
         </foreignObject>
 
         <!--<image id="img-lc" xlink:href="WS-X45-SUP6L-E.svg" clip-path="url(#lc1)" width="450" height="51" x="75" y="192"/>
 -->
-        <path id="Linecard2" class="cls-112"
+        <path id="l2" class="cls-112"
               d="M76.68,295.6H523l-.12,0c1.08,0,1.8-.27,1.8-.62h0l.12,0V244l-.12,0c0-.35-.72-.58-1.8-.58l.12,0H76.68v0c-1.08,0-1.92.23-1.92.58l.12,0v51l-.12,0c0,.35.84.62,1.92.62Z"
               transform="translate(-0.42 -0.41)"/>
 
-        <foreignObject width="450" height="51" x="75" y="242">
+        <foreignObject id="fore2" style="display:none;" width="450" height="51" x="75" y="242">
             <div xmlns="http://www.w3.org/1999/xhtml">
-                <object data="WS-X4448-GB-SFP.svg"/>
+                <object id="Linecard2" data="WS-X4448-GB-SFP.svg"/>
             </div>
         </foreignObject>
 
-        <path id="Linecard3" class="cls-112"
+        <path id="l3" class="cls-112"
               d="M76.68,346.88H523l-.12,0c1.08,0,1.8-.27,1.8-.62h0l.12,0v-51l-.12,0c0-.35-.72-.58-1.8-.58l.12,0H76.68v0c-1.08,0-1.92.23-1.92.58l.12,0v51l-.12,0c0,.35.84.62,1.92.62Z"
               transform="translate(-0.42 -0.41)"/>
 
-        <!--<foreignObject width="450" height="51" x="75" y="292">
+        <foreignObject id="fore3" style="display:none;" width="450" height="51" x="75" y="292">
             <div xmlns="http://www.w3.org/1999/xhtml">
-                <object data="WS-X4448-GB-SFP.svg"/>
+                <object id="Linecard3" data="WS-X4448-GB-SFP.svg"/>
             </div>
-        </foreignObject>-->
+        </foreignObject>
 
         <path class="cls-15"
               d="M76.68,353H523l-.12-.12a1.8,1.8,0,0,0,1.8-1.92h0l.12.12v-157l-.12-.12a1.7,1.7,0,0,0-1.8-1.8l.12.12H76.68v-.12a1.8,1.8,0,0,0-1.92,1.8l.12.12v157l-.12-.12a1.9,1.9,0,0,0,1.92,1.92Z"

@@ -2,21 +2,9 @@
      id="ws-x45-sup6l-e" data-name="Layer 1"
      viewBox="0 0 567.12 61.63">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"/>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"/>
-
-    <link rel="stylesheet" type="text/css" href="tooltipster.bundle.min.css"/>
-    <link rel="stylesheet" type="text/css" href="tooltipster-sideTip-punk.min.css"/>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"/>
-    <script type="text/javascript" src="tooltipster.bundle.min.js"/>
-
     <script type="text/javascript"><![CDATA[
 
 document.addEventListener("DOMContentLoaded", function(event) {
-
-    var linecardItem = localStorage.getItem('linecardItem');
-    var portItem = localStorage.getItem('portItem');
-    var portState = localStorage.getItem('portState');
 
     var svg = document.getElementById('ws-x45-sup6l-e');
 	var tooltip = svg.getElementById('tooltip');
@@ -24,13 +12,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	var tooltipRects = tooltip.getElementsByTagName('rect');
 	var triggers = svg.getElementsByClassName('tooltip-trigger');
 
-    if(portState === "up"){
-        var path = document.getElementById("tenGig1/1").style.fill = "green";
-    } else {
-        var path = document.getElementById("tenGig1/1").style.fill = "red";
-    }
-
-	for (var i = 0; i < triggers.length; i++) {
+    for (var i = 0; i < triggers.length; i++) {
 		triggers[i].addEventListener('mousemove', showTooltip);
 		triggers[i].addEventListener('mouseout', hideTooltip);
 	}
@@ -52,6 +34,34 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	function hideTooltip(evt) {
 		tooltip.setAttributeNS(null, "visibility", "hidden");
 	}
+
+    var getLocal = JSON.parse(localStorage.getItem('arraysInfoPort'));
+    var count = 1;
+
+    for(var i=0; i<getLocal.length; i++){
+        for(var j=0; j<getLocal[i].length; j++){
+            var splitCard = getLocal[i][j].split(/[()]/);
+            if (splitCard[0].includes("Supervisor") === true){
+                if(count%2 != 0){
+		            if(getLocal[i][2] === "up"){
+    		            var path = document.getElementById("p" + count).style.fill = "green";
+    	            } else {
+        	            var path = document.getElementById("p" + count).style.fill = "red";
+    	            }
+                    count++;
+                } else {
+                    if(getLocal[i][2] === "up"){
+    		            var path = document.getElementById("p" + count).style.fill = "green";
+    	            } else {
+        	            var path = document.getElementById("p" + count).style.fill = "red";
+    	            }
+    	            count = 1;
+                }
+		    }
+        }
+    }
+
+
 
 });
 
@@ -1242,26 +1252,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
     <g class="cls-3">
         <rect class="cls-117" x="317.76" y="30.48" width="40.08" height="16.68"/>
     </g>
-    <rect class="cls-128" x="318.96" y="31.68" width="37.8" height="14.28"/>
+    <rect id="p1" data-tooltip-text="TenGigabitEthernet1/1 | status:Active" class="tooltip-trigger" x="318.96" y="31.68" width="37.8" height="14.28"/>
     <g class="cls-3">
         <rect class="cls-117" x="318.96" y="31.68" width="37.8" height="14.28"/>
     </g>
     <rect class="cls-129" x="318.96" y="31.68" width="0.72" height="13.92"/>
     <g class="cls-3">
         <rect class="cls-117" x="318.96" y="31.68" width="0.72" height="13.92"/>
-        <polygon id="tenGig1/1" data-tooltip-text="TenGigabitEthernet1/1 | status:Active" class="tooltip-trigger"
-                 points="336.36 43.32 336.36 44.76 321.72 45.24 321.72 43.32 320.52 43.32 320.52 34.8 321.72 34.8 321.72 32.88 327.48 32.88 327.48 31.68 330.48 31.68 330.48 32.88 336.36 32.88 336.36 34.8 337.44 34.8 337.44 43.32 336.36 43.32"/>
-        <polygon class="cls-117"
-                 points="336.36 43.32 336.36 44.76 321.72 45.24 321.72 43.32 320.52 43.32 320.52 34.8 321.72 34.8 321.72 32.88 327.48 32.88 327.48 31.68 330.48 31.68 330.48 32.88 336.36 32.88 336.36 34.8 337.44 34.8 337.44 43.32 336.36 43.32"/>
-    </g>
-
+        </g>
     <g class="cls-3">
-
-        <polygon id="tenGig1/2" data-tooltip-text="TenGigabitEthernet1/2 | status:Available" class="tooltip-trigger"
-                 points="354.36 43.32 354.36 44.76 339.72 45.24 339.72 43.32 338.64 43.32 338.64 34.8 339.72 34.8 339.72 32.88 345.6 32.88 345.6 31.68 348.6 31.68 348.6 32.88 354.36 32.88 354.36 34.8 355.56 34.8 355.56 43.32 354.36 43.32"/>
-        <polygon class="cls-117"
-                 points="354.36 43.32 354.36 44.76 339.72 45.24 339.72 43.32 338.64 43.32 338.64 34.8 339.72 34.8 339.72 32.88 345.6 32.88 345.6 31.68 348.6 31.68 348.6 32.88 354.36 32.88 354.36 34.8 355.56 34.8 355.56 43.32 354.36 43.32"/>
-    </g>
+ </g>
 
 
     <g class="cls-3">
@@ -1420,18 +1420,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
     <g class="cls-3">
         <rect class="cls-117" x="406.44" y="30.48" width="40.08" height="16.68"/>
     </g>
-    <rect class="cls-128" x="407.64" y="31.68" width="37.68" height="14.28"/>
+    <rect id="p2" data-tooltip-text="TenGigabitEthernet1/2 | status:Active" class="tooltip-trigger" x="407.64" y="31.68" width="37.68" height="14.28"/>
     <g class="cls-3">
         <rect class="cls-117" x="407.64" y="31.68" width="37.68" height="14.28"/>
     </g>
     <rect class="cls-129" x="407.64" y="31.68" width="0.72" height="13.92"/>
     <g class="cls-3">
         <rect class="cls-117" x="407.64" y="31.68" width="0.72" height="13.92"/>
-        <polygon class="tooltip-trigger" data-tooltip-text="TenGigabitEthernet1/3 | status:Available"
-                 points="424.92 43.32 424.92 44.76 410.28 45.24 410.28 43.32 409.08 43.32 409.08 34.8 410.28 34.8 410.28 32.88 416.04 32.88 416.04 31.68 419.16 31.68 419.16 32.88 424.92 32.88 424.92 34.8 426.12 34.8 426.12 43.32 424.92 43.32"/>
-        <polygon class="cls-117"
-                 points="424.92 43.32 424.92 44.76 410.28 45.24 410.28 43.32 409.08 43.32 409.08 34.8 410.28 34.8 410.28 32.88 416.04 32.88 416.04 31.68 419.16 31.68 419.16 32.88 424.92 32.88 424.92 34.8 426.12 34.8 426.12 43.32 424.92 43.32"/>
-    </g>
+        </g>
 
 
     <g class="cls-3">
@@ -1440,12 +1436,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     </g>
 
     <g class="cls-3">
-
-        <polygon class="tooltip-trigger" data-tooltip-text="TenGigabitEthernet1/4 | status:Available"
-                 points="443.04 43.32 443.04 44.76 428.4 45.24 428.4 43.32 427.2 43.32 427.2 34.8 428.4 34.8 428.4 32.88 434.16 32.88 434.16 31.68 437.28 31.68 437.28 32.88 443.04 32.88 443.04 34.8 444.24 34.8 444.24 43.32 443.04 43.32"/>
-        <polygon class="cls-117"
-                 points="443.04 43.32 443.04 44.76 428.4 45.24 428.4 43.32 427.2 43.32 427.2 34.8 428.4 34.8 428.4 32.88 434.16 32.88 434.16 31.68 437.28 31.68 437.28 32.88 443.04 32.88 443.04 34.8 444.24 34.8 444.24 43.32 443.04 43.32"/>
-    </g>
+ </g>
 
 
     <g class="cls-3">
