@@ -971,6 +971,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
         <path class="cls-112"
               d="M42.6,174.72H267.84a3.72,3.72,0,0,0,3.6-3.72h.12V16.2h-.12a3.61,3.61,0,0,0-3.6-3.6v-.12H42.6l.12.12a3.61,3.61,0,0,0-3.6,3.6H39V171h.12a3.72,3.72,0,0,0,3.6,3.72Z"
               transform="translate(-0.42 -0.41)"/>
+        <foreignObject id="foreSup1" width="234" height="178" x="38" y="11">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <object id="powersupply1" data="powersupply.svg"/>
+            </div>
+        </foreignObject>
+
         <path class="cls-15"
               d="M42.6,174.72H267.84a3.72,3.72,0,0,0,3.6-3.72h.12V16.2h-.12a3.61,3.61,0,0,0-3.6-3.6v-.12H42.6l.12.12a3.61,3.61,0,0,0-3.6,3.6H39V171h.12a3.72,3.72,0,0,0,3.6,3.72Z"
               transform="translate(-0.42 -0.41)"/>
@@ -978,6 +984,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
         <path id="l1" class="cls-112"
               d="M76.68,244.44H523l-.12,0c1.08,0,1.8-.27,1.8-.62h0l.12,0v-51l-.12,0c0-.35-.72-.58-1.8-.58l.12,0H76.68v0c-1.08,0-1.92.23-1.92.58l.12,0v51l-.12,0c0,.35.84.62,1.92.62Z"
               transform="translate(-0.42 -0.41)"/>
+
+        <foreignObject id="foreSup2" width="234" height="178" x="281" y="11">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <object id="powersupply2" data="powersupply.svg"/>
+            </div>
+        </foreignObject>
 
         <foreignObject id="fore1" style="display:none;" width="450" height="51" x="75" y="192">
             <div xmlns="http://www.w3.org/1999/xhtml">

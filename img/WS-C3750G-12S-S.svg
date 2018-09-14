@@ -40,8 +40,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	for(var i=0; i<getLocal.length; i++){
 		if(getLocal[i][1] === "up"){
     		var path = document.getElementById("p" + count).style.fill = "green";
-    	} else {
+    		path = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][0] + " | status:" + getLocal[i][1]);
+    	} else if(getLocal[i][1] === "down"){
         	var path = document.getElementById("p" + count).style.fill = "red";
+        	path = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][0] + " | status:" + getLocal[i][1]);
+    	} else if(getLocal[i][1] === "admin_down"){
+    		var path = document.getElementById("p" + count).style.fill = "grey";
+    		path = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][0] + " | status:" + getLocal[i][1]);
+    	} else {
+    		var path = document.getElementById("p" + count).style.fill = "black";
+    		path = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][0] + " | status:" + getLocal[i][1]);
     	}
     	count++;
     }

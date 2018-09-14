@@ -29,7 +29,7 @@
         <div class="row" id="row-data-table">
             <div class="panel-body table-responsive">
 
-                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."
+                <input type="text" id="myInput" placeholder="Search for names.."
                        title="Type in a name"/>
 
                 <table id="table-test" class="table table-bordered display responsive nowrap" style="width:100%">
@@ -79,7 +79,7 @@
             var postData = [];
 
             $(this).closest('tr').find('td').each(function () {
-                var textval = $(this).text(); // this will be the text of each <td>
+                var textval = $(this).text();
                 postData.push(textval);
             });
 

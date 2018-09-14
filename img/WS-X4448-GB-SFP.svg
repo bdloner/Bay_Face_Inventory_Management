@@ -37,39 +37,74 @@ window.addEventListener("load", function() {
 
 	var getLocal = JSON.parse(localStorage.getItem('arraysInfoPort'));
 	var countCheckCard = 1;
-    var countLine1 = 1;
-    var countLine2 = 0;
+    var countLine = 1;
+    var numPort = 1;
 
     for(var i=0; i<getLocal.length; i++){
         for(var j=0; j<getLocal[i].length; j++){
             var splitCard = getLocal[i][j].split(/[()]/);
             if (splitCard[0].includes("Linecard") === true){
-            	console.log(getLocal[i][1]);
-                if(countCheckCard%48 != 0){
-                	countLine2+=2;
-		            if(getLocal[i][2] === "up"){
-    		            var path = document.getElementById("p" + countLine1).style.fill = "green";
-    		            var path = document.getElementById("p" + countLine2).style.fill = "green";
-    	            } else {
-        	            var path = document.getElementById("p" + countLine1).style.fill = "red";
-        	            var path = document.getElementById("p" + countLine2).style.fill = "red";
-    	            }
-                    countLine1+=2;
-                    countCheckCard++;
+                if(countCheckCard%49 != 0){
+                	if(countLine%25 != 0){
+						if(getLocal[i][2] === "up"){
+							var path1 = document.getElementById("p" + numPort).style.fill = "green";
+							var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+						} else if(getLocal[i][2] === "down") {
+							var path1 = document.getElementById("p" + numPort).style.fill = "red";
+							var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+						} else if(getLocal[i][2] === "admin_down"){
+							var path1 = document.getElementById("p" + numPort).style.fill = "grey";
+							var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+						} else {
+							var path1 = document.getElementById("p" + numPort).style.fill = "black";
+							var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+						}
+						countLine++;
+						numPort+=2;
+                    	countCheckCard++;
+					} else {
+						countLine=1;
+						numPort=2;
+						if(getLocal[i][2] === "up"){
+							var path1 = document.getElementById("p" + numPort).style.fill = "green";
+							var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+						} else if(getLocal[i][2] === "down") {
+							var path1 = document.getElementById("p" + numPort).style.fill = "red";
+							var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+						} else if(getLocal[i][2] === "admin_down"){
+							var path1 = document.getElementById("p" + numPort).style.fill = "grey";
+							var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+						} else {
+							var path1 = document.getElementById("p" + numPort).style.fill = "black";
+							var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+						}
+						numPort+=2;
+                    	countCheckCard++;
+					}
                 } else {
+
                     if(getLocal[i][2] === "up"){
-    		            var path = document.getElementById("p" + countLine1).style.fill = "green";
-    		            var path = document.getElementById("p" + countLine2).style.fill = "green";
+    		            var path = document.getElementById("p" + countLine).style.fill = "green";
+    		            var path = document.getElementById("p" + countLine).style.fill = "green";
+    	            } else if(getLocal[i][2] === "down"){
+        	            var path = document.getElementById("p" + countLine).style.fill = "red";
+        	            var path = document.getElementById("p" + countLine).style.fill = "red";
+    	            }else if(getLocal[i][2] === "admin_down"){
+    	            	var path = document.getElementById("p" + countLine).style.fill = "grey";
+        	            var path = document.getElementById("p" + countLine).style.fill = "grey";
     	            } else {
-        	            var path = document.getElementById("p" + countLine1).style.fill = "red";
-        	            var path = document.getElementById("p" + countLine2).style.fill = "red";
+    	            	var path = document.getElementById("p" + countLine).style.fill = "black";
+        	            var path = document.getElementById("p" + countLine).style.fill = "black";
     	            }
     	            countCheckCard = 1;
                 }
 		    }
         }
     }
-		});
+
+
+
+});
     ]]></script>
 
 	<style type="text/css">

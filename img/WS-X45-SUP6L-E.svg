@@ -45,15 +45,31 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 if(count%2 != 0){
 		            if(getLocal[i][2] === "up"){
     		            var path = document.getElementById("p" + count).style.fill = "green";
-    	            } else {
+    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+    	            } else if(getLocal[i][2] === "down"){
         	            var path = document.getElementById("p" + count).style.fill = "red";
+    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+    	            } else if(getLocal[i][2] === "admin_down"){
+    	                var path = document.getElementById("p" + count).style.fill = "grey";
+    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+    	            } else {
+    	                var path = document.getElementById("p" + count).style.fill = "black";
+    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
     	            }
                     count++;
                 } else {
                     if(getLocal[i][2] === "up"){
     		            var path = document.getElementById("p" + count).style.fill = "green";
-    	            } else {
+    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+    	            } else if(getLocal[i][2] === "down"){
         	            var path = document.getElementById("p" + count).style.fill = "red";
+    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+    	            }else if(getLocal[i][2] === "admin_down"){
+    	                var path = document.getElementById("p" + count).style.fill = "grey";
+    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+    	            } else {
+    	                var path = document.getElementById("p" + count).style.fill = "black";
+    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
     	            }
     	            count = 1;
                 }
