@@ -19,8 +19,8 @@ window.addEventListener("load", function() {
 
 	function showTooltip(evt) {
 		var CTM = svg.getScreenCTM();
-		var x = (evt.clientX - CTM.e + 2) / CTM.a;
-		var y = (evt.clientY - CTM.f + 5) / CTM.d;
+		var x = (evt.clientX - CTM.e - 30) / CTM.a;
+		var y = (evt.clientY - CTM.f - 14) / CTM.d;
 		tooltip.setAttributeNS(null, "transform", "translate(" + x + " " + y + ")");
 		tooltip.setAttributeNS(null, "visibility", "visible");
 
@@ -36,7 +36,6 @@ window.addEventListener("load", function() {
 	}
 
 	var getLocal = JSON.parse(localStorage.getItem('arraysInfoPort'));
-	var countCheckCard = 1;
     var countLine = 1;
     var numPort = 1;
 
@@ -44,65 +43,43 @@ window.addEventListener("load", function() {
         for(var j=0; j<getLocal[i].length; j++){
             var splitCard = getLocal[i][j].split(/[()]/);
             if (splitCard[0].includes("Linecard") === true){
-                if(countCheckCard%49 != 0){
-                	if(countLine%25 != 0){
-						if(getLocal[i][2] === "up"){
-							var path1 = document.getElementById("p" + numPort).style.fill = "green";
-							var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-						} else if(getLocal[i][2] === "down") {
-							var path1 = document.getElementById("p" + numPort).style.fill = "red";
-							var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-						} else if(getLocal[i][2] === "admin_down"){
-							var path1 = document.getElementById("p" + numPort).style.fill = "grey";
-							var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-						} else {
-							var path1 = document.getElementById("p" + numPort).style.fill = "black";
-							var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-						}
-						countLine++;
-						numPort+=2;
-                    	countCheckCard++;
+                if(countLine%25 != 0){
+					if(getLocal[i][2] === "up"){
+						var path1 = document.getElementById("p" + numPort).style.fill = "green";
+						var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+					} else if(getLocal[i][2] === "down") {
+						var path1 = document.getElementById("p" + numPort).style.fill = "red";
+						var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+					} else if(getLocal[i][2] === "admin_down"){
+						var path1 = document.getElementById("p" + numPort).style.fill = "grey";
+						var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
 					} else {
-						countLine=1;
-						numPort=2;
-						if(getLocal[i][2] === "up"){
-							var path1 = document.getElementById("p" + numPort).style.fill = "green";
-							var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-						} else if(getLocal[i][2] === "down") {
-							var path1 = document.getElementById("p" + numPort).style.fill = "red";
-							var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-						} else if(getLocal[i][2] === "admin_down"){
-							var path1 = document.getElementById("p" + numPort).style.fill = "grey";
-							var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-						} else {
-							var path1 = document.getElementById("p" + numPort).style.fill = "black";
-							var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-						}
-						numPort+=2;
-                    	countCheckCard++;
+						var path1 = document.getElementById("p" + numPort).style.fill = "black";
+						var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
 					}
-                } else {
-
-                    if(getLocal[i][2] === "up"){
-    		            var path = document.getElementById("p" + countLine).style.fill = "green";
-    		            var path = document.getElementById("p" + countLine).style.fill = "green";
-    	            } else if(getLocal[i][2] === "down"){
-        	            var path = document.getElementById("p" + countLine).style.fill = "red";
-        	            var path = document.getElementById("p" + countLine).style.fill = "red";
-    	            }else if(getLocal[i][2] === "admin_down"){
-    	            	var path = document.getElementById("p" + countLine).style.fill = "grey";
-        	            var path = document.getElementById("p" + countLine).style.fill = "grey";
-    	            } else {
-    	            	var path = document.getElementById("p" + countLine).style.fill = "black";
-        	            var path = document.getElementById("p" + countLine).style.fill = "black";
-    	            }
-    	            countCheckCard = 1;
-                }
-		    }
-        }
+					countLine++;
+					numPort+=2;
+				} else {
+					countLine=1;
+					numPort=2;
+					if(getLocal[i][2] === "up"){
+						var path1 = document.getElementById("p" + numPort).style.fill = "green";
+						var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+					} else if(getLocal[i][2] === "down") {
+						var path1 = document.getElementById("p" + numPort).style.fill = "red";
+						var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+					} else if(getLocal[i][2] === "admin_down"){
+						var path1 = document.getElementById("p" + numPort).style.fill = "grey";
+						var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+					} else {
+						var path1 = document.getElementById("p" + numPort).style.fill = "black";
+						var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+					}
+					numPort+=2;
+				}
+            }
+		}
     }
-
-
 
 });
     ]]></script>
@@ -110,7 +87,7 @@ window.addEventListener("load", function() {
 	<style type="text/css">
 
 		#tooltip {
-            font-size:8px;
+            font-size:9px;
             dominant-baseline: hanging;
             }
 
@@ -16872,7 +16849,7 @@ RhFgoJGuf44FNSIrKswoYxlzFK/sbFf88Goc6JkxCjZC9zerpkaY0cq1xul6glGB8Yt1H/o6wnaH
 
 <g id="tooltip" visibility="hidden" >
         <rect x="2" y="2" width="80" height="18" fill="black" opacity="0.4" rx="2" ry="2"/>
-        <rect width="80" height="18" fill="white" rx="2" ry="2"/>
-        <text x="4" y="6">GigabitEthernet2/1</text>
+        <rect width="80" height="18" fill="#fff" rx="2" ry="2"/>
+        <text style="color:red" x="4" y="6">GigabitEthernet2/1</text>
     </g>
 </svg>

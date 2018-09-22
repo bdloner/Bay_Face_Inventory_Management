@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 	function showTooltip(evt) {
 		var CTM = svg.getScreenCTM();
-		var x = (evt.clientX - CTM.e + 2) / CTM.a;
-		var y = (evt.clientY - CTM.f + 5) / CTM.d;
+		var x = (evt.clientX - CTM.e - 35) / CTM.a;
+		var y = (evt.clientY - CTM.f - 13) / CTM.d;
 		tooltip.setAttributeNS(null, "transform", "translate(" + x + " " + y + ")");
 		tooltip.setAttributeNS(null, "visibility", "visible");
 
@@ -57,6 +57,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
     	            }
                     count++;
+                    //length--
+
                 } else {
                     if(getLocal[i][2] === "up"){
     		            var path = document.getElementById("p" + count).style.fill = "green";
@@ -86,8 +88,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     <defs>
         <style>
             #tooltip {
-            font-size:8px;
-            dominant-baseline: hanging;
+                font-size:9px;
+                dominant-baseline: hanging;
             }
 
             .tooltip-trigger{
