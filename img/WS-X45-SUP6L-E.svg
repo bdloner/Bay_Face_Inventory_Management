@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	function showTooltip(evt) {
 		var CTM = svg.getScreenCTM();
 		var x = (evt.clientX - CTM.e - 35) / CTM.a;
-		var y = (evt.clientY - CTM.f - 13) / CTM.d;
+		var y = (evt.clientY - CTM.f - 15) / CTM.d;
 		tooltip.setAttributeNS(null, "transform", "translate(" + x + " " + y + ")");
 		tooltip.setAttributeNS(null, "visibility", "visible");
 
@@ -37,49 +37,53 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     var getLocal = JSON.parse(localStorage.getItem('arraysInfoPort'));
     var count = 1;
+    var lengthArray = getLocal.length;
 
-    for(var i=0; i<getLocal.length; i++){
-        for(var j=0; j<getLocal[i].length; j++){
-            var splitCard = getLocal[i][j].split(/[()]/);
-            if (splitCard[0].includes("Supervisor") === true){
-                if(count%2 != 0){
-		            if(getLocal[i][2] === "up"){
-    		            var path = document.getElementById("p" + count).style.fill = "green";
-    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-    	            } else if(getLocal[i][2] === "down"){
-        	            var path = document.getElementById("p" + count).style.fill = "red";
-    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-    	            } else if(getLocal[i][2] === "admin_down"){
-    	                var path = document.getElementById("p" + count).style.fill = "grey";
-    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-    	            } else {
-    	                var path = document.getElementById("p" + count).style.fill = "black";
-    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-    	            }
-                    count++;
-                    //length--
+    for(var i=0; i<lengthArray; i++){
+        while(lengthArray--){
+            for(var j=0; j<getLocal[i].length; j++){
+                var splitCard = getLocal[i][j].split(/[()]/);
+                if (splitCard[0].includes("Supervisor") === true){
+                    if(count%2 != 0){
+                        if(getLocal[i][2] === "up"){
+                            var path = document.getElementById("p" + count).style.fill = "green";
+                            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                        } else if(getLocal[i][2] === "down"){
+                            var path = document.getElementById("p" + count).style.fill = "red";
+                            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                        } else if(getLocal[i][2] === "admin_down"){
+                            var path = document.getElementById("p" + count).style.fill = "grey";
+                            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                        } else {
+                            var path = document.getElementById("p" + count).style.fill = "black";
+                            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                        }
+                        count++;
+                        getLocal.splice(0,1);
 
-                } else {
-                    if(getLocal[i][2] === "up"){
-    		            var path = document.getElementById("p" + count).style.fill = "green";
-    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-    	            } else if(getLocal[i][2] === "down"){
-        	            var path = document.getElementById("p" + count).style.fill = "red";
-    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-    	            }else if(getLocal[i][2] === "admin_down"){
-    	                var path = document.getElementById("p" + count).style.fill = "grey";
-    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-    	            } else {
-    	                var path = document.getElementById("p" + count).style.fill = "black";
-    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-    	            }
-    	            count = 1;
+                    } else {
+                        if(getLocal[i][2] === "up"){
+                            var path = document.getElementById("p" + count).style.fill = "green";
+                            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                        } else if(getLocal[i][2] === "down"){
+                            var path = document.getElementById("p" + count).style.fill = "red";
+                            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                        }else if(getLocal[i][2] === "admin_down"){
+                            var path = document.getElementById("p" + count).style.fill = "grey";
+                            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                        } else {
+                            var path = document.getElementById("p" + count).style.fill = "black";
+                            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                        }
+                        count = 1;
+                        getLocal.splice(0,1);
+                    }
                 }
-		    }
+            }
         }
     }
 
-
+    localStorage.setItem("arraysInfoPort", JSON.stringify(getLocal));
 
 });
 
@@ -103,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
             .cls-1,.cls-100,.cls-102,.cls-104,.cls-11,.cls-117,.cls-120,.cls-14,.cls-147,.cls-148,.cls-17,.cls-2,.cls-21,.cls-22,.cls-58,.cls-87,.cls-91,.cls-97{fill:none;}.cls-2{clip-rule:evenodd;}.cls-3{clip-path:url(#clip-path);}.cls-139,.cls-4{fill:#60686a;}.cls-101,.cls-103,.cls-105,.cls-116,.cls-130,.cls-136,.cls-176,.cls-4,.cls-45,.cls-5{fill-rule:evenodd;}.cls-127,.cls-5{fill:#d8d8d8;}.cls-6{clip-path:url(#clip-path-2);}.cls-7{clip-path:url(#clip-path-3);}.cls-8{fill:#9a9a9a;}.cls-9{clip-path:url(#clip-path-6);}.cls-10{clip-path:url(#clip-path-7);}.cls-11{stroke:#9a9a9a;}.cls-100,.cls-102,.cls-104,.cls-11,.cls-117,.cls-120,.cls-14,.cls-148,.cls-17,.cls-21,.cls-22,.cls-58,.cls-87,.cls-91,.cls-97{stroke-linecap:round;stroke-linejoin:round;}.cls-102,.cls-104,.cls-11,.cls-120,.cls-17,.cls-21,.cls-22{stroke-width:0.38px;}.cls-12{clip-path:url(#clip-path-10);}.cls-13{clip-path:url(#clip-path-11);}.cls-14,.cls-17{stroke:#a5a5a5;}.cls-100,.cls-117,.cls-14,.cls-148,.cls-91{stroke-width:0.36px;}.cls-15{clip-path:url(#clip-path-14);}.cls-16{clip-path:url(#clip-path-15);}.cls-18{clip-path:url(#clip-path-18);}.cls-19{clip-path:url(#clip-path-19);}.cls-20{fill:#ddd;}.cls-21{stroke:#3f3f3f;}.cls-22{stroke:#a6a6a6;}.cls-23{clip-path:url(#clip-path-22);}.cls-24{clip-path:url(#clip-path-23);}.cls-25{clip-path:url(#clip-path-25);}.cls-26{clip-path:url(#clip-path-26);}.cls-27{clip-path:url(#clip-path-28);}.cls-28{clip-path:url(#clip-path-29);}.cls-29{clip-path:url(#clip-path-32);}.cls-30{clip-path:url(#clip-path-33);}.cls-31{clip-path:url(#clip-path-35);}.cls-32{clip-path:url(#clip-path-36);}.cls-33{clip-path:url(#clip-path-38);}.cls-34{clip-path:url(#clip-path-39);}.cls-35{clip-path:url(#clip-path-41);}.cls-36{clip-path:url(#clip-path-43);}.cls-37{clip-path:url(#clip-path-45);}.cls-38{clip-path:url(#clip-path-47);}.cls-39{clip-path:url(#clip-path-49);}.cls-40{clip-path:url(#clip-path-51);}.cls-41{clip-path:url(#clip-path-53);}.cls-42{clip-path:url(#clip-path-55);}.cls-43{clip-path:url(#clip-path-57);}.cls-44{clip-path:url(#clip-path-59);}.cls-45{fill:#c0e4f0;}.cls-46{clip-path:url(#clip-path-62);}.cls-47{clip-path:url(#clip-path-63);}.cls-48{clip-path:url(#clip-path-66);}.cls-49{clip-path:url(#clip-path-67);}.cls-50{clip-path:url(#clip-path-70);}.cls-51{clip-path:url(#clip-path-71);}.cls-52{clip-path:url(#clip-path-74);}.cls-53{clip-path:url(#clip-path-75);}.cls-54{clip-path:url(#clip-path-78);}.cls-55{clip-path:url(#clip-path-79);}.cls-56{clip-path:url(#clip-path-82);}.cls-57{clip-path:url(#clip-path-83);}.cls-58,.cls-87,.cls-91,.cls-97{stroke:#d8d8d8;}.cls-58{stroke-width:0.48px;}.cls-59{clip-path:url(#clip-path-86);}.cls-60{clip-path:url(#clip-path-88);}.cls-61{clip-path:url(#clip-path-89);}.cls-62{clip-path:url(#clip-path-92);}.cls-63{clip-path:url(#clip-path-94);}.cls-64{clip-path:url(#clip-path-96);}.cls-65{clip-path:url(#clip-path-97);}.cls-66{clip-path:url(#clip-path-99);}.cls-67{clip-path:url(#clip-path-101);}.cls-68{clip-path:url(#clip-path-102);}.cls-69{clip-path:url(#clip-path-105);}.cls-70{clip-path:url(#clip-path-107);}.cls-71{clip-path:url(#clip-path-109);}.cls-72{clip-path:url(#clip-path-110);}.cls-73{clip-path:url(#clip-path-113);}.cls-74{clip-path:url(#clip-path-114);}.cls-75{clip-path:url(#clip-path-117);}.cls-76{clip-path:url(#clip-path-118);}.cls-77{clip-path:url(#clip-path-121);}.cls-78{clip-path:url(#clip-path-122);}.cls-79{clip-path:url(#clip-path-125);}.cls-80{clip-path:url(#clip-path-126);}.cls-81{clip-path:url(#clip-path-129);}.cls-82{clip-path:url(#clip-path-130);}.cls-83{clip-path:url(#clip-path-133);}.cls-84{clip-path:url(#clip-path-134);}.cls-85{clip-path:url(#clip-path-137);}.cls-86{clip-path:url(#clip-path-139);}.cls-147,.cls-87{stroke-width:0.72px;}.cls-88{clip-path:url(#clip-path-142);}.cls-89{clip-path:url(#clip-path-144);}.cls-90{clip-path:url(#clip-path-145);}.cls-92{clip-path:url(#clip-path-148);}.cls-93{clip-path:url(#clip-path-149);}.cls-94{clip-path:url(#clip-path-152);}.cls-95{clip-path:url(#clip-path-154);}.cls-96{clip-path:url(#clip-path-155);}.cls-97{stroke-width:0.24px;}.cls-98{clip-path:url(#clip-path-158);}.cls-99{fill:#404040;}.cls-100{stroke:#8c8c8c;}.cls-101{fill:#c0baa0;}.cls-102{stroke:gray;}.cls-103{fill:#333;}.cls-104{stroke:#666;}.cls-105{fill:#856427;}.cls-106{clip-path:url(#clip-path-162);}.cls-107{clip-path:url(#clip-path-164);}.cls-108{clip-path:url(#clip-path-166);}.cls-109{clip-path:url(#clip-path-168);}.cls-110{clip-path:url(#clip-path-170);}.cls-111{clip-path:url(#clip-path-172);}.cls-112{clip-path:url(#clip-path-174);}.cls-113{clip-path:url(#clip-path-175);}.cls-114{clip-path:url(#clip-path-178);}.cls-115{clip-path:url(#clip-path-180);}.cls-116{fill:#fff;}.cls-117,.cls-120,.cls-147{stroke:#7f7f7f;}.cls-118{clip-path:url(#clip-path-183);}.cls-119{clip-path:url(#clip-path-184);}.cls-121{clip-path:url(#clip-path-187);}.cls-122{clip-path:url(#clip-path-188);}.cls-123{clip-path:url(#clip-path-191);}.cls-124{clip-path:url(#clip-path-192);}.cls-125{clip-path:url(#clip-path-195);}.cls-126{clip-path:url(#clip-path-196);}.cls-128{fill:#39f;}.cls-129{fill:#507baf;}.cls-130,.cls-131{fill:#333;}.cls-132{clip-path:url(#clip-path-208);}.cls-133{clip-path:url(#clip-path-209);}.cls-134{clip-path:url(#clip-path-216);}.cls-135{clip-path:url(#clip-path-217);}.cls-136{fill:#7f7f7f;}.cls-137{clip-path:url(#clip-path-220);}.cls-138{clip-path:url(#clip-path-223);}.cls-140{clip-path:url(#clip-path-225);}.cls-141{clip-path:url(#clip-path-227);}.cls-142{clip-path:url(#clip-path-229);}.cls-143{clip-path:url(#clip-path-231);}.cls-144{clip-path:url(#clip-path-233);}.cls-145{clip-path:url(#clip-path-235);}.cls-146{clip-path:url(#clip-path-237);}.cls-147{stroke-miterlimit:2;}.cls-148{stroke:#bfbfbf;}.cls-149{clip-path:url(#clip-path-240);}.cls-150{clip-path:url(#clip-path-243);}.cls-151{clip-path:url(#clip-path-244);}.cls-152{clip-path:url(#clip-path-247);}.cls-153{clip-path:url(#clip-path-248);}.cls-154{clip-path:url(#clip-path-251);}.cls-155{clip-path:url(#clip-path-252);}.cls-156{clip-path:url(#clip-path-255);}.cls-157{clip-path:url(#clip-path-256);}.cls-158{clip-path:url(#clip-path-268);}.cls-159{clip-path:url(#clip-path-269);}.cls-160{clip-path:url(#clip-path-276);}.cls-161{clip-path:url(#clip-path-277);}.cls-162{clip-path:url(#clip-path-280);}.cls-163{clip-path:url(#clip-path-283);}.cls-164{clip-path:url(#clip-path-285);}.cls-165{clip-path:url(#clip-path-287);}.cls-166{clip-path:url(#clip-path-289);}.cls-167{clip-path:url(#clip-path-291);}.cls-168{clip-path:url(#clip-path-293);}.cls-169{clip-path:url(#clip-path-295);}.cls-170{clip-path:url(#clip-path-297);}.cls-171{clip-path:url(#clip-path-300);}.cls-172{clip-path:url(#clip-path-302);}.cls-173{clip-path:url(#clip-path-304);}.cls-174{clip-path:url(#clip-path-306);}.cls-175{clip-path:url(#clip-path-308);}.cls-176{fill:#feeba7;}.cls-177{clip-path:url(#clip-path-311);}.cls-178{clip-path:url(#clip-path-313);}.cls-179{clip-path:url(#clip-path-315);}.cls-180{clip-path:url(#clip-path-317);}
         </style>
-        <clipPath id="clip-patwh" transform="translate(-0.48 -0.72)">
+        <clipPath id="clip-path" transform="translate(-0.48 -0.72)">
             <rect class="cls-1" width="568.44" height="62.88"/>
         </clipPath>
         <clipPath id="clip-path-2" transform="translate(-0.48 -0.72)">

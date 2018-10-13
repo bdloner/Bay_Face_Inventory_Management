@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 	function showTooltip(evt) {
 		var CTM = svg.getScreenCTM();
-		var x = (evt.clientX - CTM.e + 2) / CTM.a;
-		var y = (evt.clientY - CTM.f + 5) / CTM.d;
+		var x = (evt.clientX - CTM.e - 150) / CTM.a;
+		var y = (evt.clientY - CTM.f - 40) / CTM.d;
 		tooltip.setAttributeNS(null, "transform", "translate(" + x + " " + y + ")");
 		tooltip.setAttributeNS(null, "visibility", "visible");
 

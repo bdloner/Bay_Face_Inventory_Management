@@ -195,17 +195,10 @@
         setVisible('h1', false);
     });
 
-    /*$(document).ready(function () {
-
-        /!*myDisplay();*!/
-    });*/
-    
     function showDataBayface() {
 
         var getData = getDataFromHref();
         var hostname = getData.hostname;
-        var address = getData.address;
-        var community = getData.community;
 
         $.getJSON('http://poc.servehttp.com/bayface/view?hostname=' + hostname, function (reply) {
 
