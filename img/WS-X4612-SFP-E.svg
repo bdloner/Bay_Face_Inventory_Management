@@ -35,55 +35,56 @@ window.addEventListener("load", function() {
 	}
 
 	var getLocal = JSON.parse(localStorage.getItem('arraysInfoPort'));
+
+    var getLineTitle = localStorage.getItem('linetitle').split(",");
+    var getLineTitleSlot = getLineTitle.shift().split(/[()]/);
+
+    localStorage.setItem("linetitle", getLineTitle);
+
     var count = 1;
-	var lengthArray = getLocal.length;
+    var lengthArray = getLocal.length;
 
-	for(var i=0; i<lengthArray; i++){
-        while(lengthArray--){
-            for(var j=0; j<getLocal[i].length; j++){
-                var splitCard = getLocal[i][j].split(/[()]/);
-                if (splitCard[0].includes("Linecard") === true){
-                    if(count%12 != 0){
-                        if(getLocal[i][2] === "up"){
-                            var path = document.getElementById("p" + count).style.fill = "green";
-                            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-                        } else if(getLocal[i][2] === "down"){
-                            var path = document.getElementById("p" + count).style.fill = "red";
-                            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-                        } else if(getLocal[i][2] === "admin_down"){
-                            var path = document.getElementById("p" + count).style.fill = "grey";
-                            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-                        } else {
-                            var path = document.getElementById("p" + count).style.fill = "black";
-                            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-                        }
-                        count++;
-                        getLocal.splice(0,1);
+        for(var i=0; i<getLocal.length; i++){
+                for(var j=0; j<getLocal[i].length; j++){
+                    var splitCard = getLocal[i][j].split(/[()]/);
+                    if (splitCard[0].includes("Supervisor") === true){
+                        if(splitCard[1] === getLineTitleSlot[1]){
+                            if(count%13 != 0){
+                                if(getLocal[i][2] === "up"){
+                                    var path = document.getElementById("p" + count).style.fill = "green";
+                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                                } else if(getLocal[i][2] === "down"){
+                                    var path = document.getElementById("p" + count).style.fill = "red";
+                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                                } else if(getLocal[i][2] === "admin_down"){
+                                    var path = document.getElementById("p" + count).style.fill = "grey";
+                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                                } else {
+                                    var path = document.getElementById("p" + count).style.fill = "black";
+                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                                }
+                                count++;
 
-                    } else {
-                        if(getLocal[i][2] === "up"){
-                            var path = document.getElementById("p" + count).style.fill = "green";
-                            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-                        } else if(getLocal[i][2] === "down"){
-                            var path = document.getElementById("p" + count).style.fill = "red";
-                            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-                        }else if(getLocal[i][2] === "admin_down"){
-                            var path = document.getElementById("p" + count).style.fill = "grey";
-                            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-                        } else {
-                            var path = document.getElementById("p" + count).style.fill = "black";
-                            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                            } else {
+                                if(getLocal[i][2] === "up"){
+                                    var path = document.getElementById("p" + count).style.fill = "green";
+                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                                } else if(getLocal[i][2] === "down"){
+                                    var path = document.getElementById("p" + count).style.fill = "red";
+                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                                }else if(getLocal[i][2] === "admin_down"){
+                                    var path = document.getElementById("p" + count).style.fill = "grey";
+                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                                } else {
+                                    var path = document.getElementById("p" + count).style.fill = "black";
+                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                                }
+                                count = 1;
+                            }
                         }
-                        count = 1;
-                        getLocal.splice(0,1);
                     }
                 }
-            }
         }
-    }
-
-    localStorage.setItem("arraysInfoPort", JSON.stringify(getLocal));
-
 });
     ]]></script>
 

@@ -8,69 +8,52 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 
     var linecardTitle = localStorage.getItem('linetitle');
+
+    var linecardTitleSlot = localStorage.getItem('linetitle').split(/[()]/);
     var linecardPid = localStorage.getItem('linepid').split(",");
 
-	for(var i=0; i<linecardPid.length; i++){
-	    if(linecardPid.length === 1){
-	        document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
+    var arrayPosition = [];
+    var j=0;
 
-	        document.getElementById('fore1').style.display = "block";
-	    } else if (linecardPid.length === 2){
-	        document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
-	        document.getElementById('Linecard2').setAttribute('data', linecardPid[1] + '.svg');
+    for(var i=1; i<linecardTitleSlot.length; i+=2){
+    	arrayPosition.push([linecardTitleSlot[i], linecardPid[j]]);
+    	j++;
+    }
 
-	        document.getElementById('fore1').style.display = "block";
-	        document.getElementById('fore2').style.display = "block";
-	    } else if (linecardPid.length === 3){
-	        document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
-	        document.getElementById('Linecard2').setAttribute('data', linecardPid[1] + '.svg');
-	        document.getElementById('Linecard3').setAttribute('data', linecardPid[2] + '.svg');
+    for(var i=0; i<arrayPosition.length; i++){
+    	for(var j=0; j<arrayPosition[i].length; j++){
+    		if(arrayPosition[i][0] === "slot1"){
+    			document.getElementById('Linecard1').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore1').style.display = "block";
 
-	        document.getElementById('fore1').style.display = "block";
-	        document.getElementById('fore2').style.display = "block";
-	        document.getElementById('fore3').style.display = "block";
-	    } else if (linecardPid.length === 4){
-	        document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
-	        document.getElementById('Linecard2').setAttribute('data', linecardPid[1] + '.svg');
-	        document.getElementById('Linecard3').setAttribute('data', linecardPid[2] + '.svg');
-	        document.getElementById('Linecard4').setAttribute('data', linecardPid[3] + '.svg');
+    		}else if(arrayPosition[i][0] === "slot2"){
+    			document.getElementById('Linecard2').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore2').style.display = "block";
 
-	        document.getElementById('fore1').style.display = "block";
-	        document.getElementById('fore2').style.display = "block";
-	        document.getElementById('fore3').style.display = "block";
-	        document.getElementById('fore4').style.display = "block";
-	    } else if (linecardPid.length === 5){
-	        document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
-	        document.getElementById('Linecard2').setAttribute('data', linecardPid[1] + '.svg');
-	        document.getElementById('Linecard3').setAttribute('data', linecardPid[2] + '.svg');
-	        document.getElementById('Linecard4').setAttribute('data', linecardPid[3] + '.svg');
-	        document.getElementById('Linecard5').setAttribute('data', linecardPid[4] + '.svg');
+    		}else if(arrayPosition[i][0] === "slot3"){
+    			document.getElementById('Linecard3').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore3').style.display = "block";
 
-	        document.getElementById('fore1').style.display = "block";
-	        document.getElementById('fore2').style.display = "block";
-	        document.getElementById('fore3').style.display = "block";
-	        document.getElementById('fore4').style.display = "block";
-	        document.getElementById('fore5').style.display = "block";
-	    } else {
-	    	document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
-	        document.getElementById('Linecard2').setAttribute('data', linecardPid[1] + '.svg');
-	        document.getElementById('Linecard3').setAttribute('data', linecardPid[2] + '.svg');
-	        document.getElementById('Linecard4').setAttribute('data', linecardPid[3] + '.svg');
-	        document.getElementById('Linecard5').setAttribute('data', linecardPid[4] + '.svg');
-	        document.getElementById('Linecard6').setAttribute('data', linecardPid[5] + '.svg');
+    		}else if(arrayPosition[i][0] === "slot4"){
+    			document.getElementById('Linecard4').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore4').style.display = "block";
 
-	        document.getElementById('fore1').style.display = "block";
-	        document.getElementById('fore2').style.display = "block";
-	        document.getElementById('fore3').style.display = "block";
-	        document.getElementById('fore4').style.display = "block";
-	        document.getElementById('fore5').style.display = "block";
-	        document.getElementById('fore6').style.display = "block";
-	    }
-	}
+    		}else if(arrayPosition[i][0] === "slot5"){
+    			document.getElementById('Linecard5').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore5').style.display = "block";
+
+    		}else if(arrayPosition[i][0] === "slot6"){
+    			document.getElementById('Linecard6').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore6').style.display = "block";
+
+    		}
+    	}
+    }
 
 });
 
 ]]></script>
+
 
 	<style>
         .cls-1,.cls-106,.cls-15,.cls-18,.cls-2,.cls-32,.cls-35,.cls-37,.cls-40,.cls-41,.cls-5,.cls-56,.cls-58,.cls-65,.cls-70,.cls-87,.cls-91{fill:none;}.cls-2{clip-rule:evenodd;}.cls-3,.cls-31{fill:#60686a;}.cls-4{clip-path:url(#clip-path);}.cls-15,.cls-5{stroke:#000;}.cls-15,.cls-18,.cls-32,.cls-35,.cls-37,.cls-40,.cls-41,.cls-5,.cls-56,.cls-58,.cls-65,.cls-70,.cls-87,.cls-91{stroke-linecap:round;stroke-linejoin:round;}.cls-32,.cls-5,.cls-58,.cls-65,.cls-70{stroke-width:0.38px;}.cls-6{clip-path:url(#clip-path-2);}.cls-7{clip-path:url(#clip-path-3);}.cls-8{clip-path:url(#clip-path-5);}.cls-9{clip-path:url(#clip-path-6);}.cls-10{clip-path:url(#clip-path-8);}.cls-11{clip-path:url(#clip-path-9);}.cls-12{clip-path:url(#clip-path-10);}.cls-13{clip-path:url(#clip-path-11);}.cls-14,.cls-59{fill:#d8d8d8;}.cls-106,.cls-15,.cls-18,.cls-40,.cls-87,.cls-91{stroke-width:0.36px;}.cls-16{clip-path:url(#clip-path-13);}.cls-17{clip-path:url(#clip-path-14);}.cls-18,.cls-70{stroke:#a5a5a5;}.cls-19{clip-path:url(#clip-path-17);}.cls-20{clip-path:url(#clip-path-18);}.cls-21{clip-path:url(#clip-path-21);}.cls-22{clip-path:url(#clip-path-22);}.cls-23{clip-path:url(#clip-path-26);}.cls-24{clip-path:url(#clip-path-27);}.cls-25{clip-path:url(#clip-path-30);}.cls-26{clip-path:url(#clip-path-31);}.cls-27{clip-path:url(#clip-path-34);}.cls-28{clip-path:url(#clip-path-35);}.cls-29{clip-path:url(#clip-path-39);}.cls-30{clip-path:url(#clip-path-40);}.cls-111,.cls-112,.cls-31,.cls-36,.cls-59,.cls-84{fill-rule:evenodd;}.cls-32,.cls-35{stroke:#595959;}.cls-33{clip-path:url(#clip-path-42);}.cls-34{clip-path:url(#clip-path-43);}.cls-35,.cls-41{stroke-width:0.48px;}.cls-37{stroke:#333;stroke-width:0.84px;}.cls-38{clip-path:url(#clip-path-46);}.cls-39{clip-path:url(#clip-path-47);}.cls-40,.cls-41{stroke:#fff;}.cls-42{clip-path:url(#clip-path-50);}.cls-43{clip-path:url(#clip-path-51);}.cls-44{clip-path:url(#clip-path-54);}.cls-45{clip-path:url(#clip-path-55);}.cls-46{clip-path:url(#clip-path-58);}.cls-47{clip-path:url(#clip-path-59);}.cls-48{clip-path:url(#clip-path-62);}.cls-49{clip-path:url(#clip-path-63);}.cls-50{clip-path:url(#clip-path-66);}.cls-51{clip-path:url(#clip-path-67);}.cls-52{clip-path:url(#clip-path-70);}.cls-53{clip-path:url(#clip-path-71);}.cls-54{clip-path:url(#clip-path-74);}.cls-55{clip-path:url(#clip-path-75);}.cls-56,.cls-87{stroke:#d8d8d8;}.cls-56{stroke-width:2.4px;}.cls-57{fill:#bfbfbf;}.cls-58{stroke:#ddd;}.cls-60{clip-path:url(#clip-path-81);}.cls-61{clip-path:url(#clip-path-82);}.cls-62{fill:#9a9a9a;}.cls-63{clip-path:url(#clip-path-85);}.cls-64{clip-path:url(#clip-path-86);}.cls-65{stroke:#9a9a9a;}.cls-66{clip-path:url(#clip-path-89);}.cls-67{clip-path:url(#clip-path-90);}.cls-68{clip-path:url(#clip-path-93);}.cls-69{clip-path:url(#clip-path-94);}.cls-71{clip-path:url(#clip-path-97);}.cls-72{clip-path:url(#clip-path-98);}.cls-73{clip-path:url(#clip-path-101);}.cls-74{clip-path:url(#clip-path-102);}.cls-75{clip-path:url(#clip-path-105);}.cls-76{clip-path:url(#clip-path-106);}.cls-77{clip-path:url(#clip-path-109);}.cls-78{clip-path:url(#clip-path-110);}.cls-79{clip-path:url(#clip-path-113);}.cls-80{clip-path:url(#clip-path-114);}.cls-81{clip-path:url(#clip-path-117);}.cls-82{clip-path:url(#clip-path-118);}.cls-83,.cls-84{fill:#fff;}.cls-85{clip-path:url(#clip-path-122);}.cls-86{clip-path:url(#clip-path-123);}.cls-88{clip-path:url(#clip-path-126);}.cls-89{clip-path:url(#clip-path-128);}.cls-90{fill:#4aadc6;}.cls-91{stroke:#3a97cb;}.cls-92{font-size:2.88px;fill:#38557a;font-family:MyriadPro-Regular,

@@ -1,0 +1,233 @@
+{
+  "result": [
+    {
+      "title": "SwitchSystem",
+      "pid": "WS-C4506-E",
+      "sn": "SPE141400S2",
+      "data": [
+        {
+          "title": "Supervisor(slot1)",
+          "pid": "WS-X45-SUP6L-E",
+          "sn": "JAE163505EY",
+          "data": [
+            [
+              {
+                "ifname": "TenGigabitEthernet3/1",
+                "ifstate": "up",
+                "sname": "TenGig3/1"
+              },
+              {
+                "ifname": "TenGigabitEthernet3/2",
+                "ifstate": "up",
+                "sname": "TenGig3/2"
+              }
+            ]
+          ]
+        },
+        {
+          "title": "Linecard(slot2)",
+          "pid": "WS-X4612-SFP-E",
+          "sn": "JAE1325CHSI",
+          "data": [
+            [
+              {
+                "ifname": "GigabitEthernet2/1",
+                "ifstate": "up",
+                "sname": "Gig2/1"
+              },
+              {
+                "ifname": "GigabitEthernet2/2",
+                "ifstate": "up",
+                "sname": "Gig2/2"
+              },
+              {
+                "ifname": "GigabitEthernet2/3",
+                "ifstate": "up",
+                "sname": "Gig2/3"
+              },
+              {
+                "ifname": "GigabitEthernet2/4",
+                "ifstate": "down",
+                "sname": "Gig2/4"
+              },
+              {
+                "ifname": "GigabitEthernet2/5",
+                "ifstate": "down",
+                "sname": "Gig2/5"
+              },
+              {
+                "ifname": "GigabitEthernet2/6",
+                "ifstate": "down",
+                "sname": "Gig2/6"
+              },
+              {
+                "ifname": "GigabitEthernet2/7",
+                "ifstate": "down",
+                "sname": "Gig2/7"
+              },
+              {
+                "ifname": "GigabitEthernet2/8",
+                "ifstate": "down",
+                "sname": "Gig2/8"
+              },
+              {
+                "ifname": "GigabitEthernet2/9",
+                "ifstate": "down",
+                "sname": "Gig2/9"
+              },
+              {
+                "ifname": "GigabitEthernet2/10",
+                "ifstate": "down",
+                "sname": "Gig2/10"
+              },
+              {
+                "ifname": "GigabitEthernet2/11",
+                "ifstate": "down",
+                "sname": "Gig2/11"
+              },
+              {
+                "ifname": "GigabitEthernet2/12",
+                "ifstate": "down",
+                "sname": "Gig2/12"
+              }
+            ]
+          ]
+        },
+        {
+          "title": "Linecard(slot3)",
+          "pid": "WS-X4724-SFP-E",
+          "sn": "JAE1325CHSI",
+          "data": [
+            [
+              {
+                "ifname": "GigabitEthernet3/1",
+                "ifstate": "down",
+                "sname": "Gig3/1"
+              },
+              {
+                "ifname": "GigabitEthernet3/3",
+                "ifstate": "down",
+                "sname": "Gig3/3"
+              },
+              {
+                "ifname": "GigabitEthernet3/5",
+                "ifstate": "down",
+                "sname": "Gig3/5"
+              },
+              {
+                "ifname": "GigabitEthernet3/7",
+                "ifstate": "up",
+                "sname": "Gig3/7"
+              },
+              {
+                "ifname": "GigabitEthernet3/9",
+                "ifstate": "up",
+                "sname": "Gig3/9"
+              },
+              {
+                "ifname": "GigabitEthernet3/11",
+                "ifstate": "down",
+                "sname": "Gig3/11"
+              },
+              {
+                "ifname": "GigabitEthernet3/13",
+                "ifstate": "down",
+                "sname": "Gig3/13"
+              },
+              {
+                "ifname": "GigabitEthernet3/15",
+                "ifstate": "up",
+                "sname": "Gig3/15"
+              },
+              {
+                "ifname": "GigabitEthernet3/17",
+                "ifstate": "down",
+                "sname": "Gig3/17"
+              },
+              {
+                "ifname": "GigabitEthernet3/19",
+                "ifstate": "down",
+                "sname": "Gig3/19"
+              },
+              {
+                "ifname": "GigabitEthernet3/21",
+                "ifstate": "down",
+                "sname": "Gig3/21"
+              },
+              {
+                "ifname": "GigabitEthernet3/23",
+                "ifstate": "up",
+                "sname": "Gig3/23"
+              }
+            ],
+            [
+              {
+                "ifname": "GigabitEthernet3/2",
+                "ifstate": "down",
+                "sname": "Gig3/2"
+              },
+              {
+                "ifname": "GigabitEthernet3/4",
+                "ifstate": "down",
+                "sname": "Gig3/4"
+              },
+              {
+                "ifname": "GigabitEthernet3/6",
+                "ifstate": "down",
+                "sname": "Gig3/6"
+              },
+              {
+                "ifname": "GigabitEthernet3/8",
+                "ifstate": "up",
+                "sname": "Gig3/8"
+              },
+              {
+                "ifname": "GigabitEthernet3/10",
+                "ifstate": "up",
+                "sname": "Gig3/10"
+              },
+              {
+                "ifname": "GigabitEthernet3/12",
+                "ifstate": "down",
+                "sname": "Gig3/12"
+              },
+              {
+                "ifname": "GigabitEthernet3/14",
+                "ifstate": "down",
+                "sname": "Gig3/14"
+              },
+              {
+                "ifname": "GigabitEthernet3/16",
+                "ifstate": "up",
+                "sname": "Gig3/16"
+              },
+              {
+                "ifname": "GigabitEthernet3/18",
+                "ifstate": "down",
+                "sname": "Gig3/18"
+              },
+              {
+                "ifname": "GigabitEthernet3/20",
+                "ifstate": "down",
+                "sname": "Gig3/20"
+              },
+              {
+                "ifname": "GigabitEthernet3/22",
+                "ifstate": "down",
+                "sname": "Gig3/22"
+              },
+              {
+                "ifname": "GigabitEthernet3/24",
+                "ifstate": "up",
+                "sname": "Gig3/24"
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "sitename": "-",
+  "address": "10.230.5.4",
+  "hostname": "cri_2-sw4-04"
+}

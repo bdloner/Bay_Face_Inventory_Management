@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" id="a9k-mod80-se" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 	 viewBox="0 0 83.5 733.7" enable-background="new 0 0 83.5 733.7" xml:space="preserve">
+
+	<style>
+		#l1:hover{
+			transition: fill 0.6s ease;
+			fill:#aaaaaa;
+		}
+		#l2:hover{
+			transition: fill 0.6s ease;
+			fill:#aaaaaa;
+		}
+	</style>
+
 <g>
 	<defs>
 		<polygon id="SVGID_1_" points="78.2,68.6 78.1,68.8 78,69 77.9,69.1 77.9,662 78.1,662 78.1,662.3 78.2,662.3 78.4,662.4 
@@ -2985,6 +2997,20 @@ X9V58+rx/dfkffT9v1PuJ4+p48+T93jB91L2/U8/9CXt+tP/2Q==" transform="matrix(0.12 0 0
 		<path clip-path="url(#SVGID_306_)" fill="none" stroke="#808080" stroke-width="0.48" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 		M5.4,38.5h2.5l1,2.5v91.3v-0.1c0,0.6-0.5,1.1-1.1,1.1h0.1H5.4H5.3c-0.6,0-1.1-0.5-1.2-1.1L4,132.4V41L5.4,38.5z"/>
 </g>
-<rect x="10.3" y="60" fill="#2F2F2F" width="66.6" height="299.5"/>
-<rect x="10.3" y="374.6" fill="#2F2F2F" width="66.6" height="299.5"/>
+<rect id="l1" x="10.3" y="60" fill="#2F2F2F" width="66.6" height="299.5"/>
+
+	<foreignObject id="fore1" style="display:block;" width="66.6" height="299.5" x="10.3" y="58.3">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<object id="Linecard1" data="A9K-MPA-20X10GE.svg"/>
+		</div>
+    </foreignObject>
+
+<rect id="l2" x="10.3" y="374.6" fill="#2F2F2F" width="66.6" height="299.5"/>
+
+	<foreignObject id="fore2" style="display:block;" width="66.6" height="299.5" x="10.3" y="371.6">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<object id="Linecard2" data="A9K-MPA-20X10GE.svg"/>
+		</div>
+    </foreignObject>
+
 </svg>

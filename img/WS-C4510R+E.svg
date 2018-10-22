@@ -8,145 +8,67 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 
     var linecardTitle = localStorage.getItem('linetitle');
+
+    var linecardTitleSlot = localStorage.getItem('linetitle').split(/[()]/);
     var linecardPid = localStorage.getItem('linepid').split(",");
 
-	for(var i=0; i<linecardPid.length; i++){
-	    if(linecardPid.length === 1){
-	        document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
+    var arrayPosition = [];
+    var j=0;
 
-	        document.getElementById('fore1').style.display = "block";
-	    } else if (linecardPid.length === 2){
-	        document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
-	        document.getElementById('Linecard2').setAttribute('data', linecardPid[1] + '.svg');
+    for(var i=1; i<linecardTitleSlot.length; i+=2){
+    	arrayPosition.push([linecardTitleSlot[i], linecardPid[j]]);
+    	j++;
+    }
 
-	        document.getElementById('fore1').style.display = "block";
-	        document.getElementById('fore2').style.display = "block";
-	    } else if (linecardPid.length === 3){
-	        document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
-	        document.getElementById('Linecard2').setAttribute('data', linecardPid[1] + '.svg');
-	        document.getElementById('Linecard3').setAttribute('data', linecardPid[2] + '.svg');
+    for(var i=0; i<arrayPosition.length; i++){
+    	for(var j=0; j<arrayPosition[i].length; j++){
+    		if(arrayPosition[i][0] === "slot1"){
+    			document.getElementById('Linecard1').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore1').style.display = "block";
 
-	        document.getElementById('fore1').style.display = "block";
-	        document.getElementById('fore2').style.display = "block";
-	        document.getElementById('fore3').style.display = "block";
-	    } else if (linecardPid.length === 4){
-	        document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
-	        document.getElementById('Linecard2').setAttribute('data', linecardPid[1] + '.svg');
-	        document.getElementById('Linecard3').setAttribute('data', linecardPid[2] + '.svg');
-	        document.getElementById('Linecard4').setAttribute('data', linecardPid[3] + '.svg');
+    		}else if(arrayPosition[i][0] === "slot2"){
+    			document.getElementById('Linecard2').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore2').style.display = "block";
 
-	        document.getElementById('fore1').style.display = "block";
-	        document.getElementById('fore2').style.display = "block";
-	        document.getElementById('fore3').style.display = "block";
-	        document.getElementById('fore4').style.display = "block";
-	    } else if (linecardPid.length === 5){
-	        document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
-	        document.getElementById('Linecard2').setAttribute('data', linecardPid[1] + '.svg');
-	        document.getElementById('Linecard3').setAttribute('data', linecardPid[2] + '.svg');
-	        document.getElementById('Linecard4').setAttribute('data', linecardPid[3] + '.svg');
-	        document.getElementById('Linecard5').setAttribute('data', linecardPid[4] + '.svg');
+    		}else if(arrayPosition[i][0] === "slot3"){
+    			document.getElementById('Linecard3').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore3').style.display = "block";
 
-	        document.getElementById('fore1').style.display = "block";
-	        document.getElementById('fore2').style.display = "block";
-	        document.getElementById('fore3').style.display = "block";
-	        document.getElementById('fore4').style.display = "block";
-	        document.getElementById('fore5').style.display = "block";
-	    } else if (linecardPid.length === 6){
-	    	document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
-	        document.getElementById('Linecard2').setAttribute('data', linecardPid[1] + '.svg');
-	        document.getElementById('Linecard3').setAttribute('data', linecardPid[2] + '.svg');
-	        document.getElementById('Linecard4').setAttribute('data', linecardPid[3] + '.svg');
-	        document.getElementById('Linecard5').setAttribute('data', linecardPid[4] + '.svg');
-	        document.getElementById('Linecard6').setAttribute('data', linecardPid[5] + '.svg');
+    		}else if(arrayPosition[i][0] === "slot4"){
+    			document.getElementById('Linecard4').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore4').style.display = "block";
 
-	        document.getElementById('fore1').style.display = "block";
-	        document.getElementById('fore2').style.display = "block";
-	        document.getElementById('fore3').style.display = "block";
-	        document.getElementById('fore4').style.display = "block";
-	        document.getElementById('fore5').style.display = "block";
-	        document.getElementById('fore6').style.display = "block";
-	    } else if (linecardPid.length === 7){
-	    	document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
-	        document.getElementById('Linecard2').setAttribute('data', linecardPid[1] + '.svg');
-	        document.getElementById('Linecard3').setAttribute('data', linecardPid[2] + '.svg');
-	        document.getElementById('Linecard4').setAttribute('data', linecardPid[3] + '.svg');
-	        document.getElementById('Linecard5').setAttribute('data', linecardPid[4] + '.svg');
-	        document.getElementById('Linecard6').setAttribute('data', linecardPid[5] + '.svg');
-	        document.getElementById('Linecard7').setAttribute('data', linecardPid[6] + '.svg');
+    		}else if(arrayPosition[i][0] === "slot5"){
+    			document.getElementById('Linecard5').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore5').style.display = "block";
 
-	        document.getElementById('fore1').style.display = "block";
-	        document.getElementById('fore2').style.display = "block";
-	        document.getElementById('fore3').style.display = "block";
-	        document.getElementById('fore4').style.display = "block";
-	        document.getElementById('fore5').style.display = "block";
-	        document.getElementById('fore6').style.display = "block";
-	        document.getElementById('fore7').style.display = "block";
-	    } else if (linecardPid.length === 8){
-	    	document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
-	        document.getElementById('Linecard2').setAttribute('data', linecardPid[1] + '.svg');
-	        document.getElementById('Linecard3').setAttribute('data', linecardPid[2] + '.svg');
-	        document.getElementById('Linecard4').setAttribute('data', linecardPid[3] + '.svg');
-	        document.getElementById('Linecard5').setAttribute('data', linecardPid[4] + '.svg');
-	        document.getElementById('Linecard6').setAttribute('data', linecardPid[5] + '.svg');
-	        document.getElementById('Linecard7').setAttribute('data', linecardPid[6] + '.svg');
-	        document.getElementById('Linecard8').setAttribute('data', linecardPid[7] + '.svg');
+    		}else if(arrayPosition[i][0] === "slot6"){
+    			document.getElementById('Linecard6').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore6').style.display = "block";
 
-	        document.getElementById('fore1').style.display = "block";
-	        document.getElementById('fore2').style.display = "block";
-	        document.getElementById('fore3').style.display = "block";
-	        document.getElementById('fore4').style.display = "block";
-	        document.getElementById('fore5').style.display = "block";
-	        document.getElementById('fore6').style.display = "block";
-	        document.getElementById('fore7').style.display = "block";
-	        document.getElementById('fore8').style.display = "block";
-	    } else if (linecardPid.length === 9){
-	    	document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
-	        document.getElementById('Linecard2').setAttribute('data', linecardPid[1] + '.svg');
-	        document.getElementById('Linecard3').setAttribute('data', linecardPid[2] + '.svg');
-	        document.getElementById('Linecard4').setAttribute('data', linecardPid[3] + '.svg');
-	        document.getElementById('Linecard5').setAttribute('data', linecardPid[4] + '.svg');
-	        document.getElementById('Linecard6').setAttribute('data', linecardPid[5] + '.svg');
-	        document.getElementById('Linecard7').setAttribute('data', linecardPid[6] + '.svg');
-			document.getElementById('Linecard8').setAttribute('data', linecardPid[7] + '.svg');
-			document.getElementById('Linecard9').setAttribute('data', linecardPid[8] + '.svg');
+    		}else if(arrayPosition[i][0] === "slot7"){
+    			document.getElementById('Linecard7').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore7').style.display = "block";
 
-	        document.getElementById('fore1').style.display = "block";
-	        document.getElementById('fore2').style.display = "block";
-	        document.getElementById('fore3').style.display = "block";
-	        document.getElementById('fore4').style.display = "block";
-	        document.getElementById('fore5').style.display = "block";
-	        document.getElementById('fore6').style.display = "block";
-	        document.getElementById('fore7').style.display = "block";
-	        document.getElementById('fore8').style.display = "block";
-	        document.getElementById('fore9').style.display = "block";
-	    } else {
-	    	document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
-	        document.getElementById('Linecard2').setAttribute('data', linecardPid[1] + '.svg');
-	        document.getElementById('Linecard3').setAttribute('data', linecardPid[2] + '.svg');
-	        document.getElementById('Linecard4').setAttribute('data', linecardPid[3] + '.svg');
-	        document.getElementById('Linecard5').setAttribute('data', linecardPid[4] + '.svg');
-	        document.getElementById('Linecard6').setAttribute('data', linecardPid[5] + '.svg');
-	        document.getElementById('Linecard7').setAttribute('data', linecardPid[6] + '.svg');
-			document.getElementById('Linecard8').setAttribute('data', linecardPid[7] + '.svg');
-			document.getElementById('Linecard9').setAttribute('data', linecardPid[8] + '.svg');
-			document.getElementById('Linecard10').setAttribute('data', linecardPid[9] + '.svg');
+    		}else if(arrayPosition[i][0] === "slot8"){
+    			document.getElementById('Linecard8').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore8').style.display = "block";
 
-	        document.getElementById('fore1').style.display = "block";
-	        document.getElementById('fore2').style.display = "block";
-	        document.getElementById('fore3').style.display = "block";
-	        document.getElementById('fore4').style.display = "block";
-	        document.getElementById('fore5').style.display = "block";
-	        document.getElementById('fore6').style.display = "block";
-	        document.getElementById('fore7').style.display = "block";
-	        document.getElementById('fore8').style.display = "block";
-	        document.getElementById('fore9').style.display = "block";
-	        document.getElementById('fore10').style.display = "block";
-	    }
-	}
+    		}else if(arrayPosition[i][0] === "slot9"){
+    			document.getElementById('Linecard9').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore9').style.display = "block";
+
+    		}else if(arrayPosition[i][0] === "slot10"){
+    			document.getElementById('Linecard10').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore10').style.display = "block";
+    		}
+    	}
+    }
 
 });
 
 ]]></script>
+
 
 	<style>
 

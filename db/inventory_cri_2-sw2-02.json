@@ -1,12 +1,9 @@
 {
-  "data": [
+  "result": [
     {
       "title": "SwitchSystem",
-      "pid": "WS-C4503-E",
+      "pid": "WS-C4506-E",
       "sn": "SPE141400S2",
-      "sitename": "-",
-      "address": "10.230.5.2",
-      "hostname": "cri_2-sw2-02",
       "data": [
         {
           "title": "Supervisor(slot1)",
@@ -16,7 +13,7 @@
             [
               {
                 "ifname": "TenGigabitEthernet1/1",
-                "ifstate": "up",
+                "ifstate": "down",
                 "sname": "TenGig1/1"
               },
               {
@@ -140,7 +137,7 @@
               },
               {
                 "ifname": "GigabitEthernet2/43",
-                "ifstate": "down",
+                "ifstate": "up",
                 "sname": "Gig2/43"
               },
               {
@@ -267,298 +264,272 @@
               },
               {
                 "ifname": "GigabitEthernet2/46",
-                "ifstate": "down",
+                "ifstate": "up",
                 "sname": "Gig2/46"
               },
               {
                 "ifname": "GigabitEthernet2/48",
                 "ifstate": "up",
                 "sname": "Gig2/48"
-              }
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "title": "SwitchSystem",
-      "pid": "WS-C4507R-E",
-      "sn": "FDO1447V1WU",
-      "sitename": "-",
-      "address": "10.139.5.4",
-      "hostname": "cri_2-sw2-02",
-      "data": [
-        {
-          "title": "Linecard(slot1)",
-          "pid": "WS-X4748-SPF-E",
-          "sn": "JAE163505EY",
-          "data": [
-            [
-              {
-                "ifname": "TenGigabitEthernet1/1",
-                "ifstate": "up",
-                "sname": "TenGig1/1"
-              },
-              {
-                "ifname": "TenGigabitEthernet1/2",
-                "ifstate": "up",
-                "sname": "TenGig1/2"
               }
             ]
           ]
         },
         {
-          "title": "Linecard(slot2)",
+          "title": "Linecard(slot3)",
           "pid": "WS-X4448-GB-SFP",
           "sn": "JAE1325CHSI",
           "data": [
             [
               {
-                "ifname": "GigabitEthernet2/1",
+                "ifname": "GigabitEthernet3/1",
+                "ifstate": "down",
+                "sname": "Gig3/1"
+              },
+              {
+                "ifname": "GigabitEthernet3/3",
+                "ifstate": "down",
+                "sname": "Gig3/3"
+              },
+              {
+                "ifname": "GigabitEthernet3/5",
+                "ifstate": "down",
+                "sname": "Gig3/5"
+              },
+              {
+                "ifname": "GigabitEthernet3/7",
                 "ifstate": "up",
-                "sname": "Gig2/1"
+                "sname": "Gig3/7"
               },
               {
-                "ifname": "GigabitEthernet2/3",
+                "ifname": "GigabitEthernet3/9",
                 "ifstate": "up",
-                "sname": "Gig2/3"
+                "sname": "Gig3/9"
               },
               {
-                "ifname": "GigabitEthernet2/5",
+                "ifname": "GigabitEthernet3/11",
+                "ifstate": "down",
+                "sname": "Gig3/11"
+              },
+              {
+                "ifname": "GigabitEthernet3/13",
+                "ifstate": "down",
+                "sname": "Gig3/13"
+              },
+              {
+                "ifname": "GigabitEthernet3/15",
                 "ifstate": "up",
-                "sname": "Gig2/5"
+                "sname": "Gig3/15"
               },
               {
-                "ifname": "GigabitEthernet2/7",
+                "ifname": "GigabitEthernet3/17",
                 "ifstate": "down",
-                "sname": "Gig2/7"
+                "sname": "Gig3/17"
               },
               {
-                "ifname": "GigabitEthernet2/9",
+                "ifname": "GigabitEthernet3/19",
                 "ifstate": "down",
-                "sname": "Gig2/9"
+                "sname": "Gig3/19"
               },
               {
-                "ifname": "GigabitEthernet2/11",
+                "ifname": "GigabitEthernet3/21",
                 "ifstate": "down",
-                "sname": "Gig2/11"
+                "sname": "Gig3/21"
               },
               {
-                "ifname": "GigabitEthernet2/13",
-                "ifstate": "down",
-                "sname": "Gig2/13"
-              },
-              {
-                "ifname": "GigabitEthernet2/15",
-                "ifstate": "down",
-                "sname": "Gig2/15"
-              },
-              {
-                "ifname": "GigabitEthernet2/17",
-                "ifstate": "down",
-                "sname": "Gig2/17"
-              },
-              {
-                "ifname": "GigabitEthernet2/19",
-                "ifstate": "down",
-                "sname": "Gig2/19"
-              },
-              {
-                "ifname": "GigabitEthernet2/21",
-                "ifstate": "down",
-                "sname": "Gig2/21"
-              },
-              {
-                "ifname": "GigabitEthernet2/23",
-                "ifstate": "down",
-                "sname": "Gig2/23"
-              },
-              {
-                "ifname": "GigabitEthernet2/25",
-                "ifstate": "down",
-                "sname": "Gig2/25"
-              },
-              {
-                "ifname": "GigabitEthernet2/27",
-                "ifstate": "down",
-                "sname": "Gig2/27"
-              },
-              {
-                "ifname": "GigabitEthernet2/29",
-                "ifstate": "down",
-                "sname": "Gig2/29"
-              },
-              {
-                "ifname": "GigabitEthernet2/31",
-                "ifstate": "down",
-                "sname": "Gig2/31"
-              },
-              {
-                "ifname": "GigabitEthernet2/33",
-                "ifstate": "down",
-                "sname": "Gig2/33"
-              },
-              {
-                "ifname": "GigabitEthernet2/35",
-                "ifstate": "down",
-                "sname": "Gig2/35"
-              },
-              {
-                "ifname": "GigabitEthernet2/37",
-                "ifstate": "down",
-                "sname": "Gig2/37"
-              },
-              {
-                "ifname": "GigabitEthernet2/39",
-                "ifstate": "down",
-                "sname": "Gig2/39"
-              },
-              {
-                "ifname": "GigabitEthernet2/41",
-                "ifstate": "down",
-                "sname": "Gig2/41"
-              },
-              {
-                "ifname": "GigabitEthernet2/43",
-                "ifstate": "down",
-                "sname": "Gig2/43"
-              },
-              {
-                "ifname": "GigabitEthernet2/45",
+                "ifname": "GigabitEthernet3/23",
                 "ifstate": "up",
-                "sname": "Gig2/45"
+                "sname": "Gig3/23"
               },
               {
-                "ifname": "GigabitEthernet2/47",
+                "ifname": "GigabitEthernet3/25",
                 "ifstate": "up",
-                "sname": "Gig2/47"
+                "sname": "Gig3/25"
+              },
+              {
+                "ifname": "GigabitEthernet3/27",
+                "ifstate": "down",
+                "sname": "Gig3/27"
+              },
+              {
+                "ifname": "GigabitEthernet3/29",
+                "ifstate": "down",
+                "sname": "Gig3/29"
+              },
+              {
+                "ifname": "GigabitEthernet3/31",
+                "ifstate": "up",
+                "sname": "Gig3/31"
+              },
+              {
+                "ifname": "GigabitEthernet3/33",
+                "ifstate": "down",
+                "sname": "Gig3/33"
+              },
+              {
+                "ifname": "GigabitEthernet3/35",
+                "ifstate": "up",
+                "sname": "Gig3/35"
+              },
+              {
+                "ifname": "GigabitEthernet3/37",
+                "ifstate": "down",
+                "sname": "Gig3/37"
+              },
+              {
+                "ifname": "GigabitEthernet3/39",
+                "ifstate": "admin_down",
+                "sname": "Gig3/39"
+              },
+              {
+                "ifname": "GigabitEthernet3/41",
+                "ifstate": "admin_down",
+                "sname": "Gig3/41"
+              },
+              {
+                "ifname": "GigabitEthernet3/43",
+                "ifstate": "down",
+                "sname": "Gig3/43"
+              },
+              {
+                "ifname": "GigabitEthernet3/45",
+                "ifstate": "up",
+                "sname": "Gig3/45"
+              },
+              {
+                "ifname": "GigabitEthernet3/47",
+                "ifstate": "up",
+                "sname": "Gig3/47"
               }
             ],
             [
               {
-                "ifname": "GigabitEthernet2/2",
+                "ifname": "GigabitEthernet3/2",
                 "ifstate": "up",
-                "sname": "Gig2/2"
+                "sname": "Gig3/2"
               },
               {
-                "ifname": "GigabitEthernet2/4",
+                "ifname": "GigabitEthernet3/4",
+                "ifstate": "down",
+                "sname": "Gig3/4"
+              },
+              {
+                "ifname": "GigabitEthernet3/6",
                 "ifstate": "up",
-                "sname": "Gig2/4"
+                "sname": "Gig3/6"
               },
               {
-                "ifname": "GigabitEthernet2/6",
+                "ifname": "GigabitEthernet3/8",
+                "ifstate": "down",
+                "sname": "Gig3/8"
+              },
+              {
+                "ifname": "GigabitEthernet3/10",
                 "ifstate": "up",
-                "sname": "Gig2/6"
+                "sname": "Gig3/10"
               },
               {
-                "ifname": "GigabitEthernet2/8",
+                "ifname": "GigabitEthernet3/12",
                 "ifstate": "down",
-                "sname": "Gig2/8"
+                "sname": "Gig3/12"
               },
               {
-                "ifname": "GigabitEthernet2/10",
+                "ifname": "GigabitEthernet3/14",
                 "ifstate": "down",
-                "sname": "Gig2/10"
+                "sname": "Gig3/14"
               },
               {
-                "ifname": "GigabitEthernet2/12",
+                "ifname": "GigabitEthernet3/16",
                 "ifstate": "down",
-                "sname": "Gig2/12"
+                "sname": "Gig3/16"
               },
               {
-                "ifname": "GigabitEthernet2/14",
-                "ifstate": "down",
-                "sname": "Gig2/14"
-              },
-              {
-                "ifname": "GigabitEthernet2/16",
-                "ifstate": "down",
-                "sname": "Gig2/16"
-              },
-              {
-                "ifname": "GigabitEthernet2/18",
-                "ifstate": "down",
-                "sname": "Gig2/18"
-              },
-              {
-                "ifname": "GigabitEthernet2/20",
-                "ifstate": "down",
-                "sname": "Gig2/20"
-              },
-              {
-                "ifname": "GigabitEthernet2/22",
-                "ifstate": "down",
-                "sname": "Gig2/22"
-              },
-              {
-                "ifname": "GigabitEthernet2/24",
-                "ifstate": "down",
-                "sname": "Gig2/24"
-              },
-              {
-                "ifname": "GigabitEthernet2/26",
-                "ifstate": "down",
-                "sname": "Gig2/26"
-              },
-              {
-                "ifname": "GigabitEthernet2/28",
-                "ifstate": "down",
-                "sname": "Gig2/28"
-              },
-              {
-                "ifname": "GigabitEthernet2/30",
-                "ifstate": "down",
-                "sname": "Gig2/30"
-              },
-              {
-                "ifname": "GigabitEthernet2/32",
-                "ifstate": "down",
-                "sname": "Gig2/32"
-              },
-              {
-                "ifname": "GigabitEthernet2/34",
-                "ifstate": "down",
-                "sname": "Gig2/34"
-              },
-              {
-                "ifname": "GigabitEthernet2/36",
-                "ifstate": "down",
-                "sname": "Gig2/36"
-              },
-              {
-                "ifname": "GigabitEthernet2/38",
-                "ifstate": "down",
-                "sname": "Gig2/38"
-              },
-              {
-                "ifname": "GigabitEthernet2/40",
-                "ifstate": "down",
-                "sname": "Gig2/40"
-              },
-              {
-                "ifname": "GigabitEthernet2/42",
-                "ifstate": "down",
-                "sname": "Gig2/42"
-              },
-              {
-                "ifname": "GigabitEthernet2/44",
+                "ifname": "GigabitEthernet3/18",
                 "ifstate": "up",
-                "sname": "Gig2/44"
+                "sname": "Gig3/18"
               },
               {
-                "ifname": "GigabitEthernet2/46",
-                "ifstate": "down",
-                "sname": "Gig2/46"
-              },
-              {
-                "ifname": "GigabitEthernet2/48",
+                "ifname": "GigabitEthernet3/20",
                 "ifstate": "up",
-                "sname": "Gig2/48"
+                "sname": "Gig3/20"
+              },
+              {
+                "ifname": "GigabitEthernet3/22",
+                "ifstate": "up",
+                "sname": "Gig3/22"
+              },
+              {
+                "ifname": "GigabitEthernet3/24",
+                "ifstate": "down",
+                "sname": "Gig3/24"
+              },
+              {
+                "ifname": "GigabitEthernet3/26",
+                "ifstate": "down",
+                "sname": "Gig3/26"
+              },
+              {
+                "ifname": "GigabitEthernet3/28",
+                "ifstate": "up",
+                "sname": "Gig3/28"
+              },
+              {
+                "ifname": "GigabitEthernet3/30",
+                "ifstate": "up",
+                "sname": "Gig3/30"
+              },
+              {
+                "ifname": "GigabitEthernet3/32",
+                "ifstate": "no_module",
+                "sname": "Gig3/32"
+              },
+              {
+                "ifname": "GigabitEthernet3/34",
+                "ifstate": "down",
+                "sname": "Gig3/34"
+              },
+              {
+                "ifname": "GigabitEthernet3/36",
+                "ifstate": "admin_down",
+                "sname": "Gig3/36"
+              },
+              {
+                "ifname": "GigabitEthernet3/38",
+                "ifstate": "down",
+                "sname": "Gig3/38"
+              },
+              {
+                "ifname": "GigabitEthernet3/40",
+                "ifstate": "down",
+                "sname": "Gig3/40"
+              },
+              {
+                "ifname": "GigabitEthernet3/42",
+                "ifstate": "down",
+                "sname": "Gig3/42"
+              },
+              {
+                "ifname": "GigabitEthernet3/44",
+                "ifstate": "up",
+                "sname": "Gig3/44"
+              },
+              {
+                "ifname": "GigabitEthernet3/46",
+                "ifstate": "up",
+                "sname": "Gig3/46"
+              },
+              {
+                "ifname": "GigabitEthernet3/48",
+                "ifstate": "up",
+                "sname": "Gig3/48"
               }
             ]
           ]
         }
       ]
     }
-  ]
+  ],
+  "sitename": "-",
+  "address": "10.230.5.2",
+  "hostname": "cri_2-sw2-02"
 }

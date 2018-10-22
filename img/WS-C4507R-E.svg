@@ -5,81 +5,50 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 
     var linecardTitle = localStorage.getItem('linetitle');
+
+    var linecardTitleSlot = localStorage.getItem('linetitle').split(/[()]/);
     var linecardPid = localStorage.getItem('linepid').split(",");
 
-	for(var i=0; i<linecardPid.length; i++){
-	    if(linecardPid.length === 1){
-	        document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
+    var arrayPosition = [];
+    var j=0;
 
-	        document.getElementById('fore1').style.display = "block";
-	    } else if (linecardPid.length === 2){
-	        document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
-	        document.getElementById('Linecard2').setAttribute('data', linecardPid[1] + '.svg');
+    for(var i=1; i<linecardTitleSlot.length; i+=2){
+    	arrayPosition.push([linecardTitleSlot[i], linecardPid[j]]);
+    	j++;
+    }
 
-	        document.getElementById('fore1').style.display = "block";
-	        document.getElementById('fore2').style.display = "block";
-	    } else if (linecardPid.length === 3){
-	        document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
-	        document.getElementById('Linecard2').setAttribute('data', linecardPid[1] + '.svg');
-	        document.getElementById('Linecard3').setAttribute('data', linecardPid[2] + '.svg');
+    for(var i=0; i<arrayPosition.length; i++){
+    	for(var j=0; j<arrayPosition[i].length; j++){
+    		if(arrayPosition[i][0] === "slot1"){
+    			document.getElementById('Linecard1').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore1').style.display = "block";
 
-	        document.getElementById('fore1').style.display = "block";
-	        document.getElementById('fore2').style.display = "block";
-	        document.getElementById('fore3').style.display = "block";
-	    } else if (linecardPid.length === 4){
-	        document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
-	        document.getElementById('Linecard2').setAttribute('data', linecardPid[1] + '.svg');
-	        document.getElementById('Linecard3').setAttribute('data', linecardPid[2] + '.svg');
-	        document.getElementById('Linecard4').setAttribute('data', linecardPid[3] + '.svg');
+    		}else if(arrayPosition[i][0] === "slot2"){
+    			document.getElementById('Linecard2').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore2').style.display = "block";
 
-	        document.getElementById('fore1').style.display = "block";
-	        document.getElementById('fore2').style.display = "block";
-	        document.getElementById('fore3').style.display = "block";
-	        document.getElementById('fore4').style.display = "block";
-	    } else if (linecardPid.length === 5){
-	        document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
-	        document.getElementById('Linecard2').setAttribute('data', linecardPid[1] + '.svg');
-	        document.getElementById('Linecard3').setAttribute('data', linecardPid[2] + '.svg');
-	        document.getElementById('Linecard4').setAttribute('data', linecardPid[3] + '.svg');
-	        document.getElementById('Linecard5').setAttribute('data', linecardPid[4] + '.svg');
+    		}else if(arrayPosition[i][0] === "slot3"){
+    			document.getElementById('Linecard3').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore3').style.display = "block";
 
-	        document.getElementById('fore1').style.display = "block";
-	        document.getElementById('fore2').style.display = "block";
-	        document.getElementById('fore3').style.display = "block";
-	        document.getElementById('fore4').style.display = "block";
-	        document.getElementById('fore5').style.display = "block";
-	    } else if (linecardPid.length === 6){
-	    	document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
-	        document.getElementById('Linecard2').setAttribute('data', linecardPid[1] + '.svg');
-	        document.getElementById('Linecard3').setAttribute('data', linecardPid[2] + '.svg');
-	        document.getElementById('Linecard4').setAttribute('data', linecardPid[3] + '.svg');
-	        document.getElementById('Linecard5').setAttribute('data', linecardPid[4] + '.svg');
-	        document.getElementById('Linecard6').setAttribute('data', linecardPid[5] + '.svg');
+    		}else if(arrayPosition[i][0] === "slot4"){
+    			document.getElementById('Linecard4').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore4').style.display = "block";
 
-	        document.getElementById('fore1').style.display = "block";
-	        document.getElementById('fore2').style.display = "block";
-	        document.getElementById('fore3').style.display = "block";
-	        document.getElementById('fore4').style.display = "block";
-	        document.getElementById('fore5').style.display = "block";
-	        document.getElementById('fore6').style.display = "block";
-	    } else {
-	    	document.getElementById('Linecard1').setAttribute('data', linecardPid[0] + '.svg');
-	        document.getElementById('Linecard2').setAttribute('data', linecardPid[1] + '.svg');
-	        document.getElementById('Linecard3').setAttribute('data', linecardPid[2] + '.svg');
-	        document.getElementById('Linecard4').setAttribute('data', linecardPid[3] + '.svg');
-	        document.getElementById('Linecard5').setAttribute('data', linecardPid[4] + '.svg');
-	        document.getElementById('Linecard6').setAttribute('data', linecardPid[5] + '.svg');
-	        document.getElementById('Linecard7').setAttribute('data', linecardPid[6] + '.svg');
+    		}else if(arrayPosition[i][0] === "slot5"){
+    			document.getElementById('Linecard5').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore5').style.display = "block";
 
-	        document.getElementById('fore1').style.display = "block";
-	        document.getElementById('fore2').style.display = "block";
-	        document.getElementById('fore3').style.display = "block";
-	        document.getElementById('fore4').style.display = "block";
-	        document.getElementById('fore5').style.display = "block";
-	        document.getElementById('fore6').style.display = "block";
-	        document.getElementById('fore7').style.display = "block";
-	    }
-	}
+    		}else if(arrayPosition[i][0] === "slot6"){
+    			document.getElementById('Linecard6').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore6').style.display = "block";
+
+    		}else if(arrayPosition[i][0] === "slot7"){
+    			document.getElementById('Linecard7').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore7').style.display = "block";
+    		}
+    	}
+    }
 
 });
 
@@ -1184,7 +1153,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 					<foreignObject id="fore1" style="display:none;" width="511" height="60" x="84" y="218">
 						<div xmlns="http://www.w3.org/1999/xhtml">
-							<object id="Linecard1" data="WS-X4448-GB-SFP.svg"/>
+							<object id="Linecard1" data="#"/>
 						</div>
 					</foreignObject>
 
@@ -1192,7 +1161,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 					<foreignObject id="fore2" style="display:none;" width="511" height="60" x="84" y="275">
 						<div xmlns="http://www.w3.org/1999/xhtml">
-							<object id="Linecard2" data="WS-X4448-GB-SFP.svg"/>
+							<object id="Linecard2" data="#"/>
 						</div>
 					</foreignObject>
 
@@ -1200,7 +1169,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 					<foreignObject id="fore3" style="display:none;" width="511" height="60" x="84" y="332">
 						<div xmlns="http://www.w3.org/1999/xhtml">
-							<object id="Linecard3" data="WS-X4448-GB-SFP.svg"/>
+							<object id="Linecard3" data="#"/>
 						</div>
 					</foreignObject>
 
@@ -1208,7 +1177,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 					<foreignObject id="fore4" style="display:none;" width="511" height="60" x="84" y="389">
 						<div xmlns="http://www.w3.org/1999/xhtml">
-							<object id="Linecard4" data="WS-X4448-GB-SFP.svg"/>
+							<object id="Linecard4" data="#"/>
 						</div>
 					</foreignObject>
 
@@ -1216,7 +1185,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 					<foreignObject id="fore5" style="display:none;" width="511" height="60" x="84" y="447">
 						<div xmlns="http://www.w3.org/1999/xhtml">
-							<object id="Linecard5" data="WS-X4448-GB-SFP.svg"/>
+							<object id="Linecard5" data="#"/>
 						</div>
 					</foreignObject>
 
@@ -1224,7 +1193,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 					<foreignObject id="fore6" style="display:none;" width="511" height="60" x="84" y="505">
 						<div xmlns="http://www.w3.org/1999/xhtml">
-							<object id="Linecard6" data="WS-X4448-GB-SFP.svg"/>
+							<object id="Linecard6" data="#"/>
 						</div>
 					</foreignObject>
 
@@ -1232,7 +1201,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 					<foreignObject id="fore7" style="display:none;" width="511" height="60" x="84" y="563">
 						<div xmlns="http://www.w3.org/1999/xhtml">
-							<object id="Linecard7" data="WS-X4448-GB-SFP.svg"/>
+							<object id="Linecard7" data="#"/>
 						</div>
 					</foreignObject>
 

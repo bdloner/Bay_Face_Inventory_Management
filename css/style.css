@@ -144,7 +144,7 @@ p {
         opacity: 1;
     }
 }
-.key {
+/*.key {
     position: relative;
     top: 0;
     display: inline-block;
@@ -160,5 +160,5 @@ p {
 
 .cta {
     -webkit-animation: cta 4.5s 1;
-}
+}*/
 

@@ -147,9 +147,8 @@
     <h1><span>LOADING</span></h1>
 
     <div class="page">
-        <div>
-            <object id="bay-id" class="key cta" data="#" style="margin-right:3em; padding: 20px;"></object>
-        </div>
+
+            <object id="bay-id" data="#" style="margin-right:3em; padding: 20px;width: 907px;height: 602px;"></object>
 
         <br>
             <div hidden>
@@ -177,6 +176,7 @@
 <script type="text/javascript">
 
     function onReady(callback) {
+
         var intervalId = window.setInterval(function() {
             if (document.getElementsByTagName('body')[0] !== undefined) {
                 window.clearInterval(intervalId);
@@ -190,6 +190,7 @@
     }
 
     onReady(function() {
+
         setVisible('.page', true);
         setVisible('.arc', false);
         setVisible('h1', false);
@@ -200,7 +201,7 @@
         var getData = getDataFromHref();
         var hostname = getData.hostname;
 
-        $.getJSON('http://poc.servehttp.com/bayface/view?hostname=' + hostname, function (reply) {
+        $.getJSON('./db/inventory_' + hostname + '.json', function (reply) {
 
             var title = reply.result[0].title;
             var pid = reply.result[0].pid;
@@ -256,6 +257,7 @@
 
             }
         });
+
     }
 
     function getDataFromHref() {

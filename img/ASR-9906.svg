@@ -1,6 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg version="1.2" baseProfile="tiny" id="asr-9906" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 	 x="0px" y="0px" viewBox="0 0 468.7 604" xml:space="preserve">
+
+	<script type="text/javascript"><![CDATA[
+
+document.addEventListener("DOMContentLoaded", function(event) {
+
+    var linecardTitle = localStorage.getItem('linetitle');
+
+    var linecardTitleSlot = localStorage.getItem('linetitle').split(/[()]/);
+    var linecardPid = localStorage.getItem('linepid').split(",");
+
+    var arrayPosition = [];
+    var j=0;
+
+    for(var i=1; i<linecardTitleSlot.length; i+=2){
+    	arrayPosition.push([linecardTitleSlot[i], linecardPid[j]]);
+    	j++;
+    }
+
+    for(var i=0; i<arrayPosition.length; i++){
+    	for(var j=0; j<arrayPosition[i].length; j++){
+    		if(arrayPosition[i][0] === "slot1"){
+    			document.getElementById('Linecard1').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore1').style.display = "block";
+
+    		}else if(arrayPosition[i][0] === "slot2"){
+    			document.getElementById('Linecard2').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore2').style.display = "block";
+
+    		}else if(arrayPosition[i][0] === "slot3"){
+    			document.getElementById('Linecard3').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore3').style.display = "block";
+
+    		}else if(arrayPosition[i][0] === "slot4"){
+    			document.getElementById('Linecard4').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore4').style.display = "block";
+
+    		}else if(arrayPosition[i][0] === "slot5"){
+    			document.getElementById('Linecard5').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore5').style.display = "block";
+
+    		}else if(arrayPosition[i][0] === "slot6"){
+    			document.getElementById('Linecard6').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore6').style.display = "block";
+
+    		}
+    	}
+    }
+
+});
+
+]]></script>
+
+
+	<style>
+		#l1:hover{
+			transition: fill 0.6s ease;
+			fill:#aaaaaa;
+		}
+		#l2:hover{
+			transition: fill 0.6s ease;
+			fill:#aaaaaa;
+		}
+		#l3:hover{
+			transition: fill 0.6s ease;
+			fill:#aaaaaa;
+		}
+		#l4:hover{
+			transition: fill 0.6s ease;
+			fill:#aaaaaa;
+		}
+		#l5:hover{
+			transition: fill 0.6s ease;
+			fill:#aaaaaa;
+		}
+		#l6:hover{
+			transition: fill 0.6s ease;
+			fill:#aaaaaa;
+		}
+		#l7:hover{
+			transition: fill 0.6s ease;
+			fill:#aaaaaa;
+		}
+	</style>
+
 <rect x="18.3" y="1.8" width="430.9" height="603.4"/>
 <g>
 	<path fill="none" d="M18.7,0.1V604h431.5V0.1H18.7z M450,603.7c0,0.1-0.1,0.1-0.1,0.1H19c-0.1,0-0.1-0.1-0.1-0.1V0.4
@@ -3510,10 +3594,52 @@ QlhYmIGqBjIxMVHXwFevXjEMWgAQYAAOZwWiN+7s3wAAAABJRU5ErkJggg==" transform="matrix(
 		c-0.3,0.2-0.8,0.3-1.3,0.3c-1.7,0-3-1.3-3-3V9.6c0-0.9-0.8-1.7-1.7-1.7H83.9c-0.7,0-1.3-0.6-1.3-1.4V1.9c0-0.8,0.6-1.4,1.3-1.4
 		h364.4c0.8,0,1.4,0.7,1.4,1.4V6.5z"/>
 </g>
-	<rect x="86.2" y="74" width="45.2" height="390.9"/>
-	<rect x="129.9" y="73.9" width="43.9" height="390.9"/>
-	<rect x="172.4" y="73.9" width="43.9" height="390.9"/>
-	<rect x="214.9" y="74" width="43.9" height="390.9"/>
-	<rect x="257.4" y="74" width="43.9" height="390.9"/>
-	<rect x="299.9" y="73.9" width="43.9" height="390.9"/>
+	<rect id="l1" x="86.2" y="74" width="45.2" height="390.9"/>
+
+	<foreignObject id="fore1" style="display:block;" width="44" height="390" x="87" y="76">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<object id="Linecard1" data="A9K-RSP880-SE.svg"/>
+		</div>
+    </foreignObject>
+
+	<rect id="l2" x="129.9" y="73.9" width="43.9" height="390.9"/>
+
+	<foreignObject id="fore2" style="display:block;" width="44" height="390" x="130" y="76">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<object id="Linecard2" data="A9K-MOD160-SE.svg"/>
+		</div>
+    </foreignObject>
+
+	<rect id="l3" x="172.4" y="73.9" width="43.9" height="390.9"/>
+
+	<foreignObject id="fore3" style="display:block;" width="44" height="390" x="172" y="76">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<object id="Linecard3" data="A9K-MOD160-SE.svg"/>
+		</div>
+    </foreignObject>
+
+	<rect id="l4" x="214.9" y="74" width="43.9" height="390.9"/>
+
+	<foreignObject id="fore4" style="display:block;" width="44" height="390" x="214" y="76">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<object id="Linecard4" data="A9K-MOD160-SE.svg"/>
+		</div>
+    </foreignObject>
+
+	<rect id="l5" x="257.4" y="74" width="43.9" height="390.9"/>
+
+	<foreignObject id="fore5" style="display:block;" width="44" height="390" x="257" y="76">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<object id="Linecard5" data="A9K-MOD160-SE.svg"/>
+		</div>
+    </foreignObject>
+
+	<rect id="l6" x="299.9" y="73.9" width="43.9" height="390.9"/>
+
+	<foreignObject id="fore6" style="display:block;" width="44" height="390" x="300" y="76">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<object id="Linecard6" data="A9K-RSP880-SE.svg"/>
+		</div>
+    </foreignObject>
+
 </svg>

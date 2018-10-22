@@ -18,7 +18,7 @@
               },
               {
                 "ifname": "TenGigabitEthernet1/2",
-                "ifstate": "up",
+                "ifstate": "down",
                 "sname": "TenGig1/2"
               }
             ]
@@ -279,6 +279,6 @@
     }
   ],
   "sitename": "-",
-  "address": "10.230.5.2",
-  "hostname": "cri_2-sw2-02"
+  "address": "10.230.5.1",
+  "hostname": "cri_2-sw1-01"
 }

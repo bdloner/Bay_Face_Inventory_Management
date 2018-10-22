@@ -68,13 +68,12 @@
 <script>
     $(document).ready(function () {
 
-        $.getJSON('http://poc.servehttp.com/network/bep?search=success&oper=view&page_size=100&page_index=1', function (reply) {
+        $.getJSON('./db/all_inventory.json', function (reply) {
             for (var i = 0; i < reply.device.length; i++) {
                 $("#body-data-table").append('<tr><td class="nr" style="width:34%">' + reply.device[i].hostname + '</td>' +
                     '<td style="width:33%">' + reply.device[i].address + '</td>' +
                     '<td style="width:33%">' + reply.device[i].snmp_community + '</td></tr>');
             }
-
         });
 
         var table = '#data-table';
@@ -135,8 +134,9 @@
                 if (window.focus) {
                     newwindow.focus()
                 }
-                return false;
+                return true;
             }
+
         });
 
         $("#search-input").on("keyup", function () {
@@ -146,6 +146,8 @@
             });
         });
     });
+
+
 
 </script>
 
