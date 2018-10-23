@@ -5,8 +5,6 @@
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
-    var linecardTitle = localStorage.getItem('linetitle');
-
     var linecardTitleSlot = localStorage.getItem('linetitle').split(/[()]/);
     var linecardPid = localStorage.getItem('linepid').split(",");
 

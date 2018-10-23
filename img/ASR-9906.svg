@@ -3596,7 +3596,7 @@ QlhYmIGqBjIxMVHXwFevXjEMWgAQYAAOZwWiN+7s3wAAAABJRU5ErkJggg==" transform="matrix(
 </g>
 	<rect id="l1" x="86.2" y="74" width="45.2" height="390.9"/>
 
-	<foreignObject id="fore1" style="display:block;" width="44" height="390" x="87" y="76">
+	<foreignObject id="fore1" style="display:none;" width="44" height="390" x="87" y="76">
 		<div xmlns="http://www.w3.org/1999/xhtml">
 			<object id="Linecard1" data="A9K-RSP880-SE.svg"/>
 		</div>
@@ -3604,7 +3604,7 @@ QlhYmIGqBjIxMVHXwFevXjEMWgAQYAAOZwWiN+7s3wAAAABJRU5ErkJggg==" transform="matrix(
 
 	<rect id="l2" x="129.9" y="73.9" width="43.9" height="390.9"/>
 
-	<foreignObject id="fore2" style="display:block;" width="44" height="390" x="130" y="76">
+	<foreignObject id="fore2" style="display:none;" width="44" height="390" x="130" y="76">
 		<div xmlns="http://www.w3.org/1999/xhtml">
 			<object id="Linecard2" data="A9K-MOD160-SE.svg"/>
 		</div>
@@ -3612,7 +3612,7 @@ QlhYmIGqBjIxMVHXwFevXjEMWgAQYAAOZwWiN+7s3wAAAABJRU5ErkJggg==" transform="matrix(
 
 	<rect id="l3" x="172.4" y="73.9" width="43.9" height="390.9"/>
 
-	<foreignObject id="fore3" style="display:block;" width="44" height="390" x="172" y="76">
+	<foreignObject id="fore3" style="display:none;" width="44" height="390" x="172" y="76">
 		<div xmlns="http://www.w3.org/1999/xhtml">
 			<object id="Linecard3" data="A9K-MOD160-SE.svg"/>
 		</div>
@@ -3620,7 +3620,7 @@ QlhYmIGqBjIxMVHXwFevXjEMWgAQYAAOZwWiN+7s3wAAAABJRU5ErkJggg==" transform="matrix(
 
 	<rect id="l4" x="214.9" y="74" width="43.9" height="390.9"/>
 
-	<foreignObject id="fore4" style="display:block;" width="44" height="390" x="214" y="76">
+	<foreignObject id="fore4" style="display:none;" width="44" height="390" x="214" y="76">
 		<div xmlns="http://www.w3.org/1999/xhtml">
 			<object id="Linecard4" data="A9K-MOD160-SE.svg"/>
 		</div>
@@ -3628,7 +3628,7 @@ QlhYmIGqBjIxMVHXwFevXjEMWgAQYAAOZwWiN+7s3wAAAABJRU5ErkJggg==" transform="matrix(
 
 	<rect id="l5" x="257.4" y="74" width="43.9" height="390.9"/>
 
-	<foreignObject id="fore5" style="display:block;" width="44" height="390" x="257" y="76">
+	<foreignObject id="fore5" style="display:none;" width="44" height="390" x="257" y="76">
 		<div xmlns="http://www.w3.org/1999/xhtml">
 			<object id="Linecard5" data="A9K-MOD160-SE.svg"/>
 		</div>
@@ -3636,7 +3636,7 @@ QlhYmIGqBjIxMVHXwFevXjEMWgAQYAAOZwWiN+7s3wAAAABJRU5ErkJggg==" transform="matrix(
 
 	<rect id="l6" x="299.9" y="73.9" width="43.9" height="390.9"/>
 
-	<foreignObject id="fore6" style="display:block;" width="44" height="390" x="300" y="76">
+	<foreignObject id="fore6" style="display:none;" width="44" height="390" x="300" y="76">
 		<div xmlns="http://www.w3.org/1999/xhtml">
 			<object id="Linecard6" data="A9K-RSP880-SE.svg"/>
 		</div>

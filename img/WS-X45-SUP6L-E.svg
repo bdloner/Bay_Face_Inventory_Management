@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var getLocal = JSON.parse(localStorage.getItem('arraysInfoPort'));
 
     var getLineTitle = localStorage.getItem('linetitle').split(",");
+
     var getLineTitleSlot = getLineTitle.shift().split(/[()]/);
 
     localStorage.setItem("linetitle", getLineTitle);

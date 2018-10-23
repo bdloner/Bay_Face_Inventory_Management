@@ -47,7 +47,7 @@ window.addEventListener("load", function() {
         for(var i=0; i<getLocal.length; i++){
                 for(var j=0; j<getLocal[i].length; j++){
                     var splitCard = getLocal[i][j].split(/[()]/);
-                    if (splitCard[0].includes("Supervisor") === true){
+                    if (splitCard[0].includes("Linecard") === true){
                         if(splitCard[1] === getLineTitleSlot[1]){
                             if(count%13 != 0){
                                 if(getLocal[i][2] === "up"){
@@ -65,21 +65,6 @@ window.addEventListener("load", function() {
                                 }
                                 count++;
 
-                            } else {
-                                if(getLocal[i][2] === "up"){
-                                    var path = document.getElementById("p" + count).style.fill = "green";
-                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-                                } else if(getLocal[i][2] === "down"){
-                                    var path = document.getElementById("p" + count).style.fill = "red";
-                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-                                }else if(getLocal[i][2] === "admin_down"){
-                                    var path = document.getElementById("p" + count).style.fill = "grey";
-                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-                                } else {
-                                    var path = document.getElementById("p" + count).style.fill = "black";
-                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-                                }
-                                count = 1;
                             }
                         }
                     }

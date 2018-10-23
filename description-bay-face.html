@@ -20,9 +20,9 @@
 
 <style>
 
-    body{
+    /*body{
         overflow: hidden;
-    }
+    }*/
 
     /*Page Loading*/
 
@@ -190,7 +190,6 @@
     }
 
     onReady(function() {
-
         setVisible('.page', true);
         setVisible('.arc', false);
         setVisible('h1', false);
@@ -255,8 +254,78 @@
 
                 localStorage.setItem("arraysInfoPort", JSON.stringify(arraysInfoPort));
 
+            } else if (title === "ASRSystem") {
+
+                var infoLinecardTitle = [];
+                var infoLinecardPid = [];
+                var arraysInfoPort = [];
+                var infoLinecardTitleMOD = [];
+                var infoLinecardPidMOD = [];
+                var count = 0;
+
+                document.getElementById('bay-id').setAttribute('data', 'img/' + pid + '.svg');
+
+                for (var i = 0; i < reply.result[0].data.length; i++) {
+
+                    console.log(reply.result[0].data[i].title);
+
+                    infoLinecardTitle.push(reply.result[0].data[i].title);
+                    infoLinecardPid.push(reply.result[0].data[i].pid);
+
+                    if((reply.result[0].data[i].title).includes("RSP") === true){
+
+                        for (var j = 0; j < reply.result[0].data[i].data.length; j++) {
+
+                            for (var k = 0; k < reply.result[0].data[i].data[j].length; k++) {
+
+                                arraysInfoPort[count] = [reply.result[0].data[i].title,
+                                    reply.result[0].data[i].data[j][k].ifname,
+                                    reply.result[0].data[i].data[j][k].ifstate];
+
+                                count++;
+                            }
+                        }
+
+                        localStorage.setItem("linetitle", infoLinecardTitle);
+                        localStorage.setItem("linepid", infoLinecardPid);
+
+                        localStorage.setItem("arraysInfoPort", JSON.stringify(arraysInfoPort));
+
+                    } else {
+
+                        for (var j = 0; j < reply.result[0].data[i].data.length; j++) {
+
+                            infoLinecardTitleMOD.push(reply.result[0].data[i].data[j].title);
+                            infoLinecardPidMOD.push(reply.result[0].data[i].data[j].pid);
+
+                            for (var k = 0; k < reply.result[0].data[i].data[j].data.length; k++) {
+
+                                for (var l = 0; l < reply.result[0].data[i].data[j].data[k].length; l++) {
+
+                                    arraysInfoPort[count] = [reply.result[0].data[i].data[j].title,
+                                        reply.result[0].data[i].data[j].data[k][l].ifname,
+                                        reply.result[0].data[i].data[j].data[k][l].ifstate];
+
+                                    count++;
+                                }
+                            }
+                        }
+
+                        localStorage.setItem("linetitleMOD", infoLinecardTitleMOD);
+                        localStorage.setItem("linepidMOD", infoLinecardPidMOD);
+
+                        localStorage.setItem("arraysInfoPort", JSON.stringify(arraysInfoPort));
+                    }
+
+                    localStorage.setItem("linetitle", infoLinecardTitle);
+                    localStorage.setItem("linepid", infoLinecardPid);
+
+                }
+
             }
+
         });
+
 
     }
 
