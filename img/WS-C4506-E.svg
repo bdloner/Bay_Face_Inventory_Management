@@ -1747,42 +1747,54 @@ WEJ4JAwePJYQHgmDR8JoBDwKSyNI2GU86bwCDADzw+w8q+W/MgAAAABJRU5ErkJggg==" transform=
 	v0H75.2l-0.1,0c-1,0-1.8,0.1-1.8,0.3l0.1,0v50.9l-0.1,0c0,0.2,0.8,0.3,1.8,0.3L75.2,242.7z"/>
 	<foreignObject id="fore1" style="display:none;" width="447" height="51" x="73" y="192">
             <div xmlns="http://www.w3.org/1999/xhtml">
-                <object id="Linecard1" data="WS-X4448-GB-SFP.svg"/>
+				<object id="Linecard1" data="WS-X4448-GB-SFP.svg">
+					<param name="param1" value="slot1" />
+				</object>
             </div>
         </foreignObject>
 <path id="l2" fill-rule="evenodd" fill="#262626" d="M75.3,293.1h441.6v0c1,0,1.8-0.1,1.8-0.3l0,0l0.1,0v-50.9l-0.1,0c0-0.2-0.8-0.3-1.8-0.3
 	v0H75.3l-0.1,0c-1,0-1.8,0.1-1.8,0.3l0.1,0v50.9l-0.1,0c0,0.2,0.8,0.3,1.8,0.3L75.3,293.1z"/>
 	<foreignObject id="fore2" style="display:none;" width="447" height="51" x="73" y="242">
             <div xmlns="http://www.w3.org/1999/xhtml">
-                <object id="Linecard2" data="WS-X4448-GB-SFP.svg"/>
+				<object id="Linecard2" data="WS-X4448-GB-SFP.svg">
+					<param name="param2" value="slot2" />
+				</object>
             </div>
         </foreignObject>
 <path id="l3" fill-rule="evenodd" fill="#262626" d="M75.3,343.1h441.6v0c1,0,1.8-0.1,1.8-0.3l0,0l0.1,0v-50.9l-0.1,0c0-0.2-0.8-0.3-1.8-0.3
 	v0H75.3l-0.1,0c-1,0-1.8,0.1-1.8,0.3l0.1,0v50.9l-0.1,0c0,0.2,0.8,0.3,1.8,0.3L75.3,343.1z"/>
 	<foreignObject id="fore3" style="display:none;" width="447" height="51" x="73" y="292">
             <div xmlns="http://www.w3.org/1999/xhtml">
-                <object id="Linecard3" data="WS-X4448-GB-SFP.svg"/>
+				<object id="Linecard3" data="WS-X4448-GB-SFP.svg">
+					<param name="param3" value="slot3" />
+				</object>
             </div>
         </foreignObject>
 <path id="l4" fill-rule="evenodd" fill="#262626" d="M75.3,393.8h441.6v0c1,0,1.8-0.1,1.8-0.3l0,0l0.1,0v-50.9l-0.1,0c0-0.2-0.8-0.3-1.8-0.3
 	v0H75.3l-0.1,0c-1,0-1.8,0.1-1.8,0.3l0.1,0v50.9l-0.1,0c0,0.2,0.8,0.3,1.8,0.3L75.3,393.8z"/>
 	<foreignObject id="fore4" style="display:none;" width="447" height="51" x="73" y="342">
             <div xmlns="http://www.w3.org/1999/xhtml">
-                <object id="Linecard4" data="WS-X4448-GB-SFP.svg"/>
+				<object id="Linecard4" data="WS-X4448-GB-SFP.svg">
+					<param name="param4" value="slot4" />
+				</object>
             </div>
         </foreignObject>
 <path id="l5" fill-rule="evenodd" fill="#262626" d="M75.3,444.2h441.6v0c1,0,1.8-0.1,1.8-0.3l0,0l0.1,0V393l-0.1,0c0-0.2-0.8-0.3-1.8-0.3v0
 	H75.3l-0.1,0c-1,0-1.8,0.1-1.8,0.3l0.1,0v50.9l-0.1,0c0,0.2,0.8,0.3,1.8,0.3L75.3,444.2z"/>
 	<foreignObject id="fore5" style="display:none;" width="447" height="51" x="73" y="392">
             <div xmlns="http://www.w3.org/1999/xhtml">
-                <object id="Linecard5" data="WS-X4448-GB-SFP.svg"/>
+				<object id="Linecard5" data="WS-X4448-GB-SFP.svg">
+					<param name="param5" value="slot5" />
+				</object>
             </div>
         </foreignObject>
 <path id="l6" fill-rule="evenodd" fill="#262626" d="M75.3,494.3h441.6v0c1,0,1.8-0.1,1.8-0.3l0,0l0.1,0v-50.9l-0.1,0c0-0.2-0.8-0.3-1.8-0.3
 	v0H75.3l-0.1,0c-1,0-1.8,0.1-1.8,0.3l0.1,0V494l-0.1,0c0,0.2,0.8,0.3,1.8,0.3L75.3,494.3z"/>
 	<foreignObject id="fore6" style="display:none;" width="447" height="51" x="73" y="442">
             <div xmlns="http://www.w3.org/1999/xhtml">
-                <object id="Linecard6" data="WS-X4448-GB-SFP.svg"/>
+				<object id="Linecard6" data="WS-X4448-GB-SFP.svg">
+					<param name="param6" value="slot6" />
+				</object>
             </div>
         </foreignObject>
 </svg>

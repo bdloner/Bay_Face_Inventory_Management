@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 628 631.8" style="enable-background:new 0 0 628 631.8;" xml:space="preserve">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="ws-c4507r-e"
+	 version="1.1" x="0px" y="0px" viewBox="0 0 628 631.8"
+	 style="enable-background:new 0 0 628 631.8;" xml:space="preserve">
 
 	<script type="text/javascript"><![CDATA[
 
@@ -1153,7 +1155,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 					<foreignObject id="fore1" style="display:none;" width="511" height="60" x="84" y="218">
 						<div xmlns="http://www.w3.org/1999/xhtml">
-							<object id="Linecard1" data="#"/>
+							<object id="Linecard1" data="#">
+								<param name="param1" value="slot1" />
+							</object>
 						</div>
 					</foreignObject>
 
@@ -1161,7 +1165,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 					<foreignObject id="fore2" style="display:none;" width="511" height="60" x="84" y="275">
 						<div xmlns="http://www.w3.org/1999/xhtml">
-							<object id="Linecard2" data="#"/>
+							<object id="Linecard2" data="#">
+								<param name="param2" value="slot2" />
+							</object>
 						</div>
 					</foreignObject>
 
@@ -1169,7 +1175,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 					<foreignObject id="fore3" style="display:none;" width="511" height="60" x="84" y="332">
 						<div xmlns="http://www.w3.org/1999/xhtml">
-							<object id="Linecard3" data="#"/>
+							<object id="Linecard3" data="#">
+								<param name="param3" value="slot3" />
+							</object>
 						</div>
 					</foreignObject>
 
@@ -1177,7 +1185,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 					<foreignObject id="fore4" style="display:none;" width="511" height="60" x="84" y="389">
 						<div xmlns="http://www.w3.org/1999/xhtml">
-							<object id="Linecard4" data="#"/>
+							<object id="Linecard4" data="#">
+								<param name="param4" value="slot4" />
+							</object>
 						</div>
 					</foreignObject>
 
@@ -1185,7 +1195,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 					<foreignObject id="fore5" style="display:none;" width="511" height="60" x="84" y="447">
 						<div xmlns="http://www.w3.org/1999/xhtml">
-							<object id="Linecard5" data="#"/>
+							<object id="Linecard5" data="#">
+								<param name="param5" value="slot5" />
+							</object>
 						</div>
 					</foreignObject>
 
@@ -1193,7 +1205,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 					<foreignObject id="fore6" style="display:none;" width="511" height="60" x="84" y="505">
 						<div xmlns="http://www.w3.org/1999/xhtml">
-							<object id="Linecard6" data="#"/>
+							<object id="Linecard6" data="#">
+								<param name="param6" value="slot6" />
+							</object>
 						</div>
 					</foreignObject>
 
@@ -1201,7 +1215,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 					<foreignObject id="fore7" style="display:none;" width="511" height="60" x="84" y="563">
 						<div xmlns="http://www.w3.org/1999/xhtml">
-							<object id="Linecard7" data="#"/>
+							<object id="Linecard7" data="#">
+								<param name="param7" value="slot7" />
+							</object>
 						</div>
 					</foreignObject>
 

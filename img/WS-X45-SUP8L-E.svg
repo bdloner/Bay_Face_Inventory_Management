@@ -7,6 +7,8 @@
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
+	var params = document.defaultView.frameElement.getElementsByTagName("param")[0].value;
+
     var svg = document.getElementById('ws-x45-sup8l-e');
 	var tooltip = svg.getElementById('tooltip');
 	var tooltipText = tooltip.getElementsByTagName('text')[0];
@@ -43,39 +45,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
         for(var j=0; j<getLocal[i].length; j++){
             var splitCard = getLocal[i][j].split(/[()]/);
             if (splitCard[0].includes("Supervisor") === true){
-                if(count%4 != 0){
-		            if(getLocal[i][2] === "up"){
-    		            var path = document.getElementById("p" + count).style.fill = "green";
-    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-    	            } else if(getLocal[i][2] === "down"){
-        	            var path = document.getElementById("p" + count).style.fill = "red";
-    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-    	            } else if(getLocal[i][2] === "admin_down"){
-    	                var path = document.getElementById("p" + count).style.fill = "grey";
-    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-    	            } else {
-    	                var path = document.getElementById("p" + count).style.fill = "black";
-    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-    	            }
-                    count++;
-                    //length--
-
-                } else {
-                    if(getLocal[i][2] === "up"){
-    		            var path = document.getElementById("p" + count).style.fill = "green";
-    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-    	            } else if(getLocal[i][2] === "down"){
-        	            var path = document.getElementById("p" + count).style.fill = "red";
-    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-    	            }else if(getLocal[i][2] === "admin_down"){
-    	                var path = document.getElementById("p" + count).style.fill = "grey";
-    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-    	            } else {
-    	                var path = document.getElementById("p" + count).style.fill = "black";
-    		            var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-    	            }
-    	            count = 1;
-                }
+            	if(splitCard[1] === params){
+					if(count%5 != 0){
+						if(getLocal[i][2] === "up"){
+							var path = document.getElementById("p" + count).style.fill = "green";
+							var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+						} else if(getLocal[i][2] === "down"){
+							var path = document.getElementById("p" + count).style.fill = "red";
+							var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+						} else if(getLocal[i][2] === "admin_down"){
+							var path = document.getElementById("p" + count).style.fill = "grey";
+							var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+						} else {
+							var path = document.getElementById("p" + count).style.fill = "black";
+							var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+						}
+						count++;
+					}
+				}
 		    }
         }
     }

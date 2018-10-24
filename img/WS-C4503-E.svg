@@ -990,7 +990,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         <foreignObject id="fore1" style="display:none;" width="450" height="51" x="75" y="192">
             <div xmlns="http://www.w3.org/1999/xhtml">
-                <object id="Linecard1" data="#"/>
+                <object id="Linecard1" data="#">
+                    <param name="param1" value="slot1" />
+                </object>
             </div>
         </foreignObject>
 
@@ -1000,7 +1002,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         <foreignObject id="fore2" style="display:none;" width="450" height="51" x="75" y="242">
             <div xmlns="http://www.w3.org/1999/xhtml">
-                <object id="Linecard2" data="#"/>
+                <object id="Linecard2" data="#">
+                    <param name="param2" value="slot2" />
+                </object>
             </div>
         </foreignObject>
 
@@ -1010,7 +1014,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         <foreignObject id="fore3" style="display:none;" width="450" height="51" x="75" y="292">
             <div xmlns="http://www.w3.org/1999/xhtml">
-                <object id="Linecard3" data="#"/>
+                <object id="Linecard3" data="#">
+                    <param name="param3" value="slot3" />
+                </object>
             </div>
         </foreignObject>
 

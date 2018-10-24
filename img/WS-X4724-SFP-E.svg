@@ -5,6 +5,8 @@
 	<script type="text/ecmascript"><![CDATA[
 window.addEventListener("load", function() {
 
+	var params = document.defaultView.frameElement.getElementsByTagName("param")[0].value;
+
 	var svg = document.getElementById('ws-x4724-sfp-e');
 	var tooltip = svg.getElementById('tooltip');
 	var tooltipText = tooltip.getElementsByTagName('text')[0];
@@ -50,7 +52,7 @@ window.addEventListener("load", function() {
 				for(var j=0; j<getLocal[i].length; j++){
 					var splitCard = getLocal[i][j].split(/[()]/);
 					if (splitCard[0].includes("Linecard") === true){
-						if(splitCard[1] === getLineTitleSlot[1]){
+						if(splitCard[1] === params){
 							if(countLine%13 != 0){
 								if(getLocal[i][2] === "up"){
 									var path1 = document.getElementById("p" + numPort).style.fill = "green";

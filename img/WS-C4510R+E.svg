@@ -2031,7 +2031,9 @@ loHJMlAfkOscwgAgwACEtRI3PLEnoQAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 69.4
 
 	<foreignObject id="fore1" style="display:none;" width="446" height="60" x="73" y="192">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-					<object id="Linecard1" data="WS-X4448-GB-SFP.svg"/>
+				<object id="Linecard1" data="#">
+					<param name="param1" value="slot1" />
+				</object>
 			</div>
 	</foreignObject>
 
@@ -2040,7 +2042,9 @@ loHJMlAfkOscwgAgwACEtRI3PLEnoQAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 69.4
 
 	<foreignObject id="fore2" style="display:none;" width="446" height="60" x="73" y="242">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-					<object id="Linecard2" data="WS-X4448-GB-SFP.svg"/>
+				<object id="Linecard2" data="#">
+					<param name="param2" value="slot2" />
+				</object>
 			</div>
 	</foreignObject>
 
@@ -2049,7 +2053,9 @@ loHJMlAfkOscwgAgwACEtRI3PLEnoQAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 69.4
 
 	<foreignObject id="fore3" style="display:none;" width="446" height="60" x="73" y="292">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-					<object id="Linecard3" data="WS-X4448-GB-SFP.svg"/>
+				<object id="Linecard3" data="#">
+					<param name="param3" value="slot3" />
+				</object>
 			</div>
 	</foreignObject>
 
@@ -2058,7 +2064,9 @@ loHJMlAfkOscwgAgwACEtRI3PLEnoQAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 69.4
 
 	<foreignObject id="fore4" style="display:none;" width="446" height="60" x="73" y="342">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-					<object id="Linecard4" data="WS-X4448-GB-SFP.svg"/>
+				<object id="Linecard4" data="#">
+					<param name="param4" value="slot4" />
+				</object>
 			</div>
 	</foreignObject>
 
@@ -2067,7 +2075,9 @@ loHJMlAfkOscwgAgwACEtRI3PLEnoQAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 69.4
 
 	<foreignObject id="fore5" style="display:none;" width="446" height="60" x="73" y="392">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-					<object id="Linecard5" data="WS-X4448-GB-SFP.svg"/>
+				<object id="Linecard5" data="#">
+					<param name="param5" value="slot5" />
+				</object>
 			</div>
 	</foreignObject>
 
@@ -2076,7 +2086,9 @@ loHJMlAfkOscwgAgwACEtRI3PLEnoQAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 69.4
 
 	<foreignObject id="fore6" style="display:none;" width="446" height="60" x="73" y="442">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-					<object id="Linecard6" data="WS-X4448-GB-SFP.svg"/>
+				<object id="Linecard6" data="#">
+					<param name="param6" value="slot6" />
+				</object>
 			</div>
 	</foreignObject>
 
@@ -2085,7 +2097,9 @@ loHJMlAfkOscwgAgwACEtRI3PLEnoQAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 69.4
 
 	<foreignObject id="fore7" style="display:none;" width="446" height="60" x="73" y="492">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-					<object id="Linecard7" data="WS-X4448-GB-SFP.svg"/>
+				<object id="Linecard7" data="#">
+					<param name="param7" value="slot7" />
+				</object>
 			</div>
 	</foreignObject>
 
@@ -2094,7 +2108,9 @@ loHJMlAfkOscwgAgwACEtRI3PLEnoQAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 69.4
 
 	<foreignObject id="fore8" style="display:none;" width="446" height="60" x="73" y="542">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-					<object id="Linecard8" data="WS-X4448-GB-SFP.svg"/>
+				<object id="Linecard8" data="#">
+					<param name="param8" value="slot8" />
+				</object>
 			</div>
 	</foreignObject>
 
@@ -2103,7 +2119,9 @@ loHJMlAfkOscwgAgwACEtRI3PLEnoQAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 69.4
 
 	<foreignObject id="fore9" style="display:none;" width="446" height="60" x="73" y="592">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-					<object id="Linecard9" data="WS-X4448-GB-SFP.svg"/>
+				<object id="Linecard9" data="#">
+					<param name="param9" value="slot9" />
+				</object>
 			</div>
 	</foreignObject>
 
@@ -2112,7 +2130,9 @@ loHJMlAfkOscwgAgwACEtRI3PLEnoQAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 69.4
 
 	<foreignObject id="fore10" style="display:none;" width="446" height="60" x="73" y="642">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-					<object id="Linecard10" data="WS-X4448-GB-SFP.svg"/>
+				<object id="Linecard10" data="#">
+					<param name="param10" value="slot10" />
+				</object>
 			</div>
 	</foreignObject>
 
