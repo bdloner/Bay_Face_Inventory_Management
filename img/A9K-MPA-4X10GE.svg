@@ -1,6 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" id="a9k-mpa-4x10ge" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 	 viewBox="0 0 130 600.2" enable-background="new 0 0 130 600.2" xml:space="preserve">
+
+	<script type="text/javascript"><![CDATA[
+
+document.addEventListener("DOMContentLoaded", function(event) {
+
+    var params = document.defaultView.frameElement.getElementsByTagName("param")[0].value;
+
+    var getLocal = JSON.parse(localStorage.getItem('arraysInfoPort'));
+
+    var count = 1;
+
+        for(var i=0; i<getLocal.length; i++){
+                for(var j=0; j<getLocal[i].length; j++){
+                    var splitCard = getLocal[i][j].split(/[()]/);
+                    if (splitCard[0].includes("A9K-MOD") === true){
+                        if(splitCard[1] === params){
+                            if(count%5 != 0){
+                                if(getLocal[i][2] === "up"){
+                                    var path = document.getElementById("p" + count).style.fill = "green";
+                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                                } else if(getLocal[i][2] === "down"){
+                                    var path = document.getElementById("p" + count).style.fill = "red";
+                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                                } else if(getLocal[i][2] === "admin_down"){
+                                    var path = document.getElementById("p" + count).style.fill = "grey";
+                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                                } else {
+                                    var path = document.getElementById("p" + count).style.fill = "black";
+                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                                }
+                                count++;
+                            }
+                        }
+                    }
+                }
+        }
+});
+
+]]></script>
+
+	<style>
+			#tooltip {
+            	font-size:9px;
+            	dominant-baseline: hanging;
+            }
+
+            .tooltip-trigger{
+            	fill:#404040;
+            }
+
+            .tooltip-trigger:hover{
+            	transition: opacity 0.6s ease;
+            	opacity:0.3;
+            }
+	</style>
+
 <g>
 	<defs>
 		<rect id="SVGID_1_" x="4.8" y="1.9" width="121.9" height="596.5"/>
@@ -909,7 +965,8 @@ wVSDzfA4LPzTZoQQQgghlFK/AgwAQGouz+d/uCAAAAAASUVORK5CYII=" transform="matrix(0.12
 	<clipPath id="SVGID_108_">
 		<use xlink:href="#SVGID_107_"  overflow="visible"/>
 	</clipPath>
-	<path clip-path="url(#SVGID_108_)" fill-rule="evenodd" clip-rule="evenodd" fill="#5F5F5F" d="M91.2,452.5H62.4l-0.1,0.1
+	<path id="p4" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+		  clip-path="url(#SVGID_108_)" fill-rule="evenodd" clip-rule="evenodd" fill="#5F5F5F" d="M91.2,452.5H62.4l-0.1,0.1
 		c-1.1,0-1.8,0.8-1.8,1.8l0,0v67.1c0,1,0.7,1.9,1.8,1.9h0.1h28.8c1,0,1.8-1,1.8-1.9h0.1v-67.1H93c0-1-0.8-1.8-1.8-1.8V452.5z"/>
 	
 		<path clip-path="url(#SVGID_108_)" fill="none" stroke="#000000" stroke-width="0.96" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
@@ -1127,7 +1184,8 @@ x+pFOXoLIYQQQgghhBBCvPIjwABeBCmbp9gzIwAAAABJRU5ErkJggg==" transform="matrix(0.12
 	<clipPath id="SVGID_114_">
 		<use xlink:href="#SVGID_113_"  overflow="visible"/>
 	</clipPath>
-	<path clip-path="url(#SVGID_114_)" fill-rule="evenodd" clip-rule="evenodd" fill="#5F5F5F" d="M91.2,328.3H62.4l-0.1,0.1
+	<path id="p3" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+		  clip-path="url(#SVGID_114_)" fill-rule="evenodd" clip-rule="evenodd" fill="#5F5F5F" d="M91.2,328.3H62.4l-0.1,0.1
 		c-1.1,0-1.8,0.8-1.8,1.9l0,0v-0.1v67.1c0,1.1,0.7,1.9,1.8,1.9h0.1h28.8c1,0,1.8-0.8,1.8-1.9h0.1v-67.1l-0.1,0.1
 		c0-1.1-0.8-1.9-1.8-1.9V328.3z"/>
 	
@@ -1344,7 +1402,8 @@ AEwQgzA7rzphmExjECbTKDSZ3RC/ujN/Ae0KeW/HvSj0moP4ass0Ll7aQQy4M0EkIiKi2t0EGACO
 	<clipPath id="SVGID_120_">
 		<use xlink:href="#SVGID_119_"  overflow="visible"/>
 	</clipPath>
-	<path clip-path="url(#SVGID_120_)" fill-rule="evenodd" clip-rule="evenodd" fill="#5F5F5F" d="M91.2,204.1H62.4l-0.1,0.2
+	<path id="p2" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+		  clip-path="url(#SVGID_120_)" fill-rule="evenodd" clip-rule="evenodd" fill="#5F5F5F" d="M91.2,204.1H62.4l-0.1,0.2
 		c-1.1,0-1.8,0.8-1.8,1.9l0,0V206v67.1v0.1c0,1.1,0.7,1.9,1.8,1.9l0.1-0.1h28.8v0.1c1,0,1.8-0.8,1.8-1.9l0.1-0.1V206l-0.1,0.2
 		c0-1.1-0.8-1.9-1.8-1.9V204.1z"/>
 	
@@ -1562,7 +1621,8 @@ SMVcBRrtW2vIG2o7Abpi7rL12wpzFDbz0URFUZQM+RVgAF+ZRsxSq/qdAAAAAElFTkSuQmCC" transf
 	<clipPath id="SVGID_126_">
 		<use xlink:href="#SVGID_125_"  overflow="visible"/>
 	</clipPath>
-	<path clip-path="url(#SVGID_126_)" fill-rule="evenodd" clip-rule="evenodd" fill="#5F5F5F" d="M91.2,79.8H62.4l-0.1,0.4
+	<path id="p1" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+		  clip-path="url(#SVGID_126_)" fill-rule="evenodd" clip-rule="evenodd" fill="#5F5F5F" d="M91.2,79.8H62.4l-0.1,0.4
 		c-1.1,0-1.8,1-1.8,1.9l0,0v-0.2v67.1v0.2c0,1,0.7,1.8,1.8,1.8l0.1-0.1h28.8v0.1c1,0,1.8-0.8,1.8-1.8l0.1-0.2V81.8L93,82.1
 		c0-1-0.8-1.9-1.8-1.9V79.8z"/>
 	

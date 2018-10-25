@@ -90,9 +90,6 @@ window.addEventListener("load", function() {
 				}
 
 		}
-
-	localStorage.setItem("linetitle", getLineTitle);
-
 });
     ]]></script>
 

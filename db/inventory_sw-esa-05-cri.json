@@ -41,7 +41,7 @@
           "data": [
             {
               "title": "A9K-MOD(slot1)",
-              "pid": "A9K-MPA-20X10GE",
+              "pid": "A9K-MPA-20X1GE",
               "sn": "JAE163505EY",
               "data": [
                 [
@@ -158,12 +158,12 @@
                 [
                   {
                     "ifname": "GigabitEthernet2/2/0",
-                    "ifstate": "up",
+                    "ifstate": "down",
                     "sname": "Gig2/2/0"
                   },
                   {
                     "ifname": "GigabitEthernet2/2/2",
-                    "ifstate": "up",
+                    "ifstate": "down",
                     "sname": "Gig2/2/2"
                   },
                   {
@@ -261,6 +261,25 @@
                 ]
               ]
             }
+          ]
+        },
+        {
+          "title": "RSP(slot6)",
+          "pid": "A9K-RSP440-SE",
+          "sn": "JAE163505EY",
+          "data": [
+            [
+              {
+                "ifname": "GigabitEthernet1/0/0",
+                "ifstate": "down",
+                "sname": "Gig1/0/0"
+              },
+              {
+                "ifname": "GigabitEthernet1/0/1",
+                "ifstate": "up",
+                "sname": "Gig1/0/1"
+              }
+            ]
           ]
         }
       ]

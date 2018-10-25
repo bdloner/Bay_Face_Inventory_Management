@@ -2,6 +2,41 @@
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" id="a9k-mod80-se" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 	 viewBox="0 0 83.5 733.7" enable-background="new 0 0 83.5 733.7" xml:space="preserve">
 
+	<script type="text/javascript"><![CDATA[
+
+document.addEventListener("DOMContentLoaded", function(event) {
+
+    var linecardTitleSlot = localStorage.getItem('linetitleMOD').split(/[()]/);
+
+    console.log(linecardTitleSlot);
+    var linecardPid = localStorage.getItem('linepidMOD').split(",");
+
+    var arrayPosition = [];
+    var j=0;
+
+    for(var i=1; i<linecardTitleSlot.length; i+=2){
+    	arrayPosition.push([linecardTitleSlot[i], linecardPid[j]]);
+    	j++;
+    }
+
+    for(var i=0; i<arrayPosition.length; i++){
+    	for(var j=0; j<arrayPosition[i].length; j++){
+    		if(arrayPosition[i][0] === "slot1"){
+    			document.getElementById('Linecard1').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore1').style.display = "block";
+
+    		}else if(arrayPosition[i][0] === "slot2"){
+    			document.getElementById('Linecard2').setAttribute('data', arrayPosition[i][1] + '.svg');
+	        	document.getElementById('fore2').style.display = "block";
+
+    		}
+    	}
+    }
+
+});
+
+]]></script>
+
 	<style>
 		#l1:hover{
 			transition: fill 0.6s ease;
@@ -2999,17 +3034,21 @@ X9V58+rx/dfkffT9v1PuJ4+p48+T93jB91L2/U8/9CXt+tP/2Q==" transform="matrix(0.12 0 0
 </g>
 <rect id="l1" x="10.3" y="60" fill="#2F2F2F" width="66.6" height="299.5"/>
 
-	<foreignObject id="fore1" style="display:block;" width="66.6" height="299.5" x="10.3" y="58.3">
+	<foreignObject id="fore1" style="display:none;" width="66.6" height="299.5" x="10.3" y="58.3">
 		<div xmlns="http://www.w3.org/1999/xhtml">
-			<object id="Linecard1" data="A9K-MPA-20X10GE.svg"/>
+			<object id="Linecard1" data="#">
+				<param name="param1" value="slot1" />
+			</object>
 		</div>
     </foreignObject>
 
 <rect id="l2" x="10.3" y="374.6" fill="#2F2F2F" width="66.6" height="299.5"/>
 
-	<foreignObject id="fore2" style="display:block;" width="66.6" height="299.5" x="10.3" y="371.6">
+	<foreignObject id="fore2" style="display:none;" width="66.6" height="299.5" x="10.3" y="371.6">
 		<div xmlns="http://www.w3.org/1999/xhtml">
-			<object id="Linecard2" data="A9K-MPA-20X10GE.svg"/>
+			<object id="Linecard2" data="#">
+				<param name="param2" value="slot2" />
+			</object>
 		</div>
     </foreignObject>
 

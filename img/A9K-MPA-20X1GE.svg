@@ -1,6 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" id="a9k-mpa-20x1ge" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 	 viewBox="0 0 135.2 627.7" enable-background="new 0 0 135.2 627.7" xml:space="preserve">
+
+	<script type="text/ecmascript"><![CDATA[
+window.addEventListener("load", function() {
+
+	var params = document.defaultView.frameElement.getElementsByTagName("param")[0].value;
+
+	var countArray = 0;
+	var getLocal = JSON.parse(localStorage.getItem('arraysInfoPort'));
+
+	var getLineTitle = localStorage.getItem('linetitle').split(",");
+
+    var countLine = 1;
+    var numPort = 1;
+
+		for(var i=0; i<getLocal.length; i++){
+				for(var j=0; j<getLocal[i].length; j++){
+					var splitCard = getLocal[i][j].split(/[()]/);
+					console.log(splitCard);
+					if (splitCard[0].includes("A9K-MOD") === true){
+						if(splitCard[1] === params){
+							if(countLine%11 != 0){
+								if(getLocal[i][2] === "up"){
+									var path1 = document.getElementById("p" + numPort).style.fill = "green";
+									var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+								} else if(getLocal[i][2] === "down") {
+									var path1 = document.getElementById("p" + numPort).style.fill = "red";
+									var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+								} else if(getLocal[i][2] === "admin_down"){
+									var path1 = document.getElementById("p" + numPort).style.fill = "grey";
+									var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+								} else {
+									var path1 = document.getElementById("p" + numPort).style.fill = "black";
+									var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+								}
+								countLine++;
+								numPort+=2;
+							} else {
+								countLine=1;
+								numPort=2;
+								if(getLocal[i][2] === "up"){
+									var path1 = document.getElementById("p" + numPort).style.fill = "green";
+									var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+								} else if(getLocal[i][2] === "down") {
+									var path1 = document.getElementById("p" + numPort).style.fill = "red";
+									var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+								} else if(getLocal[i][2] === "admin_down"){
+									var path1 = document.getElementById("p" + numPort).style.fill = "grey";
+									var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+								} else {
+									var path1 = document.getElementById("p" + numPort).style.fill = "black";
+									var path1 = document.getElementById("p" + numPort).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+								}
+								numPort+=2;
+							}
+						}
+					}
+				}
+
+		}
+
+});
+    ]]></script>
+
+	<style>
+			#tooltip {
+            	font-size:9px;
+            	dominant-baseline: hanging;
+            }
+
+            .tooltip-trigger{
+            	fill:#404040;
+            }
+
+            .tooltip-trigger:hover{
+            	transition: opacity 0.6s ease;
+            	opacity:0.3;
+            }
+	</style>
+
 <g>
 	<defs>
 		<rect id="SVGID_1_" x="2" y="3.1" width="130.8" height="621"/>
@@ -829,7 +908,8 @@ m1wMPHDEJuj8awQ0BgAAAAAAAAAAAADgMH4FGACrWY59wMMCrwAAAABJRU5ErkJggg==" transform=
 		M65.9,65.8v6.1h-0.4c0,0.2,0.2,0.5,0.5,0.5c0.1,0,0.1,0,0.2,0l-0.4-0.5l8.3-3.1l-0.2,0.4c0.2-0.1,0.4-0.4,0.2-0.7
 		c-0.1-0.1-0.2-0.1-0.2-0.2l0.2-0.4l-8.3-3.1l0.4,0.2c-0.2-0.1-0.6,0-0.7,0.2c0,0.1,0,0.1,0,0.2L65.9,65.8z"/>
 </g>
-<rect x="80.4" y="23.6" fill="#404040" width="34.9" height="54.4"/>
+<rect id="p2" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+	  x="80.4" y="23.6" fill="#404040" width="34.9" height="54.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_111_" y="0" width="135.2" height="627.7"/>
@@ -854,7 +934,8 @@ m1wMPHDEJuj8awQ0BgAAAAAAAAAAAADgMH4FGACrWY59wMMCrwAAAABJRU5ErkJggg==" transform=
 	
 		<rect x="88.6" y="52.3" clip-path="url(#SVGID_114_)" fill="none" stroke="#000000" stroke-width="0.36" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="4.2" height="3.1"/>
 </g>
-<rect x="23.6" y="23.6" fill="#404040" width="35" height="54.4"/>
+<rect id="p1" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+	  x="23.6" y="23.6" fill="#404040" width="35" height="54.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_115_" y="0" width="135.2" height="627.7"/>
@@ -1021,7 +1102,8 @@ MP1F4c7ZcH1H4cy49ggIsh+pPtqqp06dP5CNP//Z" transform="matrix(0.12 0 0 22.92 77.88
 		M65.9,120.1v6.1l-0.4,0.5c0,0.2,0.2,0.5,0.5,0.5c0.1,0,0.1,0,0.2,0l-0.4,0.1l8.3-3.1l-0.2-0.4c0.2,0,0.4-0.4,0.2-0.6
 		c-0.1-0.1-0.2-0.2-0.2-0.2l0.2,0.2L65.9,120.1l0.4-0.4c-0.2-0.1-0.6,0-0.7,0.2c0,0,0,0.1,0,0.2L65.9,120.1z"/>
 </g>
-<rect x="80.4" y="78" fill="#404040" width="34.9" height="54.5"/>
+<rect id="p4" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+	  x="80.4" y="78" fill="#404040" width="34.9" height="54.5"/>
 <g>
 	<defs>
 		<rect id="SVGID_135_" y="0" width="135.2" height="627.7"/>
@@ -1046,7 +1128,8 @@ MP1F4c7ZcH1H4cy49ggIsh+pPtqqp06dP5CNP//Z" transform="matrix(0.12 0 0 22.92 77.88
 	
 		<rect x="88.6" y="106.8" clip-path="url(#SVGID_138_)" fill="none" stroke="#000000" stroke-width="0.36" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="4.2" height="4.1"/>
 </g>
-<rect x="23.6" y="78" fill="#404040" width="35" height="54.5"/>
+<rect id="p3" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+	  x="23.6" y="78" fill="#404040" width="35" height="54.5"/>
 <g>
 	<defs>
 		<rect id="SVGID_139_" y="0" width="135.2" height="627.7"/>
@@ -1213,7 +1296,8 @@ w11df+yOGlt46lqS4ryH+ggI7+n4pTT/2Q==" transform="matrix(0.12 0 0 22.8 77.88 93.9
 		M65.9,174.5v7.2l-0.4-0.2c0,0.4,0.2,0.5,0.5,0.5c0.1,0,0.1,0,0.2,0l-0.4-0.2l8.3-3h-0.2c0.2-0.1,0.4-0.4,0.2-0.6
 		c-0.1-0.1-0.2-0.2-0.2-0.4l0.2-0.1L65.9,174.5h0.4c-0.2-0.1-0.6,0-0.7,0.4v0.1L65.9,174.5z"/>
 </g>
-<rect x="80.4" y="132.5" fill="#404040" width="34.9" height="55.4"/>
+<rect id="p6" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+	  x="80.4" y="132.5" fill="#404040" width="34.9" height="55.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_159_" y="0" width="135.2" height="627.7"/>
@@ -1238,7 +1322,8 @@ w11df+yOGlt46lqS4ryH+ggI7+n4pTT/2Q==" transform="matrix(0.12 0 0 22.8 77.88 93.9
 	
 		<rect x="88.6" y="161.2" clip-path="url(#SVGID_162_)" fill="none" stroke="#000000" stroke-width="0.36" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="4.2" height="4.1"/>
 </g>
-<rect x="23.6" y="132.5" fill="#404040" width="35" height="55.4"/>
+<rect id="p5" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+	  x="23.6" y="132.5" fill="#404040" width="35" height="55.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_163_" y="0" width="135.2" height="627.7"/>
@@ -1404,7 +1489,8 @@ nfW9+Tz4QamP7YmvqJPURdV/0q0//9k=" transform="matrix(0.12 0 0 22.92 77.88 148.680
 		M65.9,229.9v6.2l-0.4,0.1c0,0.2,0.2,0.5,0.5,0.5c0.1,0,0.1,0,0.2,0l-0.4,0.4l8.3-4.1l-0.2,0.5c0.2-0.1,0.4-0.5,0.2-0.7
 		c-0.1-0.1-0.2-0.2-0.2-0.2l0.2,0.5l-8.3-4.1l0.4,0.4c-0.2-0.1-0.6,0-0.7,0.2c0,0.1,0,0.1,0,0.2L65.9,229.9z"/>
 </g>
-<rect x="80.4" y="187.9" fill="#404040" width="34.9" height="54.4"/>
+<rect id="p8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+	  x="80.4" y="187.9" fill="#404040" width="34.9" height="54.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_183_" y="0" width="135.2" height="627.7"/>
@@ -1429,7 +1515,8 @@ nfW9+Tz4QamP7YmvqJPURdV/0q0//9k=" transform="matrix(0.12 0 0 22.92 77.88 148.680
 	
 		<rect x="88.6" y="216.6" clip-path="url(#SVGID_186_)" fill="none" stroke="#000000" stroke-width="0.36" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="4.2" height="3.1"/>
 </g>
-<rect x="23.6" y="187.9" fill="#404040" width="35" height="54.4"/>
+<rect id="p7" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+	  x="23.6" y="187.9" fill="#404040" width="35" height="54.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_187_" y="0" width="135.2" height="627.7"/>
@@ -1594,7 +1681,8 @@ FehzwVxXbWd8FcV21Xvmriu2o/8ANfFPp2GlsqFwBAHEikRDp/Vv/9k=" transform="matrix(0.12
 		M65.9,284.4v7.1l-0.4-0.5c0,0.4,0.2,0.6,0.5,0.6c0.1,0,0.1-0.1,0.2-0.1h-0.4l8.3-3l-0.2-0.2c0.2-0.1,0.4-0.4,0.2-0.6
 		c-0.1-0.1-0.2-0.2-0.2-0.2h0.2L65.9,284.4l0.4-0.2c-0.2-0.1-0.6,0-0.7,0.2v0.1L65.9,284.4z"/>
 </g>
-<rect x="80.4" y="242.3" fill="#404040" width="34.9" height="54.4"/>
+<rect id="p10" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+	  x="80.4" y="242.3" fill="#404040" width="34.9" height="54.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_207_" y="0" width="135.2" height="627.7"/>
@@ -1619,7 +1707,8 @@ FehzwVxXbWd8FcV21Xvmriu2o/8ANfFPp2GlsqFwBAHEikRDp/Vv/9k=" transform="matrix(0.12
 	
 		<rect x="88.6" y="271" clip-path="url(#SVGID_210_)" fill="none" stroke="#000000" stroke-width="0.36" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="4.2" height="4.2"/>
 </g>
-<rect x="23.6" y="242.3" fill="#404040" width="35" height="54.4"/>
+<rect id="p9" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+	  x="23.6" y="242.3" fill="#404040" width="35" height="54.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_211_" y="0" width="135.2" height="627.7"/>
@@ -2082,7 +2171,8 @@ Gog1EGog1EGog1EGog1EGog1EGog1EGog1EGog1EGog/O8veXvL3l7zvO87wf//Z" transform="mat
 		M65.9,372.6v6.2l-0.4,0.2c0,0.2,0.2,0.5,0.5,0.5c0.1,0,0.1,0,0.2,0l-0.4,0.2l8.3-3.1l-0.2-0.4c0.2-0.1,0.4-0.5,0.2-0.7
 		c-0.1-0.1-0.2-0.2-0.2-0.2l0.2,0.4L65.9,372.6l0.4-0.5c-0.2-0.1-0.6,0-0.7,0.2c0,0.1,0,0.1,0,0.2H65.9z"/>
 </g>
-<rect x="80.4" y="330.5" fill="#404040" width="34.9" height="54.5"/>
+<rect id="p12" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+	  x="80.4" y="330.5" fill="#404040" width="34.9" height="54.5"/>
 <g>
 	<defs>
 		<rect id="SVGID_247_" y="0" width="135.2" height="627.7"/>
@@ -2107,7 +2197,8 @@ Gog1EGog1EGog1EGog1EGog1EGog1EGog1EGog1EGog/O8veXvL3l7zvO87wf//Z" transform="mat
 	
 		<rect x="88.6" y="359.3" clip-path="url(#SVGID_250_)" fill="none" stroke="#000000" stroke-width="0.36" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="4.2" height="4.1"/>
 </g>
-<rect x="23.6" y="330.5" fill="#404040" width="35" height="54.5"/>
+<rect id="p11" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+	  x="23.6" y="330.5" fill="#404040" width="35" height="54.5"/>
 <g>
 	<defs>
 		<rect id="SVGID_251_" y="0" width="135.2" height="627.7"/>
@@ -2270,7 +2361,8 @@ N2xJhKsRig3bEmEqxGKDdsSYSrEYoN2xJhKsRig3bEmEqxGKDdsSYSrEYoN2xJhKtNk30MQESx8h
 		M65.9,427.1v7.1l-0.4-0.4c0,0.4,0.2,0.6,0.5,0.6c0.1,0,0.1-0.1,0.2-0.1l-0.4-0.1l8.3-3l-0.2-0.1c0.2-0.1,0.4-0.4,0.2-0.6
 		c-0.1-0.1-0.2-0.2-0.2-0.2l0.2-0.1L65.9,427.1l0.4-0.1c-0.2-0.1-0.6,0-0.7,0.2v0.1L65.9,427.1z"/>
 </g>
-<rect x="80.4" y="385" fill="#404040" width="34.9" height="55.4"/>
+<rect id="p14" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+	  x="80.4" y="385" fill="#404040" width="34.9" height="55.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_271_" y="0" width="135.2" height="627.7"/>
@@ -2295,7 +2387,8 @@ N2xJhKsRig3bEmEqxGKDdsSYSrEYoN2xJhKsRig3bEmEqxGKDdsSYSrEYoN2xJhKtNk30MQESx8h
 	
 		<rect x="88.6" y="413.6" clip-path="url(#SVGID_274_)" fill="none" stroke="#000000" stroke-width="0.36" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="4.2" height="4.2"/>
 </g>
-<rect x="23.6" y="385" fill="#404040" width="35" height="55.4"/>
+<rect id="p13" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+	  x="23.6" y="385" fill="#404040" width="35" height="55.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_275_" y="0" width="135.2" height="627.7"/>
@@ -2462,7 +2555,8 @@ nuV4a4Osdy/DTreQpClOL9QfjERDbbb5kpp//9k=" transform="matrix(0.12 0 0 22.8 77.88 
 		M65.9,482.4v6.2h-0.4c0,0.2,0.2,0.5,0.5,0.5c0.1,0,0.1,0,0.2,0l-0.4-0.5l8.3-3.1l-0.2,0.4c0.2-0.1,0.4-0.5,0.2-0.7
 		c-0.1-0.1-0.2-0.1-0.2-0.2l0.2-0.4l-8.3-3.1l0.4,0.2c-0.2-0.1-0.6,0-0.7,0.2c0,0.1,0,0.1,0,0.2L65.9,482.4z"/>
 </g>
-<rect x="80.4" y="440.4" fill="#404040" width="34.9" height="54.4"/>
+<rect id="p16" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+	  x="80.4" y="440.4" fill="#404040" width="34.9" height="54.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_295_" y="0" width="135.2" height="627.7"/>
@@ -2487,7 +2581,8 @@ nuV4a4Osdy/DTreQpClOL9QfjERDbbb5kpp//9k=" transform="matrix(0.12 0 0 22.8 77.88 
 	
 		<rect x="88.6" y="469.1" clip-path="url(#SVGID_298_)" fill="none" stroke="#000000" stroke-width="0.36" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="4.2" height="3.1"/>
 </g>
-<rect x="23.6" y="440.4" fill="#404040" width="35" height="54.4"/>
+<rect id="p15" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+	  x="23.6" y="440.4" fill="#404040" width="35" height="54.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_299_" y="0" width="135.2" height="627.7"/>
@@ -2653,7 +2748,8 @@ drj35J5Ndrr/AOSOTS28dS1JcVxD1BAR37v4pTT/2Q==" transform="matrix(0.12 0 0 22.92 7
 		M65.9,536.9v6.1l-0.4,0.5c0,0.2,0.2,0.5,0.5,0.5c0.1,0,0.1,0,0.2-0.1l-0.4,0.2l8.3-3.1l-0.2-0.4c0.2-0.1,0.4-0.4,0.2-0.6
 		c-0.1-0.1-0.2-0.2-0.2-0.2l0.2,0.1L65.9,536.9l0.4-0.4c-0.2-0.1-0.6,0-0.7,0.2v0.1H65.9z"/>
 </g>
-<rect x="80.4" y="494.8" fill="#404040" width="34.9" height="54.4"/>
+<rect id="p18" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+	  x="80.4" y="494.8" fill="#404040" width="34.9" height="54.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_319_" y="0" width="135.2" height="627.7"/>
@@ -2678,7 +2774,8 @@ drj35J5Ndrr/AOSOTS28dS1JcVxD1BAR37v4pTT/2Q==" transform="matrix(0.12 0 0 22.92 7
 	
 		<rect x="88.6" y="523.6" clip-path="url(#SVGID_322_)" fill="none" stroke="#000000" stroke-width="0.36" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="4.2" height="4.1"/>
 </g>
-<rect x="23.6" y="494.8" fill="#404040" width="35" height="54.4"/>
+<rect id="p17" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+	  x="23.6" y="494.8" fill="#404040" width="35" height="54.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_323_" y="0" width="135.2" height="627.7"/>
@@ -2844,7 +2941,8 @@ kAqsRpJN2RIBVYjSSbsiQCqxGkk3ZEgFUEgygEgGwACQ2AOWv0t9odNfob7E9NccZrsT01xxWf5p
 		M65.9,591.2v7.2l-0.4-0.2c0,0.2,0.2,0.5,0.5,0.5c0.1,0,0.1,0,0.2,0l-0.4-0.2l8.3-3.1l-0.2,0.1c0.2-0.1,0.4-0.4,0.2-0.7
 		c-0.1-0.1-0.2-0.1-0.2-0.2l0.2-0.1L65.9,591.2h0.4c-0.2-0.1-0.6,0-0.7,0.2c0,0.1,0,0.1,0,0.2L65.9,591.2z"/>
 </g>
-<rect x="80.4" y="549.1" fill="#404040" width="34.9" height="55.4"/>
+<rect id="p20" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+	  x="80.4" y="549.1" fill="#404040" width="34.9" height="55.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_343_" y="0" width="135.2" height="627.7"/>
@@ -2869,7 +2967,8 @@ kAqsRpJN2RIBVYjSSbsiQCqxGkk3ZEgFUEgygEgGwACQ2AOWv0t9odNfob7E9NccZrsT01xxWf5p
 	
 		<rect x="88.6" y="577.9" clip-path="url(#SVGID_346_)" fill="none" stroke="#000000" stroke-width="0.36" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="4.2" height="4.1"/>
 </g>
-<rect x="23.6" y="549.1" fill="#404040" width="35" height="55.4"/>
+<rect id="p19" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+	  x="23.6" y="549.1" fill="#404040" width="35" height="55.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_347_" y="0" width="135.2" height="627.7"/>

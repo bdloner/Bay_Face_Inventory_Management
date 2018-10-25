@@ -1,6 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" id="a9k-mpa-2x10ge" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 	 viewBox="0 0 136 627.7" enable-background="new 0 0 136 627.7" xml:space="preserve">
+
+	<script type="text/javascript"><![CDATA[
+
+document.addEventListener("DOMContentLoaded", function(event) {
+
+    var params = document.defaultView.frameElement.getElementsByTagName("param")[0].value;
+
+    var getLocal = JSON.parse(localStorage.getItem('arraysInfoPort'));
+
+    var count = 1;
+
+        for(var i=0; i<getLocal.length; i++){
+                for(var j=0; j<getLocal[i].length; j++){
+                    var splitCard = getLocal[i][j].split(/[()]/);
+                    if (splitCard[0].includes("A9K-MOD") === true){
+                        if(splitCard[1] === params){
+                            if(count%3 != 0){
+                                if(getLocal[i][2] === "up"){
+                                    var path = document.getElementById("p" + count).style.fill = "green";
+                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                                } else if(getLocal[i][2] === "down"){
+                                    var path = document.getElementById("p" + count).style.fill = "red";
+                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                                } else if(getLocal[i][2] === "admin_down"){
+                                    var path = document.getElementById("p" + count).style.fill = "grey";
+                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                                } else {
+                                    var path = document.getElementById("p" + count).style.fill = "black";
+                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                                }
+                                count++;
+                            }
+                        }
+                    }
+                }
+        }
+});
+
+]]></script>
+
+	<style>
+			#tooltip {
+            	font-size:9px;
+            	dominant-baseline: hanging;
+            }
+
+            .tooltip-trigger{
+            	fill:#404040;
+            }
+
+            .tooltip-trigger:hover{
+            	transition: opacity 0.6s ease;
+            	opacity:0.3;
+            }
+	</style>
+
 <g>
 	<defs>
 		<rect id="SVGID_1_" x="5" y="2.2" width="127.4" height="623.6"/>
@@ -874,7 +930,8 @@ wQ0IREFc/0OIEEIIIUSfhwADAKZg2pFbaS9oAAAAAElFTkSuQmCC" transform="matrix(0.12 0 0
 	<clipPath id="SVGID_108_">
 		<use xlink:href="#SVGID_107_"  overflow="visible"/>
 	</clipPath>
-	<path clip-path="url(#SVGID_108_)" fill-rule="evenodd" clip-rule="evenodd" fill="#5F5F5F" d="M95.4,343.3H65.3l-0.1,0.1
+	<path id="p2" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+		  clip-path="url(#SVGID_108_)" fill-rule="evenodd" clip-rule="evenodd" fill="#5F5F5F" d="M95.4,343.3H65.3l-0.1,0.1
 		c-1.1,0-1.9,1-1.9,2l0,0v-0.1v70.1v0.1c0,1.1,0.8,1.9,1.9,1.9h0.1h30.1c1.1,0,1.9-0.8,1.9-1.9v-0.1v-70.1v0.1c0-1.1-0.8-2-1.9-2
 		V343.3z"/>
 	
@@ -1097,7 +1154,8 @@ s1fhaeNc9QAAAABJRU5ErkJggg==" transform="matrix(0.12 0 0 0.12 106.68 114.1199)">
 	<clipPath id="SVGID_114_">
 		<use xlink:href="#SVGID_113_"  overflow="visible"/>
 	</clipPath>
-	<path clip-path="url(#SVGID_114_)" fill-rule="evenodd" clip-rule="evenodd" fill="#5F5F5F" d="M95.4,83.5H65.3l-0.1,0.4
+	<path id="p1" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+		  clip-path="url(#SVGID_114_)" fill-rule="evenodd" clip-rule="evenodd" fill="#5F5F5F" d="M95.4,83.5H65.3l-0.1,0.4
 		c-1.1,0-1.9,1-1.9,2l0,0v-0.4v70.1v0.4c0,1.1,0.8,1.9,1.9,1.9l0.1-0.1h30.1v0.1c1.1,0,1.9-0.8,1.9-1.9v-0.4V85.6v0.4
 		c0-1.1-0.8-2-1.9-2V83.5z"/>
 	

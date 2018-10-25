@@ -3031,7 +3031,9 @@ X+fil8fQ+l/l+7n+h9Kv7tf1Po39z6/P2PrV/Zr9j63+T7Of6j/D+F1UunTdtN/LSX/iX6Y//9k=" tr
 
 	<foreignObject id="fore1" style="display:none;" width="66.6" height="299.5" x="10.3" y="58.3">
 		<div xmlns="http://www.w3.org/1999/xhtml">
-			<object id="Linecard1" data="A9K-MPA-20X10GE.svg"/>
+			<object id="Linecard1" data="#">
+				<param name="param1" value="slot1" />
+			</object>
 		</div>
     </foreignObject>
 
@@ -3039,7 +3041,9 @@ X+fil8fQ+l/l+7n+h9Kv7tf1Po39z6/P2PrV/Zr9j63+T7Of6j/D+F1UunTdtN/LSX/iX6Y//9k=" tr
 
 	<foreignObject id="fore2" style="display:none;" width="66.6" height="299.5" x="10.3" y="371.6">
 		<div xmlns="http://www.w3.org/1999/xhtml">
-			<object id="Linecard2" data="A9K-MPA-20X10GE.svg"/>
+			<object id="Linecard2" data="#">
+				<param name="param2" value="slot2" />
+			</object>
 		</div>
     </foreignObject>
 

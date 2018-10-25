@@ -1,6 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" id="a9k-mpa-2x40ge" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 	 viewBox="0 0 145.3 670.7" enable-background="new 0 0 145.3 670.7" xml:space="preserve">
+
+	<script type="text/javascript"><![CDATA[
+
+document.addEventListener("DOMContentLoaded", function(event) {
+
+    var params = document.defaultView.frameElement.getElementsByTagName("param")[0].value;
+
+    var getLocal = JSON.parse(localStorage.getItem('arraysInfoPort'));
+
+    var count = 1;
+
+        for(var i=0; i<getLocal.length; i++){
+                for(var j=0; j<getLocal[i].length; j++){
+                    var splitCard = getLocal[i][j].split(/[()]/);
+                    if (splitCard[0].includes("A9K-MOD") === true){
+                        if(splitCard[1] === params){
+                            if(count%3 != 0){
+                                if(getLocal[i][2] === "up"){
+                                    var path = document.getElementById("p" + count).style.fill = "green";
+                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                                } else if(getLocal[i][2] === "down"){
+                                    var path = document.getElementById("p" + count).style.fill = "red";
+                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                                } else if(getLocal[i][2] === "admin_down"){
+                                    var path = document.getElementById("p" + count).style.fill = "grey";
+                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                                } else {
+                                    var path = document.getElementById("p" + count).style.fill = "black";
+                                    var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
+                                }
+                                count++;
+                            }
+                        }
+                    }
+                }
+        }
+});
+
+]]></script>
+
+	<style>
+			#tooltip {
+            	font-size:9px;
+            	dominant-baseline: hanging;
+            }
+
+            .tooltip-trigger{
+            	fill:#404040;
+            }
+
+            .tooltip-trigger:hover{
+            	transition: opacity 0.6s ease;
+            	opacity:0.3;
+            }
+	</style>
+
 <g>
 	<defs>
 		<rect id="SVGID_1_" x="4.8" y="2.4" width="137.2" height="666.1"/>
@@ -889,7 +945,8 @@ o8FqBKJgaQdRdJkD+Y/u03nyfW4iIiKi2n4FGACVTOqS6CSD7AAAAABJRU5ErkJggg==" transform=
 	<clipPath id="SVGID_108_">
 		<use xlink:href="#SVGID_107_"  overflow="visible"/>
 	</clipPath>
-	<path clip-path="url(#SVGID_108_)" fill-rule="evenodd" clip-rule="evenodd" fill="#5F5F5F" d="M102.4,366.8H70.2l-0.5,0.1
+	<path id="p2" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+		  clip-path="url(#SVGID_108_)" fill-rule="evenodd" clip-rule="evenodd" fill="#5F5F5F" d="M102.4,366.8H70.2l-0.5,0.1
 		c-1.1,0-2,1-2,2.2l0,0L68,369v74.9l-0.4,0.1c0,1.1,1,2,2,2h0.5h32.2H102c1.2,0,2-1,2-2l0.5-0.1V369l-0.5,0.1c0-1.2-0.8-2.2-2-2.2
 		L102.4,366.8z"/>
 	
@@ -1119,7 +1176,8 @@ lY4EyyxQKiOHgO+2BC8D7g2/2y8IUr23kOeDCCGEEPKXXwEGAM7wcIl0OyR4AAAAAElFTkSuQmCC" tr
 	<clipPath id="SVGID_114_">
 		<use xlink:href="#SVGID_113_"  overflow="visible"/>
 	</clipPath>
-	<path clip-path="url(#SVGID_114_)" fill-rule="evenodd" clip-rule="evenodd" fill="#5F5F5F" d="M102.4,89.3H70.2l-0.5,0.5
+	<path id="p1" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable"
+		  clip-path="url(#SVGID_114_)" fill-rule="evenodd" clip-rule="evenodd" fill="#5F5F5F" d="M102.4,89.3H70.2l-0.5,0.5
 		c-1.1,0-2,1-2,2l0,0l0.4-0.2v74.9l-0.4,0.2c0,1.2,1,2.2,2,2.2l0.5-0.2h32.2l-0.4,0.2c1.2,0,2-1,2-2.2l0.5-0.2V91.6l-0.5,0.2
 		c0-1.1-0.8-2-2-2L102.4,89.3z"/>
 	

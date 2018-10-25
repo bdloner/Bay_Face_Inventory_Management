@@ -3598,7 +3598,9 @@ QlhYmIGqBjIxMVHXwFevXjEMWgAQYAAOZwWiN+7s3wAAAABJRU5ErkJggg==" transform="matrix(
 
 	<foreignObject id="fore1" style="display:none;" width="44" height="390" x="87" y="76">
 		<div xmlns="http://www.w3.org/1999/xhtml">
-			<object id="Linecard1" data="A9K-RSP880-SE.svg"/>
+			<object id="Linecard1" data="#">
+				<param name="param1" value="slot1" />
+			</object>
 		</div>
     </foreignObject>
 
@@ -3606,7 +3608,9 @@ QlhYmIGqBjIxMVHXwFevXjEMWgAQYAAOZwWiN+7s3wAAAABJRU5ErkJggg==" transform="matrix(
 
 	<foreignObject id="fore2" style="display:none;" width="44" height="390" x="130" y="76">
 		<div xmlns="http://www.w3.org/1999/xhtml">
-			<object id="Linecard2" data="A9K-MOD160-SE.svg"/>
+			<object id="Linecard2" data="A9K-MOD160-SE.svg">
+				<param name="param2" value="slot2" />
+			</object>
 		</div>
     </foreignObject>
 
@@ -3614,7 +3618,10 @@ QlhYmIGqBjIxMVHXwFevXjEMWgAQYAAOZwWiN+7s3wAAAABJRU5ErkJggg==" transform="matrix(
 
 	<foreignObject id="fore3" style="display:none;" width="44" height="390" x="172" y="76">
 		<div xmlns="http://www.w3.org/1999/xhtml">
-			<object id="Linecard3" data="A9K-MOD160-SE.svg"/>
+			<object id="Linecard3" data="#">
+				<param name="param3" value="slot3" />
+			</object>
+
 		</div>
     </foreignObject>
 
@@ -3622,7 +3629,9 @@ QlhYmIGqBjIxMVHXwFevXjEMWgAQYAAOZwWiN+7s3wAAAABJRU5ErkJggg==" transform="matrix(
 
 	<foreignObject id="fore4" style="display:none;" width="44" height="390" x="214" y="76">
 		<div xmlns="http://www.w3.org/1999/xhtml">
-			<object id="Linecard4" data="A9K-MOD160-SE.svg"/>
+			<object id="Linecard4" data="#">
+				<param name="param4" value="slot4" />
+			</object>
 		</div>
     </foreignObject>
 
@@ -3630,7 +3639,9 @@ QlhYmIGqBjIxMVHXwFevXjEMWgAQYAAOZwWiN+7s3wAAAABJRU5ErkJggg==" transform="matrix(
 
 	<foreignObject id="fore5" style="display:none;" width="44" height="390" x="257" y="76">
 		<div xmlns="http://www.w3.org/1999/xhtml">
-			<object id="Linecard5" data="A9K-MOD160-SE.svg"/>
+			<object id="Linecard5" data="#">
+				<param name="param5" value="slot5" />
+			</object>
 		</div>
     </foreignObject>
 
@@ -3638,7 +3649,9 @@ QlhYmIGqBjIxMVHXwFevXjEMWgAQYAAOZwWiN+7s3wAAAABJRU5ErkJggg==" transform="matrix(
 
 	<foreignObject id="fore6" style="display:none;" width="44" height="390" x="300" y="76">
 		<div xmlns="http://www.w3.org/1999/xhtml">
-			<object id="Linecard6" data="A9K-RSP880-SE.svg"/>
+			<object id="Linecard6" data="#">
+				<param name="param6" value="slot6" />
+			</object>
 		</div>
     </foreignObject>
 
