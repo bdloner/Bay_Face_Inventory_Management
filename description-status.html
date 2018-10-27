@@ -7,145 +7,165 @@
 
     <style>
 
-        .login-page {
-            width: 360px;
-            padding: 8% 0 0;
-            margin: auto;
-        }
-        .form {
-            position: relative;
-            z-index: 1;
-            background: rgba(255, 255, 255, 0.3);
-            max-width: 360px;
-            margin: 0 auto 100px;
-            padding: 45px;
-            text-align: center;
-            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        @import url(https://fonts.googleapis.com/css?family=Lato:100,400);
+
+        body{
+            margin: 0;
+            padding: 0;
+            background: #eee;
         }
 
-        .container {
-            position: relative;
-            z-index: 1;
-            max-width: 300px;
-            margin: 0 auto;
-        }
-        .container:before, .container:after {
-            content: "";
-            display: block;
-            clear: both;
+        .box{
+            width: 250px;
+            height: 200px;
+            position: absolute;
+            left: calc(50% - 125px);
+            top: calc(50% - 100px);
+            left: -webkit-calc(50% - 125px);
+            top: -webkit-calc(50% - 100px);
         }
 
-        .text-status {
-            font-family: Kanit;
+        .box span{
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
             font-size: 20px;
-        }
-
-        body {
-            background: #0b0b14;
-        }
-
-        .status {
-            width: 10px;
-            height: 10px;
-            border-radius: 100% 100%;
             position: absolute;
-            top: 50%;
-            left: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            background: #7fb900;
         }
 
-        .pulse {
-            border-radius: 50px;
-            line-height: 50px;
-            text-align: center;
-            width: 60px;
-            height: 60px;
-            position: absolute;
-            top: 70%;
-            left: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .pulse:before, .pulse:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(127, 185, 0, 0.2);
-            border-radius: 50px;
-            opacity: 0;
-        }
-        .pulse:before {
-            -webkit-transform: scale(1);
-            transform: scale(1);
-            -webkit-animation: pulse 3s infinite linear;
-            animation: pulse 3s infinite linear;
-        }
-        .pulse:after {
-            -webkit-animation: pulse 3s 2s infinite linear;
-            animation: pulse 3s 2s infinite linear;
+        .box span:nth-child(2){
+            top: 2px;
+            left: 125px;
         }
 
-        @-webkit-keyframes pulse {
-            0% {
-                -webkit-transform: scale(0.6);
-                transform: scale(0.6);
-                opacity: 0;
+        .box span:nth-child(7){
+            top: 85px;
+            left: 125px;
+        }
+
+        .box span:nth-child(12){
+            top: 165px;
+            left: 125px;
+        }
+
+        .server{
+            width: 110px;
+            height: 30px;
+            background: #3a3a3a;
+            border-radius: 1px;
+        }
+
+        .server ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .server:first-child ul li{
+            width: 6px;
+            height: 6px;
+            float: left;
+            margin-left: 10px;
+            margin-top: 12px;
+            background: rgba(149,244,118,0.6);
+        }
+
+        .server ul li:first-child{
+            -webkit-animation: pattern1 0.14s linear infinite;
+        }
+
+        .server ul li:nth-child(2){
+            -webkit-animation: pattern1 0.14s 0.02s linear infinite;
+        }
+
+        .server ul li:last-child{
+            -webkit-animation: pattern1 0.14s 0.05s linear infinite;
+        }
+
+        @-webkit-keyframes pattern1{
+            0%{
+                background: rgba(149,244,118,0.6);
             }
-            33% {
-                -webkit-transform: scale(1);
-                transform: scale(1);
-                opacity: 1;
-            }
-            100% {
-                -webkit-transform: scale(1.4);
-                transform: scale(1.4);
-                opacity: 0;
+            100%{
+                background: rgba(149,244,118,1);
             }
         }
 
-        @keyframes pulse {
-            0% {
-                -webkit-transform: scale(0.6);
-                transform: scale(0.6);
-                opacity: 0;
+        .warning ul li{
+            width: 6px;
+            height: 6px;
+            float: left;
+            margin-left: 10px;
+            margin-top: 12px;
+            background: rgba(245,190,0,0.6);
+        }
+
+        .warning ul li:first-child{
+            -webkit-animation: pattern2 0.14s linear infinite;
+        }
+
+        .warning ul li:nth-child(2){
+            -webkit-animation: pattern2 0.14s 0.02s linear infinite;
+        }
+
+        .warning ul li:last-child{
+            -webkit-animation: pattern2 0.14s 0.05s linear infinite;
+        }
+
+        @-webkit-keyframes pattern2{
+            0%{
+                background: rgba(245,190,0,0.6);
             }
-            33% {
-                -webkit-transform: scale(1);
-                transform: scale(1);
-                opacity: 1;
-            }
-            100% {
-                -webkit-transform: scale(1.4);
-                transform: scale(1.4);
-                opacity: 0;
+            100%{
+                background: rgba(245,190,0,1);
             }
         }
-        /* Soon
-        [data-status="running"] { background: rgba(127, 185, 0, 1); }
-        [data-status="pending"] { background: rgba(243, 156, 18, 1); }
-        [data-status="failed"] { background: rgba(192, 57, 43, 1); }
-*/
+
+        .error ul li{
+            width: 6px;
+            height: 6px;
+            float: left;
+            margin-left: 10px;
+            margin-top: 12px;
+            background: rgba(236,69,62,0.6);
+        }
+
+        .error ul li:first-child{
+            -webkit-animation: pattern3 0.9s linear infinite;
+        }
+
+        .error ul li:nth-child(2){
+            -webkit-animation: pattern3 0.9s linear infinite;
+        }
+
+        .error ul li:last-child{
+            -webkit-animation: pattern3 0.9s linear infinite;
+        }
+
+        @-webkit-keyframes pattern3{
+            0%{
+                background: rgba(236,69,62,0.6);
+            }
+            80%{
+                background: rgba(236,69,62,0.6);
+            }
+            100%{
+                background: rgba(236,69,62,1);
+            }
+        }
 
     </style>
 </head>
 <body>
-    <div class="login-page">
-        <div class="form">
-            <div style="margin-bottom: 150px">
-                <p class="text-status">GigabitEthernet1/3 <br> Status:UP</p>
-                <div class="pulse" data-status="running">
-                    <div class="status">
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="box">
+    <div class="server">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
     </div>
+    <span>Status : UP</span>
+    <br><br><br>
+</div>
 </body>
 </html>

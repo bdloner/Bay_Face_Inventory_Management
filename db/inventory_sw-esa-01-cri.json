@@ -18,17 +18,17 @@
               },
               {
                 "ifname": "GigabitEthernet1/0/1",
-                "ifstate": "up",
+                "ifstate": "down",
                 "sname": "Gig1/0/1"
               },
               {
                 "ifname": "GigabitEthernet1/0/2",
-                "ifstate": "down",
+                "ifstate": "admin_down",
                 "sname": "Gig1/0/2"
               },
               {
                 "ifname": "GigabitEthernet1/0/3",
-                "ifstate": "down",
+                "ifstate": "no_module",
                 "sname": "Gig1/0/3"
               }
             ]
@@ -40,7 +40,7 @@
           "sn": "JAE163505EY",
           "data": [
             {
-              "title": "A9K-MOD(slot1)",
+              "title": "A9K-MOD(slot2-1)",
               "pid": "A9K-MPA-20X1GE",
               "sn": "JAE163505EY",
               "data": [
@@ -77,7 +77,7 @@
                   },
                   {
                     "ifname": "GigabitEthernet2/1/12",
-                    "ifstate": "down",
+                    "ifstate": "admin_down",
                     "sname": "Gig2/1/12"
                   },
                   {
@@ -87,7 +87,7 @@
                   },
                   {
                     "ifname": "GigabitEthernet2/1/16",
-                    "ifstate": "up",
+                    "ifstate": "no_module",
                     "sname": "Gig2/1/16"
                   },
                   {
@@ -119,12 +119,12 @@
                   },
                   {
                     "ifname": "GigabitEthernet2/1/9",
-                    "ifstate": "up",
+                    "ifstate": "admin_down",
                     "sname": "Gig2/1/9"
                   },
                   {
                     "ifname": "GigabitEthernet2/1/11",
-                    "ifstate": "up",
+                    "ifstate": "no_module",
                     "sname": "Gig2/1/11"
                   },
                   {
@@ -151,7 +151,7 @@
               ]
             },
             {
-              "title": "A9K-MOD(slot2)",
+              "title": "A9K-MOD(slot2-2)",
               "pid": "A9K-MPA-20X10GE",
               "sn": "JAE163505EY",
               "data": [
@@ -270,12 +270,12 @@
           "data": [
             [
               {
-                "ifname": "GigabitEthernet1/0/0",
+                "ifname": "GigabitEthernet6/0/0",
                 "ifstate": "down",
                 "sname": "Gig1/0/0"
               },
               {
-                "ifname": "GigabitEthernet1/0/1",
+                "ifname": "GigabitEthernet6/0/1",
                 "ifstate": "up",
                 "sname": "Gig1/0/1"
               }
@@ -286,6 +286,6 @@
     }
   ],
   "sitename": "-",
-  "address": "10.230.5.4",
-  "hostname": "cri_2-sw4-04"
+  "address": "10.230.6.1",
+  "hostname": "sw-esa-01-cri"
 }

@@ -2,7 +2,7 @@
   "result": [
     {
       "title": "SwitchSystem",
-      "pid": "WS-C4507R-E",
+      "pid": "WS-C4510R+E",
       "sn": "SPE141400S2",
       "data": [
         {
@@ -258,7 +258,7 @@
         },
         {
           "title": "Linecard(slot2)",
-          "pid": "WS-X4748-SFP-E",
+          "pid": "WS-X4724-SFP-E",
           "sn": "JAE1325CHSI",
           "data": [
             [
@@ -274,12 +274,12 @@
               },
               {
                 "ifname": "GigabitEthernet2/5",
-                "ifstate": "down",
+                "ifstate": "up",
                 "sname": "Gig2/5"
               },
               {
                 "ifname": "GigabitEthernet2/7",
-                "ifstate": "down",
+                "ifstate": "up",
                 "sname": "Gig2/7"
               },
               {
@@ -294,12 +294,12 @@
               },
               {
                 "ifname": "GigabitEthernet2/13",
-                "ifstate": "down",
+                "ifstate": "up",
                 "sname": "Gig2/13"
               },
               {
                 "ifname": "GigabitEthernet2/15",
-                "ifstate": "down",
+                "ifstate": "up",
                 "sname": "Gig2/15"
               },
               {
@@ -309,7 +309,7 @@
               },
               {
                 "ifname": "GigabitEthernet2/19",
-                "ifstate": "down",
+                "ifstate": "admin_down",
                 "sname": "Gig2/19"
               },
               {
@@ -319,68 +319,8 @@
               },
               {
                 "ifname": "GigabitEthernet2/23",
-                "ifstate": "down",
+                "ifstate": "no_module",
                 "sname": "Gig2/23"
-              },
-              {
-                "ifname": "GigabitEthernet2/25",
-                "ifstate": "down",
-                "sname": "Gig2/25"
-              },
-              {
-                "ifname": "GigabitEthernet2/27",
-                "ifstate": "down",
-                "sname": "Gig2/27"
-              },
-              {
-                "ifname": "GigabitEthernet2/29",
-                "ifstate": "down",
-                "sname": "Gig2/29"
-              },
-              {
-                "ifname": "GigabitEthernet2/31",
-                "ifstate": "down",
-                "sname": "Gig2/31"
-              },
-              {
-                "ifname": "GigabitEthernet2/33",
-                "ifstate": "down",
-                "sname": "Gig2/33"
-              },
-              {
-                "ifname": "GigabitEthernet2/35",
-                "ifstate": "down",
-                "sname": "Gig2/35"
-              },
-              {
-                "ifname": "GigabitEthernet2/37",
-                "ifstate": "down",
-                "sname": "Gig2/37"
-              },
-              {
-                "ifname": "GigabitEthernet2/39",
-                "ifstate": "down",
-                "sname": "Gig2/39"
-              },
-              {
-                "ifname": "GigabitEthernet2/41",
-                "ifstate": "down",
-                "sname": "Gig2/41"
-              },
-              {
-                "ifname": "GigabitEthernet2/43",
-                "ifstate": "down",
-                "sname": "Gig2/43"
-              },
-              {
-                "ifname": "GigabitEthernet2/45",
-                "ifstate": "down",
-                "sname": "Gig2/45"
-              },
-              {
-                "ifname": "GigabitEthernet2/47",
-                "ifstate": "down",
-                "sname": "Gig2/47"
               }
             ],
             [
@@ -396,17 +336,17 @@
               },
               {
                 "ifname": "GigabitEthernet2/6",
-                "ifstate": "up",
+                "ifstate": "down",
                 "sname": "Gig2/6"
               },
               {
                 "ifname": "GigabitEthernet2/8",
-                "ifstate": "down",
+                "ifstate": "admin_down",
                 "sname": "Gig2/8"
               },
               {
                 "ifname": "GigabitEthernet2/10",
-                "ifstate": "down",
+                "ifstate": "no_module",
                 "sname": "Gig2/10"
               },
               {
@@ -416,22 +356,22 @@
               },
               {
                 "ifname": "GigabitEthernet2/14",
-                "ifstate": "down",
+                "ifstate": "up",
                 "sname": "Gig2/14"
               },
               {
                 "ifname": "GigabitEthernet2/16",
-                "ifstate": "down",
+                "ifstate": "up",
                 "sname": "Gig2/16"
               },
               {
                 "ifname": "GigabitEthernet2/18",
-                "ifstate": "down",
+                "ifstate": "no_module",
                 "sname": "Gig2/18"
               },
               {
                 "ifname": "GigabitEthernet2/20",
-                "ifstate": "down",
+                "ifstate": "admin_down",
                 "sname": "Gig2/20"
               },
               {
@@ -441,87 +381,157 @@
               },
               {
                 "ifname": "GigabitEthernet2/24",
-                "ifstate": "down",
+                "ifstate": "up",
                 "sname": "Gig2/24"
-              },
-              {
-                "ifname": "GigabitEthernet2/26",
-                "ifstate": "down",
-                "sname": "Gig2/26"
-              },
-              {
-                "ifname": "GigabitEthernet2/28",
-                "ifstate": "down",
-                "sname": "Gig2/28"
-              },
-              {
-                "ifname": "GigabitEthernet2/30",
-                "ifstate": "down",
-                "sname": "Gig2/30"
-              },
-              {
-                "ifname": "GigabitEthernet2/32",
-                "ifstate": "down",
-                "sname": "Gig2/32"
-              },
-              {
-                "ifname": "GigabitEthernet2/34",
-                "ifstate": "down",
-                "sname": "Gig2/34"
-              },
-              {
-                "ifname": "GigabitEthernet2/36",
-                "ifstate": "down",
-                "sname": "Gig2/36"
-              },
-              {
-                "ifname": "GigabitEthernet2/38",
-                "ifstate": "down",
-                "sname": "Gig2/38"
-              },
-              {
-                "ifname": "GigabitEthernet2/40",
-                "ifstate": "down",
-                "sname": "Gig2/40"
-              },
-              {
-                "ifname": "GigabitEthernet2/42",
-                "ifstate": "down",
-                "sname": "Gig2/42"
-              },
-              {
-                "ifname": "GigabitEthernet2/44",
-                "ifstate": "up",
-                "sname": "Gig2/44"
-              },
-              {
-                "ifname": "GigabitEthernet2/46",
-                "ifstate": "up",
-                "sname": "Gig2/46"
-              },
-              {
-                "ifname": "GigabitEthernet2/48",
-                "ifstate": "up",
-                "sname": "Gig2/48"
               }
             ]
           ]
         },
         {
-          "title": "Supervisor(slot3)",
-          "pid": "WS-X45-SUP6L-E",
+          "title": "Linecard(slot3)",
+          "pid": "WS-X4612-SFP-E",
+          "sn": "JAE1325CHSI",
+          "data": [
+            [
+              {
+                "ifname": "GigabitEthernet2/1",
+                "ifstate": "up",
+                "sname": "Gig2/1"
+              },
+              {
+                "ifname": "GigabitEthernet2/3",
+                "ifstate": "up",
+                "sname": "Gig2/3"
+              },
+              {
+                "ifname": "GigabitEthernet2/5",
+                "ifstate": "up",
+                "sname": "Gig2/5"
+              },
+              {
+                "ifname": "GigabitEthernet2/7",
+                "ifstate": "up",
+                "sname": "Gig2/7"
+              },
+              {
+                "ifname": "GigabitEthernet2/9",
+                "ifstate": "down",
+                "sname": "Gig2/9"
+              },
+              {
+                "ifname": "GigabitEthernet2/11",
+                "ifstate": "down",
+                "sname": "Gig2/11"
+              }
+            ],
+            [
+              {
+                "ifname": "GigabitEthernet2/2",
+                "ifstate": "down",
+                "sname": "Gig2/2"
+              },
+              {
+                "ifname": "GigabitEthernet2/4",
+                "ifstate": "admin_down",
+                "sname": "Gig2/4"
+              },
+              {
+                "ifname": "GigabitEthernet2/6",
+                "ifstate": "admin_down",
+                "sname": "Gig2/6"
+              },
+              {
+                "ifname": "GigabitEthernet2/8",
+                "ifstate": "up",
+                "sname": "Gig2/8"
+              },
+              {
+                "ifname": "GigabitEthernet2/10",
+                "ifstate": "down",
+                "sname": "Gig2/10"
+              },
+              {
+                "ifname": "GigabitEthernet2/12",
+                "ifstate": "no_module",
+                "sname": "Gig2/12"
+              }
+            ]
+          ]
+        },
+        {
+          "title": "Supervisor(slot5)",
+          "pid": "WS-X45-SUP7L-E",
           "sn": "JAE163505EY",
           "data": [
             [
               {
-                "ifname": "TenGigabitEthernet3/1",
+                "ifname": "TenGigabitEthernet5/1",
                 "ifstate": "up",
-                "sname": "TenGig3/1"
+                "sname": "TenGig5/1"
               },
               {
-                "ifname": "TenGigabitEthernet3/2",
+                "ifname": "TenGigabitEthernet5/2",
+                "ifstate": "down",
+                "sname": "TenGig5/2"
+              },
+              {
+                "ifname": "TenGigabitEthernet5/3",
+                "ifstate": "down",
+                "sname": "TenGig5/3"
+              },
+              {
+                "ifname": "TenGigabitEthernet5/4",
                 "ifstate": "up",
-                "sname": "TenGig3/2"
+                "sname": "TenGig5/4"
+              }
+            ]
+          ]
+        },
+        {
+          "title": "Supervisor(slot6)",
+          "pid": "WS-X45-SUP8-E",
+          "sn": "JAE163505EY",
+          "data": [
+            [
+              {
+                "ifname": "TenGigabitEthernet6/1",
+                "ifstate": "up",
+                "sname": "TenGig6/1"
+              },
+              {
+                "ifname": "TenGigabitEthernet6/2",
+                "ifstate": "up",
+                "sname": "TenGig6/2"
+              },
+              {
+                "ifname": "TenGigabitEthernet6/3",
+                "ifstate": "admin_down",
+                "sname": "TenGig6/3"
+              },
+              {
+                "ifname": "TenGigabitEthernet6/4",
+                "ifstate": "admin_down",
+                "sname": "TenGig6/4"
+              },
+              {
+                "ifname": "TenGigabitEthernet6/5",
+                "ifstate": "up",
+                "sname": "TenGig6/5"
+              },
+              {
+                "ifname": "TenGigabitEthernet6/6",
+                "ifstate": "down",
+                "sname": "TenGig6/6"
+              },
+              {
+                "ifname": "TenGigabitEthernet6/7",
+                "ifstate": "no_module",
+                "sname": "TenGig6/7"
+              },
+              {
+                "ifname": "TenGigabitEthernet6/8",
+                "ifstate": "up",
+                "sname": "TenGig6/8"
               }
             ]
           ]
@@ -530,6 +540,6 @@
     }
   ],
   "sitename": "-",
-  "address": "10.230.5.3",
-  "hostname": "cri_2-sw3-03"
+  "address": "10.230.5.5",
+  "hostname": "cri_2-sw5-05"
 }

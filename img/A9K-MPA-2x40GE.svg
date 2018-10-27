@@ -6,6 +6,38 @@
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
+	var svg = document.getElementById('a9k-mpa-2x40ge');
+	var tooltip = svg.getElementById('tooltip');
+	var tooltipText = tooltip.getElementsByTagName('text')[0];
+	var tooltipRects = tooltip.getElementsByTagName('rect');
+	var triggers = svg.getElementsByClassName('tooltip-trigger');
+
+    for (var i = 0; i < triggers.length; i++) {
+		triggers[i].addEventListener('mousemove', showTooltip);
+		triggers[i].addEventListener('mouseout', hideTooltip);
+	}
+
+	function showTooltip(evt) {
+		var pt = svg.createSVGPoint();
+		pt.x = evt.clientX;
+		pt.y = evt.clientY;
+		pt = pt.matrixTransform(svg.getScreenCTM().inverse());
+		var r_pt_x = pt.x - 50;
+		var r_pt_y = pt.y + 180;
+		tooltip.setAttributeNS(null, "transform", "translate(" + r_pt_x + " " + r_pt_y + ")");
+		tooltip.setAttributeNS(null, "visibility", "visible");
+
+		tooltipText.firstChild.data = evt.target.getAttributeNS(null, "data-tooltip-text");
+		var length = tooltipText.getComputedTextLength();
+		for (var i = 0; i < tooltipRects.length; i++) {
+			tooltipRects[i].setAttributeNS(null, "width", length + 8);
+		}
+	}
+
+	function hideTooltip(evt) {
+		tooltip.setAttributeNS(null, "visibility", "hidden");
+	}
+
     var params = document.defaultView.frameElement.getElementsByTagName("param")[0].value;
 
     var getLocal = JSON.parse(localStorage.getItem('arraysInfoPort'));
@@ -43,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 	<style>
 			#tooltip {
-            	font-size:9px;
+            	font-size:22px;
             	dominant-baseline: hanging;
             }
 
@@ -2008,4 +2040,11 @@ Jxhz1pQWXr4ljxh0jA2aDR7x5WeNgFfZjnWZOsUKJP4Mu9K8kiSqe3WleTZJdNyYqQGV4qeqk+X3
 		</g>
 	</g>
 </g>
+
+	<g id="tooltip" visibility="hidden" >
+        <rect style="transform: rotate(270deg);" x="2" y="2" width="80" height="26" fill="black" opacity="0.4" rx="2" ry="2"/>
+        <rect style="transform: rotate(270deg);" width="80" height="26" fill="white" rx="2" ry="2"/>
+        <text style="transform: rotate(270deg);" x="4" y="6">GigabitEthernet2/1</text>
+    </g>
+
 </svg>

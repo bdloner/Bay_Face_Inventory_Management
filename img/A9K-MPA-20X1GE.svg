@@ -1,9 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" id="a9k-mpa-20x1ge" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+<svg xmlns:xlink="http://www.w3.org/1999/xlink"
+	 version="1.0" id="a9k-mpa-20x1ge" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 	 viewBox="0 0 135.2 627.7" enable-background="new 0 0 135.2 627.7" xml:space="preserve">
 
 	<script type="text/ecmascript"><![CDATA[
 window.addEventListener("load", function() {
+
+	var svg = document.getElementById('a9k-mpa-20x1ge');
+	var tooltip = svg.getElementById('tooltip');
+	var tooltipText = tooltip.getElementsByTagName('text')[0];
+	var tooltipRects = tooltip.getElementsByTagName('rect');
+	var triggers = svg.getElementsByClassName('tooltip-trigger');
+
+    for (var i = 0; i < triggers.length; i++) {
+		triggers[i].addEventListener('mousemove', showTooltip);
+		triggers[i].addEventListener('mouseout', hideTooltip);
+	}
+
+	function showTooltip(evt) {
+		var pt = svg.createSVGPoint();
+		pt.x = evt.clientX;
+		pt.y = evt.clientY;
+		pt = pt.matrixTransform(svg.getScreenCTM().inverse());
+		var r_pt_x = pt.x + 30;
+		var r_pt_y = pt.y + 280;
+		tooltip.setAttributeNS(null, "transform", "translate(" + r_pt_x + " " + r_pt_y + ")");
+		tooltip.setAttributeNS(null, "visibility", "visible");
+
+		tooltipText.firstChild.data = evt.target.getAttributeNS(null, "data-tooltip-text");
+		var length = tooltipText.getComputedTextLength();
+		for (var i = 0; i < tooltipRects.length; i++) {
+			tooltipRects[i].setAttributeNS(null, "width", length + 8);
+		}
+	}
+
+	function hideTooltip(evt) {
+		tooltip.setAttributeNS(null, "visibility", "hidden");
+	}
 
 	var params = document.defaultView.frameElement.getElementsByTagName("param")[0].value;
 
@@ -18,7 +51,6 @@ window.addEventListener("load", function() {
 		for(var i=0; i<getLocal.length; i++){
 				for(var j=0; j<getLocal[i].length; j++){
 					var splitCard = getLocal[i][j].split(/[()]/);
-					console.log(splitCard);
 					if (splitCard[0].includes("A9K-MOD") === true){
 						if(splitCard[1] === params){
 							if(countLine%11 != 0){
@@ -66,7 +98,7 @@ window.addEventListener("load", function() {
 
 	<style>
 			#tooltip {
-            	font-size:9px;
+            	font-size:22px;
             	dominant-baseline: hanging;
             }
 
@@ -3609,4 +3641,11 @@ IYTQt/oTYACroo+xLI1OfQAAAABJRU5ErkJggg==" transform="matrix(0.12 0 0 0.12 93.36 
 		</g>
 	</g>
 </g>
+
+	<g id="tooltip" visibility="hidden" >
+        <rect style="transform: rotate(270deg);" x="2" y="2" width="80" height="26" fill="black" opacity="0.4" rx="2" ry="2"/>
+        <rect style="transform: rotate(270deg);" width="80" height="26" fill="white" rx="2" ry="2"/>
+        <text style="transform: rotate(270deg);" x="4" y="6">GigabitEthernet2/1</text>
+    </g>
+
 </svg>

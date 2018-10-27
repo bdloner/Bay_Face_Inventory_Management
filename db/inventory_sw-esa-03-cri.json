@@ -1,0 +1,94 @@
+{
+  "result": [
+    {
+      "title": "ASRSystem",
+      "pid": "ASR-9906",
+      "sn": "SPE141400S2",
+      "data": [
+        {
+          "title": "A9K-MOD(slot2)",
+          "pid": "A9K-MOD160-SE",
+          "sn": "JAE163505EY",
+          "data": [
+            {
+              "title": "A9K-MOD(slot2-1)",
+              "pid": "A9K-MPA-2x40GE",
+              "sn": "JAE163505EY",
+              "data": [
+                [
+                  {
+                    "ifname": "GigabitEthernet2/1/0",
+                    "ifstate": "up",
+                    "sname": "Gig2/1/0"
+                  },
+                  {
+                    "ifname": "GigabitEthernet2/1/1",
+                    "ifstate": "up",
+                    "sname": "Gig2/1/1"
+                  }
+                ]
+              ]
+            },
+            {
+              "title": "A9K-MOD(slot2-2)",
+              "pid": "A9K-MPA-2X10GE",
+              "sn": "JAE163505EY",
+              "data": [
+                [
+                  {
+                    "ifname": "GigabitEthernet2/2/0",
+                    "ifstate": "down",
+                    "sname": "Gig2/2/0"
+                  },
+                  {
+                    "ifname": "GigabitEthernet2/2/1",
+                    "ifstate": "down",
+                    "sname": "Gig2/2/1"
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "A9K-MOD(slot4)",
+          "pid": "A9K-MOD80-SE",
+          "sn": "JAE163505EY",
+          "data": [
+            {
+              "title": "A9K-MOD(slot4-1)",
+              "pid": "A9K-MPA-1X100GE",
+              "sn": "JAE163505EY",
+              "data": [
+                [
+                  {
+                    "ifname": "GigabitEthernet4/1/0",
+                    "ifstate": "up",
+                    "sname": "Gig2/1/0"
+                  }
+                ]
+              ]
+            },
+            {
+              "title": "A9K-MOD(slot4-2)",
+              "pid": "A9K-MPA-1x40GE",
+              "sn": "JAE163505EY",
+              "data": [
+                [
+                  {
+                    "ifname": "GigabitEthernet4/2/0",
+                    "ifstate": "down",
+                    "sname": "Gig2/2/0"
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sitename": "-",
+  "address": "10.230.6.3",
+  "hostname": "sw-esa-03-cri"
+}

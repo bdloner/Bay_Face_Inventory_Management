@@ -17,10 +17,13 @@ window.addEventListener("load", function() {
 	}
 
 	function showTooltip(evt) {
-		var CTM = svg.getScreenCTM();
-		var x = (evt.clientX - CTM.e - 30) / CTM.a;
-		var y = (evt.clientY - CTM.f - 16) / CTM.d;
-		tooltip.setAttributeNS(null, "transform", "translate(" + x + " " + y + ")");
+		var pt = svg.createSVGPoint();
+		pt.x = evt.clientX;
+		pt.y = evt.clientY;
+		pt = pt.matrixTransform(svg.getScreenCTM().inverse());
+		var r_pt_x = pt.x - 60;
+		var r_pt_y = pt.y - 22;
+		tooltip.setAttributeNS(null, "transform", "translate(" + r_pt_x + " " + r_pt_y + ")");
 		tooltip.setAttributeNS(null, "visibility", "visible");
 
 		tooltipText.firstChild.data = evt.target.getAttributeNS(null, "data-tooltip-text");
@@ -98,7 +101,7 @@ window.addEventListener("load", function() {
         <style>
 
             #tooltip {
-            font-size:8px;
+            font-size:11px;
             dominant-baseline: hanging;
             }
 
@@ -2114,46 +2117,7 @@ window.addEventListener("load", function() {
         <rect class="cls-20" x="21.96" y="57.48" width="500.16" height="1.08"/>
         <polyline class="cls-21" points="522.12 57.48 21.96 57.48 21.96 58.56 522.12 58.56 522.12 57.48"/>
     </g>
-    <g class="cls-29">
-        <g class="cls-29">
-            <image width="41" height="24" transform="translate(4.68 4.68) scale(0.12)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAZCAYAAACsGgdbAAAACXBIWXMAAFxGAABcRgEUlENBAAABCklEQVRYR82WUQ6EIAxEi/GfA3AYzu5hPIAnYL+aYNPSjqLuS/YHhzpMYSW11ujfWbf9OLmsJSdNKHWIVtNp9RipXy3hU4zMSQ2bXcbyuUQM9rB+kdEihTRtpNUooXYjxi2ie1rqtv1ocLtnJENk19HGYZNfEGr328g0byd5db8i8xai8T5Dikn6utYh4Z981gMlyS+adXh6RmZVk97KLLx5teTkLVAzCyU5C88o0XnBQ5NeMkxU18OpRs7DX/wF9UaHXxyvBd5zCapntHmXk6wlJ6TNdy4enxwcFNMkkhLRs/rXkoxcy6yxy3tyFl6iteR0ShK5480c93it3QxilLWftJtfbrVaLuQH2r6q1U9JVNMAAAAASUVORK5CYII="/>
-        </g>
-    </g>
-    <g class="cls-30">
-        <g class="cls-30">
-            <use transform="translate(9.96 6.36) scale(0.12 0.12)" xlink:href="#image"/>
-        </g>
-    </g>
-    <g class="cls-31">
-        <g class="cls-31">
-            <image width="18" height="24" transform="translate(10.92 4.68) scale(0.12 0.12)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAZCAYAAAA8CX6UAAAACXBIWXMAAFxGAABcRgEUlENBAAAArUlEQVQ4T7WTzRGFIBCDg+PdAizG2i3GAqyAd4qD7A+L8HJyJMl+OGvKOWOGVgA4r1u0HfuWpN32LnyQkZiYXSyDNll7Rz1FX6jKjEkEvAk8GqAq6qGqvatlpFoklLhahErzuN+oR2qRR2WdmURawBvw36sBA5s9KrXIm2ydiaLIAmqe5tWOfUuRJX0VRWio2usSlSQtqqeoh4YqM3M3+wsNxey8n3aEhjqvO/8A+ihXnbnK3dgAAAAASUVORK5CYII="/>
-        </g>
-    </g>
-    <g class="cls-32">
-        <g class="cls-32">
-            <image width="57" height="24" transform="translate(13.2 4.68) scale(0.12 0.12)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAAZCAYAAACLtIazAAAACXBIWXMAAFxGAABcRgEUlENBAAABF0lEQVRYR+WYyxGEIAyGA+PdAiyG2inGAqyAPbGDCHnwlN3vaGLCTwJmVM45+HU2ysGe120XzLGr1HMO/l2MMK7U3xO/R4ociWTjMF9v82J1zjF0fhvcdXk/VORIuAsvIduuVFLqvOTOMscXgzqDsd2el0tWUpI0BVegPS9XmyuOnco1rV1rxUl4tGttcm4VY8yxK05ubrwQtJIlAUvonedWSc5OYkirSNlLSGnIVrLHAkJ6x/eYY1dfkdJxiqJFDCm5TtSYUUKLGDVg389Hu86oQG90jwqM3ihqChJ/J+MJP3w2A0ogwMSJpwUcgQALi+QKBFhYpISNuiSoKYay90BSRYCX/f6oAbv8lmvXkpt8OZEl/IXID6iKtrFU2zYzAAAAAElFTkSuQmCC"/>
-        </g>
-    </g>
-    <g class="cls-33">
-        <g class="cls-33">
-            <use transform="translate(20.64 6.96) scale(0.12 0.12)" xlink:href="#image"/>
-        </g>
-    </g>
-    <g class="cls-34">
-        <g class="cls-34">
-            <image width="50" height="24" transform="translate(21.36 4.68) scale(0.12)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAZCAYAAABzVH1EAAAACXBIWXMAAFxGAABcRgEUlENBAAAA+ElEQVRYR92WURKEIAiG0em9A3SYzt5hOkAncB92aMpAIFuX/GZ6UXB+EJKQUoIeGPKFZd3YyOZpDNweQNm3BJ5r8c+17IFoDkEbKaAW5FricVGL1f6XoJYoGb6FgcouVTq53bJuSSoxaV+C86e0XG6Ec64V9SSUln5KSzI44ulWci434umPZCFyjY0f5eQRsbRqHkFNIp46dwDQjQg1Ad1FkwiAr6ZTj2hEag9vDfmO4Ec5APgKBnUWe+QYzD9e9hLs9CsxT2NofROWRFxmLYuzJ7oZUfp/2TVrnmCbXRLurZcigD9Rd9h7xBKMxbYVp9KSZi6PASAf+eOQg4ATdwsAAAAASUVORK5CYII="/>
-        </g>
-    </g>
-    <g class="cls-35">
-        <g class="cls-35">
-            <use transform="translate(27.96 6.96) scale(0.12 0.12)" xlink:href="#image"/>
-        </g>
-    </g>
-    <g class="cls-36">
-        <g class="cls-36">
-            <image width="15" height="24" transform="translate(28.8 4.68) scale(0.12 0.12)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAZCAYAAADuWXTMAAAACXBIWXMAAFxGAABcRgEUlENBAAAATUlEQVQ4T2P8//8/A7mA5eDTj2TrZiKkAB8YOM0s6AL20vyM2BRiAxTZPEQ1YwQYsYnGXpqfkSKbB07zaCIhEQycZrKTJwMDhTYPnGYAG1gPOXsyu1MAAAAASUVORK5CYII="/>
-        </g>
-    </g>
+
     <g class="cls-3">
         <polygon class="cls-37" points="522.12 2.4 522.12 53.64 539.4 53.64 539.4 0 524.28 0 524.28 2.4 522.12 2.4"/>
     </g>
@@ -5899,6 +5863,22 @@ window.addEventListener("load", function() {
             <image width="24" height="15" transform="translate(505.56 8.88) scale(0.12 0.12)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAQCAYAAADj5tSrAAAACXBIWXMAAFxGAABcRgEUlENBAAAApklEQVQ4T7WUQRLFIAhDY6cH4+ZyM/+KToqg1v6+ZQ0GItPSWsPXnNmBql7uIlIyndcCvf5AgC8aEWlVtfH30GQVP202cWdihbOIGNZGdTeTHYMVXsVlcGxRo5fJzhSs5ccebtcTA2Ol5gCerayHuzfDboV3YjKiWh8hAJRa6/IU0QVZc3z+l+2acY5imnVrGn/u3zj9Qc4QkWKXZYtj5q/iGk3IZz9F4ncfLzHu6wAAAABJRU5ErkJggg=="/>
         </g>
     </g>
+
+    <text transform="matrix(1 0 0 1 5.1592 7)" fill="#D8D8D8" font-family="'MyriadPro-Bold'" font-size="3.5671px">W</text>
+    <text transform="matrix(1 0 0 1 8.2984 7)" fill="#D8D8D8" font-family="'MyriadPro-Bold'" font-size="3.5671px">S</text>
+    <text transform="matrix(1 0 0 1 10.2672 7)" fill="#D8D8D8" font-family="'MyriadPro-Bold'" font-size="3.5671px">-</text>
+    <text transform="matrix(1 0 0 1 11.355 7)" fill="#D8D8D8" font-family="'MyriadPro-Bold'" font-size="3.5671px">X</text>
+    <text transform="matrix(1 0 0 1 13.5416 7)" fill="#D8D8D8" font-family="'MyriadPro-Bold'" font-size="3.5671px">4</text>
+    <text transform="matrix(1 0 0 1 15.5215 7)" fill="#D8D8D8" font-family="'MyriadPro-Bold'" font-size="3.5671px">7</text>
+    <text transform="matrix(1 0 0 1 17.501 7)" fill="#D8D8D8" font-family="'MyriadPro-Bold'" font-size="3.5671px">4</text>
+    <text transform="matrix(1 0 0 1 19.481 7)" fill="#D8D8D8" font-family="'MyriadPro-Bold'" font-size="3.5671px">8</text>
+    <text transform="matrix(1 0 0 1 21.4605 7)" fill="#D8D8D8" font-family="'MyriadPro-Bold'" font-size="3.5671px">-</text>
+    <text transform="matrix(1 0 0 1 22.6089 7)" fill="#D8D8D8" font-family="'MyriadPro-Bold'" font-size="3.5671px">S</text>
+    <text transform="matrix(1 0 0 1 24.5352 7)" fill="#D8D8D8" font-family="'MyriadPro-Bold'" font-size="3.5671px">F</text>
+    <text transform="matrix(1 0 0 1 26.4151 7)" fill="#D8D8D8" font-family="'MyriadPro-Bold'" font-size="3.5671px">P</text>
+    <text transform="matrix(1 0 0 1 28.4415 7)" fill="#D8D8D8" font-family="'MyriadPro-Bold'" font-size="3.5671px">-</text>
+    <text transform="matrix(1 0 0 1 29.5899 7)" fill="#D8D8D8" font-family="'MyriadPro-Bold'" font-size="3.5671px">E</text>
+
     <g id="tooltip" visibility="hidden" transform="translate(489.1824440161386 35.62586072961493)">
         <rect x="2" y="2" width="127.17755126953125" height="18" fill="black" opacity="0.4" rx="2" ry="2"/>
         <rect width="127.17755126953125" height="18" fill="white" rx="2" ry="2"/>

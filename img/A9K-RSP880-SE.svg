@@ -6,6 +6,38 @@
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
+	var svg = document.getElementById('a9k-rsp880-se');
+	var tooltip = svg.getElementById('tooltip');
+	var tooltipText = tooltip.getElementsByTagName('text')[0];
+	var tooltipRects = tooltip.getElementsByTagName('rect');
+	var triggers = svg.getElementsByClassName('tooltip-trigger');
+
+    for (var i = 0; i < triggers.length; i++) {
+		triggers[i].addEventListener('mousemove', showTooltip);
+		triggers[i].addEventListener('mouseout', hideTooltip);
+	}
+
+	function showTooltip(evt) {
+		var pt = svg.createSVGPoint();
+		pt.x = evt.clientX;
+		pt.y = evt.clientY;
+		pt = pt.matrixTransform(svg.getScreenCTM().inverse());
+		var r_pt_x = pt.x ;
+		var r_pt_y = pt.y + 280;
+		tooltip.setAttributeNS(null, "transform", "translate(" + r_pt_x + " " + r_pt_y + ")");
+		tooltip.setAttributeNS(null, "visibility", "visible");
+
+		tooltipText.firstChild.data = evt.target.getAttributeNS(null, "data-tooltip-text");
+		var length = tooltipText.getComputedTextLength();
+		for (var i = 0; i < tooltipRects.length; i++) {
+			tooltipRects[i].setAttributeNS(null, "width", length + 8);
+		}
+	}
+
+	function hideTooltip(evt) {
+		tooltip.setAttributeNS(null, "visibility", "hidden");
+	}
+
     var params = document.defaultView.frameElement.getElementsByTagName("param")[0].value;
 
     var getLocal = JSON.parse(localStorage.getItem('arraysInfoPort'));
@@ -21,8 +53,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                 if(getLocal[i][2] === "up"){
                                     var path = document.getElementById("p" + count).style.fill = "green";
                                     var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
-                                    var url = '../description-status.html?desc=' + getLocal[i][1] + "&status=" + getLocal[i][2];
-                                	 var path = document.getElementById("p" + count).setAttribute('onclick', "window.open(url, '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes')");
+                                    /*var url = '../description-status.html?desc=' + getLocal[i][1] + "&status=" + getLocal[i][2];
+                                	 var path = document.getElementById("p" + count).setAttribute('onclick', "window.open(url, '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes')");//
+                                	 document.getElementById("p" + count).addEventListener("click", function(){
+    									window.open(url, '_blank', 'location=yes,height=460,width=500,scrollbars=yes,status=yes')
+									 });*/
                                 } else if(getLocal[i][2] === "down"){
                                     var path = document.getElementById("p" + count).style.fill = "red";
                                     var path1 = document.getElementById("p" + count).setAttribute('data-tooltip-text', getLocal[i][1] + " | status:" + getLocal[i][2]);
@@ -43,10 +78,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 ]]></script>
 
+	<script type="text/ecmascript"><![CDATA[
+		function myFunction() {
+			alert("hello");
+		}
+	]]>
+</script>
+
 	<style>
 			#tooltip {
-            	font-size:9px;
-            	dominant-baseline: hanging;
+                font-size:14px;
+                dominant-baseline: hanging;
             }
 
             .tooltip-trigger{
@@ -3007,11 +3049,11 @@ JQ4SShwklDhJKHCSUOEkocJJQ4SShwklDhJKHCSUOEkocJJQ4SShwklDhJKHCSUOEkocJJQ4X//Z" tr
 		<path clip-path="url(#SVGID_316_)" fill="none" stroke="#737373" stroke-width="0.48" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 		M28.2,720c-1.7-1.2-3.6-2.3-5.5-3.1c-1.8-1.8-3.2-3.8-4.3-6.2l-4.3-14v40.6c-0.1,2.5-1.1,4.8-2.8,6.7c-0.6,1.7,0,3.6,1.6,4.7
 		c4.9,3.2,10.1,6.1,15.4,8.5V720z"/>
-	
+
 		<rect id="p1" class="tooltip-trigger" data-tooltip-text="GigabitEthernet0/0/0 | Status:Unable" onclick=""
 			  x="39.7" y="158" clip-path="url(#SVGID_316_)" fill-rule="evenodd" clip-rule="evenodd" fill="#404040" width="25.9" height="28.2"/>
-	
-		<rect x="39.7" y="158" clip-path="url(#SVGID_316_)" fill="none" stroke="#000000" stroke-width="0.48" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="25.9" height="28.2"/>
+
+	<rect x="39.7" y="158" clip-path="url(#SVGID_316_)" fill="none" stroke="#000000" stroke-width="0.48" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="25.9" height="28.2"/>
 	<path clip-path="url(#SVGID_316_)" fill-rule="evenodd" clip-rule="evenodd" fill="#737373" d="M59.3,174.8h1.9v-1.9h-1.9V174.8z
 		 M59.3,171.5h1.9v-1.9h-1.9V171.5z"/>
 	
@@ -5660,4 +5702,11 @@ p6K5/9k=" transform="matrix(0.72 0 0 0.72 40.08 665.76)">
 		c0,2.5,1.9,4.6,4.3,4.6"/>
 </g>
 <text transform="matrix(0 0.9954 -1 0 64.1938 547.1985)"><tspan x="0" y="0" font-family="'MyriadPro-Regular'" font-size="5.4414px">S</tspan><tspan x="2.6" y="0" font-family="'MyriadPro-Regular'" font-size="5.4414px">/</tspan><tspan x="4.6" y="0" font-family="'MyriadPro-Regular'" font-size="5.4414px">N</tspan></text>
+
+	<g id="tooltip" visibility="hidden" >
+        <rect style="transform: rotate(270deg);" x="2" y="2" width="80" height="22" fill="black" opacity="0.4" rx="2" ry="2"/>
+        <rect style="transform: rotate(270deg);" width="80" height="22" fill="white" rx="2" ry="2"/>
+        <text style="transform: rotate(270deg);" x="4" y="6">GigabitEthernet2/1</text>
+    </g>
+
 </svg>

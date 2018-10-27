@@ -24,193 +24,51 @@
     {
       "address": "10.230.5.4",
       "snmp_community": "teninu-2ps",
-      "hostname": "cri_4-sw4-04",
+      "hostname": "cri_2-sw4-04",
       "state": "Success",
       "sitename": "-"
     },
     {
       "address": "10.230.5.5",
       "snmp_community": "teninu-2ps",
-      "hostname": "sw-esa-05-cri",
+      "hostname": "cri_2-sw5-05",
       "state": "Success",
       "sitename": "-"
     },
     {
       "address": "10.230.5.6",
       "snmp_community": "teninu-2ps",
-      "hostname": "sw-esa-06-cri",
+      "hostname": "cri_2-sw6-06",
       "state": "Success",
       "sitename": "-"
     },
     {
       "address": "10.230.5.7",
       "snmp_community": "teninu-2ps",
-      "hostname": "sw-esa-07-cri",
+      "hostname": "cri_2-sw7-07",
       "state": "Success",
       "sitename": "-"
     },
     {
-      "address": "10.230.5.13",
+      "address": "10.230.6.1",
       "snmp_community": "teninu-2ps",
-      "hostname": "sch-57030075-SW",
+      "hostname": "sw-esa-01-cri",
       "state": "Success",
       "sitename": "-"
     },
     {
-      "address": "10.230.5.14",
+      "address": "10.230.6.2",
       "snmp_community": "teninu-2ps",
-      "hostname": "SW-PC_CR_CRI",
+      "hostname": "sw-esa-02-cri",
       "state": "Success",
       "sitename": "-"
     },
     {
-      "address": "10.230.5.16",
+      "address": "10.230.6.3",
       "snmp_community": "teninu-2ps",
-      "hostname": "sch-57012004-SW",
-      "state": "Success",
-      "sitename": "-"
-    },
-    {
-      "address": "10.230.5.18",
-      "snmp_community": "teninu-2ps",
-      "hostname": "SW-ESA-01-CRI",
-      "state": "Success",
-      "sitename": "-"
-    },
-    {
-      "address": "10.230.5.19",
-      "snmp_community": "teninu-2ps",
-      "hostname": "SW-TC_KCR_CRI",
-      "state": "Success",
-      "sitename": "-"
-    },
-    {
-      "address": "10.230.5.21",
-      "snmp_community": "teninu-2ps",
-      "hostname": "SW-VC_CR_CRI",
-      "state": "Success",
-      "sitename": "-"
-    },
-    {
-      "address": "10.230.5.23",
-      "snmp_community": "teninu-2ps",
-      "hostname": "SW-PC_WCR_CRI",
-      "state": "Success",
-      "sitename": "-"
-    },
-    {
-      "address": "10.230.5.28",
-      "snmp_community": "teninu-2ps",
-      "hostname": "SW-ESA-02-CRI",
-      "state": "Success",
-      "sitename": "-"
-    },
-    {
-      "address": "10.230.5.29",
-      "snmp_community": "teninu-2ps",
-      "hostname": "sch-57012003-SW",
-      "state": "Success",
-      "sitename": "-"
-    },
-    {
-      "address": "10.230.5.30",
-      "snmp_community": "teninu-2ps",
-      "hostname": "SW-ESA-04-CRI",
-      "state": "Success",
-      "sitename": "-"
-    },
-    {
-      "address": "10.230.5.31",
-      "snmp_community": "teninu-2ps",
-      "hostname": "sch-57042005-SW",
-      "state": "Success",
-      "sitename": "-"
-    },
-    {
-      "address": "10.230.5.32",
-      "snmp_community": "teninu-2ps",
-      "hostname": "sch-57042006-SW",
-      "state": "Success",
-      "sitename": "-"
-    },
-    {
-      "address": "10.230.5.33",
-      "snmp_community": "teninu-2ps",
-      "hostname": "sch-57012009-SW",
-      "state": "Success",
-      "sitename": "-"
-    },
-    {
-      "address": "10.230.5.34",
-      "snmp_community": "teninu-2ps",
-      "hostname": "sch-57042010-SW",
-      "state": "Success",
-      "sitename": "-"
-    },
-    {
-      "address": "10.230.5.36",
-      "snmp_community": "teninu-2ps",
-      "hostname": "sch-57032005-SW",
-      "state": "Success",
-      "sitename": "-"
-    },
-    {
-      "address": "10.230.5.37",
-      "snmp_community": "teninu-2ps",
-      "hostname": "sch-57042009-SW",
-      "state": "Success",
-      "sitename": "-"
-    },
-    {
-      "address": "10.230.5.39",
-      "snmp_community": "teninu-2ps",
-      "hostname": "sch-52032002-SW",
-      "state": "Success",
-      "sitename": "-"
-    },
-    {
-      "address": "10.230.5.40",
-      "snmp_community": "teninu-2ps",
-      "hostname": "sch-57042001-SW",
-      "state": "Success",
-      "sitename": "-"
-    },
-    {
-      "address": "10.230.5.41",
-      "snmp_community": "teninu-2ps",
-      "hostname": "SW-CRRU-CRI",
-      "state": "Success",
-      "sitename": "-"
-    },
-    {
-      "address": "10.230.5.42",
-      "snmp_community": "teninu-2ps",
-      "hostname": "SW-PC_TG_CRI",
-      "state": "Success",
-      "sitename": "-"
-    },
-    {
-      "address": "10.230.5.43",
-      "snmp_community": "teninu-2ps",
-      "hostname": "cri-C3750-01.uni.net.th",
-      "state": "Success",
-      "sitename": "-"
-    },
-    {
-      "address": "10.230.5.150",
-      "snmp_community": "teninu-2ps",
-      "hostname": "SW-TC_CR_CRI",
-      "state": "Success",
-      "sitename": "-"
-    },
-    {
-      "address": "10.230.5.151",
-      "snmp_community": "teninu-2ps",
-      "hostname": "SW-AT_CR_CRI",
+      "hostname": "sw-esa-03-cri",
       "state": "Success",
       "sitename": "-"
     }
-  ],
-  "tpages": 1,
-  "total": 34
+  ]
 }

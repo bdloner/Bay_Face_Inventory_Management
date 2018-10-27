@@ -4,10 +4,7 @@
 <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
       integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.16/r-2.2.1/datatables.min.css"/>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css">
 
 <head>
     <meta charset="utf-8">
@@ -141,7 +138,7 @@
 
 <body class="view-bay" onload="showDataBayface()">
 
-<div class="container">
+<div class="container" style="text-align: center;">
 
     <div class="arc"></div>
     <h1><span>LOADING</span></h1>
@@ -168,10 +165,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
         integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
-
-<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.16/r-2.2.1/datatables.min.js"></script>
-<script type="text/javascript" charset="utf8"
-        src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
 
 <script type="text/javascript">
 
@@ -205,24 +198,7 @@
             var title = reply.result[0].title;
             var pid = reply.result[0].pid;
 
-            if(title === "1"){
-
-                var arraysInfoPort = [];
-                var count = 0;
-
-                document.getElementById('bay-id').setAttribute('data', 'img/' + pid + '.svg');
-
-                for (var i = 0; i < reply.result[0].data[0].data[0].length; i++) {
-
-                    arraysInfoPort[count] = [reply.result[0].data[0].data[0][i].ifname,
-                        reply.result[0].data[0].data[0][i].ifstate];
-
-                    count++;
-                }
-
-                localStorage.setItem("arraysInfoPort", JSON.stringify(arraysInfoPort));
-
-            } else if (title === "SwitchSystem"){
+            if (title === "SwitchSystem"){
 
                 var infoLinecardTitle = [];
                 var infoLinecardPid = [];
@@ -235,8 +211,6 @@
 
                     infoLinecardTitle.push(reply.result[0].data[i].title);
                     infoLinecardPid.push(reply.result[0].data[i].pid);
-
-                    console.log(reply.result[0].data[i]);
 
                     for (var j = 0; j < reply.result[0].data[i].data.length; j++) {
 
@@ -268,8 +242,6 @@
                 document.getElementById('bay-id').setAttribute('data', 'img/' + pid + '.svg');
 
                 for (var i = 0; i < reply.result[0].data.length; i++) {
-
-                    console.log(reply.result[0].data[i].title);
 
                     infoLinecardTitle.push(reply.result[0].data[i].title);
                     infoLinecardPid.push(reply.result[0].data[i].pid);

@@ -20,10 +20,13 @@ window.addEventListener("load", function() {
 	}
 
 	function showTooltip(evt) {
-		var CTM = svg.getScreenCTM();
-		var x = (evt.clientX - CTM.e - 30) / CTM.a;
-		var y = (evt.clientY - CTM.f - 16) / CTM.d;
-		tooltip.setAttributeNS(null, "transform", "translate(" + x + " " + y + ")");
+		var pt = svg.createSVGPoint();
+		pt.x = evt.clientX;
+		pt.y = evt.clientY;
+		pt = pt.matrixTransform(svg.getScreenCTM().inverse());
+		var r_pt_x = pt.x - 60;
+		var r_pt_y = pt.y - 20;
+		tooltip.setAttributeNS(null, "transform", "translate(" + r_pt_x + " " + r_pt_y + ")");
 		tooltip.setAttributeNS(null, "visibility", "visible");
 
 		tooltipText.firstChild.data = evt.target.getAttributeNS(null, "data-tooltip-text");
@@ -96,7 +99,7 @@ window.addEventListener("load", function() {
 	<style type="text/css">
 
 		#tooltip {
-            font-size:9px;
+            font-size:11px;
             dominant-baseline: hanging;
             }
 
