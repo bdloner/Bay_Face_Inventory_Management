@@ -52,12 +52,12 @@
               },
               {
                 "ifname": "GigabitEthernet2/9",
-                "ifstate": "down",
+                "ifstate": "admin_down",
                 "sname": "Gig2/9"
               },
               {
                 "ifname": "GigabitEthernet2/11",
-                "ifstate": "down",
+                "ifstate": "admin_down",
                 "sname": "Gig2/11"
               },
               {
@@ -132,7 +132,7 @@
               },
               {
                 "ifname": "GigabitEthernet2/41",
-                "ifstate": "down",
+                "ifstate": "no_module",
                 "sname": "Gig2/41"
               },
               {
@@ -174,7 +174,7 @@
               },
               {
                 "ifname": "GigabitEthernet2/10",
-                "ifstate": "down",
+                "ifstate": "no_module",
                 "sname": "Gig2/10"
               },
               {

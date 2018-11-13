@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 22.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="xs-x4448-gb-sfp" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg version="1.1" id="xs-x4448-gb-sfp" xmlns="http://www.w3.org/2000/svg"
+	 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 540.4 59.9" style="enable-background:new 0 0 540.4 59.9;" xml:space="preserve">
 
 	<script type="text/ecmascript"><![CDATA[
@@ -47,7 +48,6 @@ window.addEventListener("load", function() {
 
     var countLine = 1;
     var numPort = 1;
-	var lengthArray = getLocal.length;
 
 		for(var i=0; i<getLocal.length; i++){
 				for(var j=0; j<getLocal[i].length; j++){
@@ -2756,7 +2756,8 @@ BRF43wAAAABJRU5ErkJggg==" transform="matrix(0.12 0 0 0.12 5.5201 13.3199)">
 	<polygon class="st63" points="162.6,27.7 150.2,27.7 150.2,32 170,32 170,27.7 	"/>
 	<polygon class="st64" points="162.6,27.7 150.2,27.7 150.2,32 170,32 170,27.7 	"/>
 </g>
-<rect id="p13" x="150.2" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/13 | Status:Available" width="19.8" height="12.4"/>
+<rect id="p13" x="150.2" y="14.8" class="tooltip-trigger"
+	  data-tooltip-text="GigabitEthernet2/13 | Status:Available" width="19.8" height="12.4"/>
 <g>
 	<defs>
 		<rect id="SVGID_155_" x="0" width="540.4" height="59.9"/>
@@ -3516,8 +3517,11 @@ m4io5rYYcNidpbNPLzuUCURXA0E4tlO7fl2af63KBKEUXCcp3nTPNPHKs0f7PVJB2EKv4jt+TZ//
 	<polygon class="st133" points="202,27.7 189.6,27.7 189.6,32 209.3,32 209.3,27.7 	"/>
 	<polygon class="st134" points="202,27.7 189.6,27.7 189.6,32 209.3,32 209.3,27.7 	"/>
 </g>
-<rect id="p17" x="189.6" y="14.8" class="tooltip-trigger" data-tooltip-text="GigabitEthernet2/17 | Status:Available" width="19.7" height="12.4"/>
-<g>
+
+	<rect id="p17" x="189.6" y="14.8" class="tooltip-trigger"
+		  data-tooltip-text="GigabitEthernet2/17 | Status:Available" width="19.7" height="12.4"/>
+
+	<g>
 	<defs>
 		<rect id="SVGID_299_" x="0" width="540.4" height="59.9"/>
 	</defs>
@@ -16859,9 +16863,10 @@ RhFgoJGuf44FNSIrKswoYxlzFK/sbFf88Goc6JkxCjZC9zerpkaY0cq1xul6glGB8Yt1H/o6wnaH
 </g>
 <text transform="matrix(1 0 0 1 5.5202 7.7999)" class="st1129 st1130 st1131">WS-X4448-GB-SFP</text>
 
-<g id="tooltip" visibility="hidden" >
+	<g id="tooltip" visibility="hidden" >
         <rect x="2" y="2" width="80" height="18" fill="black" opacity="0.4" rx="2" ry="2"/>
         <rect width="80" height="18" fill="#fff" rx="2" ry="2"/>
         <text style="color:red" x="4" y="6">GigabitEthernet2/1</text>
     </g>
+
 </svg>
